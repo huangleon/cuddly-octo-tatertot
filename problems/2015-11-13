@@ -1,4 +1,6 @@
 Cannot connect to samba shared files after 4.1.14-1 upgrade.
+
+https://bbs.archlinux.org/viewtopic.php?id=190592
 https://bugs.archlinux.org/task/43015
 
 See https://bbs.archlinux.org/viewtopic.php?pid=1484501#p1484501 for some log comparisons between 4.1.13 and 4.1.14 taken moments apart and some cursory debugging. The problem is not so easily worked around for windows clients.
@@ -8,3 +10,7 @@ EDIT: Looked at the upstream patch found at "http://samba.org/samba/ftp/patches/
 EDIT2: Super simple workaround! Just shorten your NETBIOS name by adding "netbios name=[15 chars or less, simple ASCII chars only]" to your smb.conf.
 
 EDIT3: Reported upstream: https://bugzilla.samba.org/show_bug.cgi?id=11008
+
+
+Troubleshooting Samba
+https://www.samba.org/samba/docs/using_samba/ch12.html
