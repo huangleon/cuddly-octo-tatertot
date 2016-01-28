@@ -1,11 +1,9 @@
 #OCTOPUS MEMOs
-<span id="TOC"> </span>
-* Misc
-	* [What is the best way to merge mp3 files](#1)
-	* [Cannot connect to samba shared files after 4.1.14-1 upgrade.](#2)
 
+##Misc
+* [What is the best way to merge mp3 files](#what-is-the-best-way-to-merge mp3-files?)
+* [Cannot connect to samba shared files after 4.1.14-1 upgrade.](#cannot-connect-to-samba-shared-files-after-4.1.14-1-upgrade.)
 
-<span id="1"> </span>
 ##What is the best way to merge mp3 files?
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
 
@@ -21,7 +19,6 @@ Finally, run them through the tool MP3Val to fix any stream errors without forci
 
 >mp3val output.mp3 -f -nb
 
-<span id="2"> </span>
 ##Cannot connect to samba shared files after 4.1.14-1 upgrade.
 
 [\[SOLVED\]cannot connect to samba server after upgrade](https://bbs.archlinux.org/viewtopic.php?id=190592)
@@ -38,4 +35,4 @@ EDIT3: Reported upstream: [samba-show-bug](https://bugzilla.samba.org/show_bug.c
 
 [Troubleshooting Samba](https://www.samba.org/samba/docs/using_samba/ch12.html)
 
-[Table of Contents](#TOC)
+[Table of Contents](#misc)
