@@ -49,7 +49,7 @@ testdisk
 photorec
 
 ##Linux运维 <a id="4"></a>
-[Linux运维网](www.linuxyunwei.com)
+[Linux运维网](http://www.linuxyunwei.com)
 
 ##VPN相关 <a id="5"></a>
 [使用 Strongswan 架设 Ipsec VPN](https://zh.opensuse.org/SDB:Setup_Ipsec_VPN_with_Strongswan)
