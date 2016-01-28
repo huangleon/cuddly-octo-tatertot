@@ -62,4 +62,4 @@ photorec
 [Markdown open a new window link](http://stackoverflow.com/questions/3492153/markdown-open-a-new-window-link)
 
 
-[Table of Contents](#toc)
+[\[Table of Contents\]](#toc)
