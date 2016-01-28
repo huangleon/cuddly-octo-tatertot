@@ -6,6 +6,7 @@
 * [Disk Utility in Linux](#3)
 * [Linux运维](#4)
 * [VPN相关](#5)
+* [Markdown相关](#6)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -52,4 +53,10 @@ photorec
 
 ##VPN相关 <a id="5"></a>
 [使用 Strongswan 架设 Ipsec VPN](https://zh.opensuse.org/SDB:Setup_Ipsec_VPN_with_Strongswan)
+
+##Markdown相关 <a id="6"></a>
+[Markdown Cheatsheet](http://assemble.io/docs/Cheatsheet-Markdown.html)
+[Anchor links in markdown](http://blog.justin.kelly.org.au/anchor-links-in-markdown/)
+
+
 [Table of Contents](#toc)
