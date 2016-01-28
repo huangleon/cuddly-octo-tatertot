@@ -56,7 +56,7 @@ photorec
 
 ##Markdown相关 <a id="6"></a>
 [Markdown Cheatsheet](http://assemble.io/docs/Cheatsheet-Markdown.html)
-[Anchor links in markdown](http://blog.justin.kelly.org.au/anchor-links-in-markdown/)
+[Anchor links in markdown](http://blog.justin.kelly.org.au/anchor-links-in-markdown/){:target="_blank"}
 
 
 [Table of Contents](#toc)
