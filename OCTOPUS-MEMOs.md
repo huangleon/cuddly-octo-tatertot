@@ -1,6 +1,6 @@
 #OCTOPUS MEMOs
 * Misc
-	* [What is the best way to merge mp3 files](#1)
+	* [What is the best way to merge mp3 files](#What is the best way to merge mp3 files?)
 
 ##What is the best way to merge mp3 files?
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
