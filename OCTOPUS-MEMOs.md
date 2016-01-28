@@ -1,8 +1,11 @@
 #OCTOPUS MEMOs
 
-##Misc
+##Misc <a id="toc"></a>
 * [What is the best way to merge mp3 files](#1)
 * [Cannot connect to samba shared files after 4.1.14-1 upgrade.](#2)
+* [Disk Utility in Linux](#3)
+* [Linux运维](#4)
+* [VPN相关](#5)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -26,13 +29,27 @@ Finally, run them through the tool MP3Val to fix any stream errors without forci
 
 See [\[SOLVED\] cannot connect to samba server after upgrade](https://bbs.archlinux.org/viewtopic.php?pid=1484501#p1484501) for some log comparisons between 4.1.13 and 4.1.14 taken moments apart and some cursory debugging. The problem is not so easily worked around for windows clients.
 
-EDIT: Looked at the upstream patch found at [patch-4.1.13-4.1.14.diffs.gz](http://samba.org/samba/ftp/patches/patch-4.1.13-4.1.14.diffs.gz) and found that they changed how the "smb_my_netbios_names" array is allocated in "samba-4.1.14/source3/lib/util_names.c" and must have broke "is_myname(cstring)". It's an upstream bug for sure.
+>EDIT: Looked at the upstream patch found at [patch-4.1.13-4.1.14.diffs.gz](http://samba.org/samba/ftp/patches/patch-4.1.13-4.1.14.diffs.gz) and found that they changed how the "smb_my_netbios_names" array is allocated in "samba-4.1.14/source3/lib/util_names.c" and must have broke "is_myname(cstring)". It's an upstream bug for sure.
 
-EDIT2: Super simple workaround! Just shorten your NETBIOS name by adding "netbios name=\[15 chars or less, simple ASCII chars only\]" to your smb.conf.
+>EDIT2: Super simple workaround! Just shorten your NETBIOS name by adding "netbios name=\[15 chars or less, simple ASCII chars only\]" to your smb.conf.
 
-EDIT3: Reported upstream: [samba-show-bug](https://bugzilla.samba.org/show_bug.cgi?id=11008)
-
+>EDIT3: Reported upstream: [samba-show-bug](https://bugzilla.samba.org/show_bug.cgi?id=11008)
 
 [Troubleshooting Samba](https://www.samba.org/samba/docs/using_samba/ch12.html)
 
-[Table of Contents](#misc)
+##Disk Utility in Linux <a id="3"></a>
+###Disk scanning for badblocks
+badblocks
+mhdd
+
+###Data recovery
+safecopy
+testdisk
+photorec
+
+##Linux运维 <a id="4"></a>
+[Linux运维网](www.linuxyunwei.com)
+
+##VPN相关 <a id="5"></a>
+[使用 Strongswan 架设 Ipsec VPN](https://zh.opensuse.org/SDB:Setup_Ipsec_VPN_with_Strongswan)
+[Table of Contents](#toc)
