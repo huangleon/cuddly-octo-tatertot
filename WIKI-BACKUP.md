@@ -376,14 +376,14 @@ android旋转屏幕
 屏是LANDSCAPE的，要让它默认显示为PORTRAIT.
 
 1. kernel里要旋转FrameBuffer.启动参数里加入fbcon=rotate:1(0:正常屏; 1:顺时钟转90度; 2:转180度; 3:顺时钟转270度;) 最后生成的autoconf.h里有类似项：
-```c_cpp
-#define CONFIG_CMDLINE "console=ttySAC0,115200 fbcon=rotate:1"
-```
-此项的解析在$(kernel)/drivers/video/console/fbcon.c
-```c_cpp
-static int __init fb_console_setup(char *this_opt);
-```
-只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。注意：参考$(kernel)/documentation/fb/fbcon.txt
+    ```c_cpp
+    #define CONFIG_CMDLINE "console=ttySAC0,115200 fbcon=rotate:1"
+    ```
+    此项的解析在$(kernel)/drivers/video/console/fbcon.c
+    ```c_cpp
+    static int __init fb_console_setup(char *this_opt);
+    ```
+    只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。注意：参考$(kernel)/documentation/fb/fbcon.txt
 2. android OS旋转屏幕
 系统默认是针对竖屏的，而MID使用的是横屏，所以需要做一个转换的动作。
 ```
@@ -479,7 +479,7 @@ device/*/*/vendorsetup.sh
  */
 ```
 加载环境变量
-```
+```c_cpp
 static const char *variant_keys[] = {
     "ro.hardware",  /* This goes first so that it can pick up a different
                        file on the emulator. */
@@ -499,7 +499,7 @@ android_root/bionic/libc/include/sys/__system_properties.h
 ```
 
 配置文件路径位于
-```
+```c_cpp
 #define PROP_PATH_RAMDISK_DEFAULT  "/default.prop"
 #define PROP_PATH_SYSTEM_BUILD     "/system/build.prop"
 #define PROP_PATH_SYSTEM_DEFAULT   "/system/default.prop"
@@ -547,7 +547,9 @@ android_root/bionic/libc/include/sys/__system_properties.h
     ```
     2. 在系统层，如何查看某个应用的权限
         1. 在应用进程开启时，ActivityManagerService.java会在logcat中输出该应用的权限，形如：
+        ```
         >I/ActivityManager(1730): Start proc com.anbdroid.phone for restart com.android.phone:pid=2605 uid=1000 gids={3002,3001,3003}
+        ```
         即它有3001,3002,3003三个权限：访问蓝牙和建立socket
         2. 注意：此打印输出在应用第一次启动时。如果进程已存在，需要先把对应进程杀掉，以保证该进程重新启动，才能显示
         3. 具体实现，见：
@@ -565,14 +567,12 @@ android_root/bionic/libc/include/sys/__system_properties.h
 对于一个APK来说，如果要使用某个共享UID的话，必须做三步：
 
 1. 在Manifest节点中增加android:sharedUserId属性。
-
 2. 在Android.mk中增加LOCAL_CERTIFICATE的定义。
-如果增加了上面的属性但没有定义与之对应的LOCAL_CERTIFICATE的话，APK是安装不上去的。提示错误是：
-```
-Package com.test.MyTest has no signatures that match those in shared user android.uid.system; ignoring!
-```
-也就是说，仅有相同签名和相同sharedUserID标签的两个应用程序签名都会被分配相同的用户ID。例如所有和 media/download相关的APK都使用android.media作为sharedUserId的话，那么它们必须有相同的签名media。
-
+    如果增加了上面的属性但没有定义与之对应的LOCAL_CERTIFICATE的话，APK是安装不上去的。提示错误是：
+    ```
+    Package com.test.MyTest has no signatures that match those in shared user android.uid.system; ignoring!
+    ```
+    也就是说，仅有相同签名和相同sharedUserID标签的两个应用程序签名都会被分配相同的用户ID。例如所有和 media/download相关的APK都使用android.media作为sharedUserId的话，那么它们必须有相同的签名media。
 3. 把APK的源码放到packages/apps/目录下，用mm进行编译。
 
 ####举例说明一下。
@@ -590,11 +590,8 @@ Package com.test.MyTest has no signatures that match those in shared user androi
 build/target/product/security目录中有四组默认签名供Android.mk在编译APK使用：
 
 1. testkey：普通APK，默认情况下使用。
-
 2. platform：该APK完成一些系统的核心功能。经过对系统中存在的文件夹的访问测试，这种方式编译出来的APK所在进程的UID为system。
-
 3. shared：该APK需要和home/contacts进程共享数据。
-
 4. media：该APK是media/download系统中的一环。
 
 应用程序的Android.mk中有一个LOCAL_CERTIFICATE字段，由它指定用哪个key签名，未指定的默认用testkey.
@@ -663,6 +660,7 @@ jd-gui - Java Decompiler is a tools to decompile and analyze Java 5 “byte code
 for more how-to-use-dextojar. Hope this will help You and all! :)
 
 三个工具完成APK的反编译:
+
 1. dex2jar，把dex文件转成java的.class文件 [dex2jar](http://code.google.com/p/dex2jar/)
 2. apktool, android apk的反向工程工具 [apk-tool](https://code.google.com/p/android-apktool/)
 3. jd-gui，查看.class文件的浏览器工具。 [jd-gui](http://jd.benow.ca/)
@@ -839,11 +837,10 @@ sudo udevadm control --reload-rules
 ```
 usermod -L username
 ```
-2. 强制密码立刻过期：
+2. 强制密码立刻过期，该命令设置用户上次修改密码的时间为纪元时间（1970年1月1日），这样会使得该命令立刻过期，而不论密码过期策略的设置。
 ```
 chage -d 0 username
 ```
-该命令设置用户上次修改密码的时间为纪元时间（1970年1月1日），这样会使得该命令立刻过期，而不论密码过期策略的设置。
 3. 对帐号解锁 - 这里有两个方法来实现，管理员可以设置一个新密码或者设置空密码：
 注意：不要使用passwd来设置密码，因为它会使得刚才设置的使密码立刻过期的设置失效。
 为了设置初始密码，使用下面步骤：
