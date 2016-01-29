@@ -375,11 +375,15 @@ android旋转屏幕
 
 屏是LANDSCAPE的，要让它默认显示为PORTRAIT.
 
-1. kernel里要旋转FrameBuffer.启动参数里加入fbcon=rotate:1    (0:正常屏; 1:顺时钟转90度; 2:转180度; 3:顺时钟转270度;) 最后生成的autoconf.h里有类似项：```c_cpp
+1. kernel里要旋转FrameBuffer.启动参数里加入fbcon=rotate:1(0:正常屏; 1:顺时钟转90度; 2:转180度; 3:顺时钟转270度;) 最后生成的autoconf.h里有类似项：
+```c_cpp
 #define CONFIG_CMDLINE "console=ttySAC0,115200 fbcon=rotate:1"
-```此项的解析在$(kernel)/drivers/video/console/fbcon.c```c_cpp
+```
+此项的解析在$(kernel)/drivers/video/console/fbcon.c
+```c_cpp
 static int __init fb_console_setup(char *this_opt);
-```只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。注意：参考$(kernel)/documentation/fb/fbcon.txt
+```
+只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。注意：参考$(kernel)/documentation/fb/fbcon.txt
 2. android OS旋转屏幕
 系统默认是针对竖屏的，而MID使用的是横屏，所以需要做一个转换的动作。
 ```
