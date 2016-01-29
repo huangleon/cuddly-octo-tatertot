@@ -375,15 +375,11 @@ android旋转屏幕
 
 屏是LANDSCAPE的，要让它默认显示为PORTRAIT.
 
-1. kernel里要旋转FrameBuffer.启动参数里加入fbcon=rotate:1    (0:正常屏; 1:顺时钟转90度; 2:转180度; 3:顺时钟转270度;) 最后生成的autoconf.h里有类似项：
-```c_cpp
+1. kernel里要旋转FrameBuffer.启动参数里加入fbcon=rotate:1    (0:正常屏; 1:顺时钟转90度; 2:转180度; 3:顺时钟转270度;) 最后生成的autoconf.h里有类似项：```c_cpp
 #define CONFIG_CMDLINE "console=ttySAC0,115200 fbcon=rotate:1"
-```
-此项的解析在$(kernel)/drivers/video/console/fbcon.c
-```c_cpp
+```此项的解析在$(kernel)/drivers/video/console/fbcon.c```c_cpp
 static int __init fb_console_setup(char *this_opt);
-```
-只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。注意：参考$(kernel)/documentation/fb/fbcon.txt
+```只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。注意：参考$(kernel)/documentation/fb/fbcon.txt
 2. android OS旋转屏幕
 系统默认是针对竖屏的，而MID使用的是横屏，所以需要做一个转换的动作。
 ```
@@ -396,16 +392,16 @@ ROTATION_270        ROTATION_0
 
 准备ramdisk分区
 ```
-mount ${card}2 /mnt
-tar -xpvf boot.tar -C /mnt
+$ mount ${card}2 /mnt
+$ tar -xpvf boot.tar -C /mnt
 ```
 修改init.sun4i.rc文件，替换nand
 ```
-sed -i "s/nandd/mmcblk0p3/g"  /mnt/init.sun4i.rc
-sed -i "s/nande/mmcblk0p5/g"  /mnt/init.sun4i.rc
-sed -i "s/nandh/mmcblk0p8/g"  /mnt/init.sun4i.rc
-sed -i "s/nandi/mmcblk0p9/g" /mnt/init.sun4i.rc
-umount /mnt
+$ sed -i "s/nandd/mmcblk0p3/g"  /mnt/init.sun4i.rc
+$ sed -i "s/nande/mmcblk0p5/g"  /mnt/init.sun4i.rc
+$ sed -i "s/nandh/mmcblk0p8/g"  /mnt/init.sun4i.rc
+$ sed -i "s/nandi/mmcblk0p9/g" /mnt/init.sun4i.rc
+$ umount /mnt
 ```
 修改init.sun4.rc文件，添加/mnt/sdcard
 ```
@@ -414,22 +410,22 @@ umount /mnt
 
 复制system分区
 ```
-mount ${card}3 /mnt
-tar -xpvf system.tar -C /mnt
-umount /mnt
+$ mount ${card}3 /mnt
+$ tar -xpvf system.tar -C /mnt
+$ umount /mnt
 ```
 复制recovery分区
 ```
-mount ${card}7 /mnt
-tar -xpvf recovery.tar -C /mnt
-sed -i "s/nandf/mmcblk0p6/g"  /mnt/ueventd.sun4i.rc
-umount /mnt
+$ mount ${card}7 /mnt
+$ tar -xpvf recovery.tar -C /mnt
+$ sed -i "s/nandf/mmcblk0p6/g"  /mnt/ueventd.sun4i.rc
+$ umount /mnt
 ```
 重新配置 kernel
 
 在cubieboard-tv-sdk目录下，编译kernel的命令行是
 ```
-make -C kernel/allwinner/common O=/opt/cubieboard-tv-sdk/out/target/product/cubieboard/obj/KERNEL_OBJ ARCH=arm CROSS_COMPILE=" /opt/cubieboard-tv-sdk/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-" cubieboard_defconfig
+$ make -C kernel/allwinner/common O=/opt/cubieboard-tv-sdk/out/target/product/cubieboard/obj/KERNEL_OBJ ARCH=arm CROSS_COMPILE=" /opt/cubieboard-tv-sdk/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-" cubieboard_defconfig
 ```
 配置文件在
 ```
@@ -443,7 +439,7 @@ out/target/product/cubieboard/obj/KERNEL_OBJ/.config
 
 环境配置脚本
 ```
-build/envsetup.sh
+$ build/envsetup.sh
 ```
 通过搜索
 ```
