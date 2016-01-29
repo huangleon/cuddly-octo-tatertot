@@ -7,6 +7,7 @@
 * [Linux运维](#4)
 * [VPN相关](#5)
 * [Markdown相关](#6)
+* [VIM配置](#7)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -61,5 +62,18 @@ photorec
 
 [Markdown open a new window link](http://stackoverflow.com/questions/3492153/markdown-open-a-new-window-link)
 
+##<a id="7"></a>VIM配置
+常用vim配置
+```
+set cindent shiftwidth=4
+set ts=4
+set listchars=tab:>-,trail:-
+set list
+set expandtab
+set number
+
+set encoding=utf8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+```
 
 [\[Table of Contents\]](#toc)
