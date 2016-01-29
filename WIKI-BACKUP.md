@@ -15,6 +15,8 @@
     * [网络工具使用](#13)
     * [samba服务挂载](#14)
     * [usbfs的问题](#15)
+    * [Linux用户密码设置](#16)
+    * [vim使用技巧](#17)
 
 ##<a id="1"/>cubieboard的android系统编译准备
 文档:
@@ -331,7 +333,7 @@ dd if=./u-boot.bin of=$card bs=1024 seek=32
 创建android分区
 
 partition|Size|Name|Fs|Description
----------|----|----|--|-----------
+---------|----|----|---|-----------
 /dev/sdc1|16MiB|bootloader|VFAT|Files to assist the bootloader.
 /dev/sdc2|36MiB|boot|EXT4|ramdisk
 /dev/sdc3|500 MiB|system|EXT4|Android's /system partition
@@ -792,7 +794,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="ffff", ATTRS{idProduct}=="ffff", ACTION=="ad
 
 补充：
 
-在android 系统中，因为游戏要读取鼠标数据，故需要将 /dev/input/event* 的权限亦改为 666
+在android 系统中，因为游戏要读取鼠标数据，故需要将 /dev/input/event/* 的权限亦改为 666
 
 此修改仅用于2.x 版本，4.0以上系统不需要修改
 
@@ -829,6 +831,94 @@ sudo udevadm control --reload-rules
 参考
 
 [ueventdrc](http://www.vikesh.in/posts/2011-08-29-uventdrc.html)
+
+##<a id="16"/>Linux用户密码设置
+如果系统管理员希望添加一个用户以后，让该用户第一次登录以后自己设置自己的密码，那么就要使得用户的初始密码或者空密码立刻过期，强制用户第一次登录后立刻修改密码。
+
+为了强制用户第一次登录时设置一个新密码，请按照下面的指示来做，但是需要的注意的时候如果用户是通过SSH远程登录进去的，那么该方法是不能生效的。
+
+1. 锁定用户密码 - 如果用户不存在，用useradd添加用户，但是不设置密码，使得该帐号仍然处于锁定状态，如果用户密码已经激活，则用下面命令锁定：
+```
+usermod -L username
+```
+2. 强制密码立刻过期：
+```
+chage -d 0 username
+```
+该命令设置用户上次修改密码的时间为纪元时间（1970年1月1日），这样会使得该命令立刻过期，而不论密码过期策略的设置。
+3. 对帐号解锁 - 这里有两个方法来实现，管理员可以设置一个新密码或者设置空密码：
+注意：不要使用passwd来设置密码，因为它会使得刚才设置的使密码立刻过期的设置失效。
+为了设置初始密码，使用下面步骤：
+启动Python:
+```
+$ python
+Python 2.3.4 (#1, Feb 6 2006, 10:38:46) [GCC 3.4.5 20051201 (Red Hat 3.4.5-2)] on linux2 Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+在提示符>>>后输入下面命令：
+```
+import crypt;
+print crypt.crypt("userpassword","username")
+```
+输出将会类似是： 12CsGd8FRcMSM
+输入[Ctrl]+[D]退出python。
+拷贝刚才的输出密码结果，12CsGd8FRcMSM，用在下面的命令中：
+```
+usermod -p "12CsGd8FRcMSM" username 
+```
+当然也可以给用户给一个空密码：
+```
+usermod -p "" username 
+```
+注： 虽然空密码很方便，但是有安全风险。
+然后登录该用户，就会提示输入密码。
+
+####其他办法：
+
+使用下面方法也可以实现：
+
+1. 使用useradd添加用户
+2. 使用passwd设置用户密码
+3. 使用usermod -L来锁密码
+4. 强制用户帐号过期chage -d 0 username
+5. 解锁用户帐号
+
+上面流程的示例：
+```
+# useradd dan
+//Changing password for user dan.
+# passwd dan
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+# usermod -L dan
+# chage -d 0 dan
+# usermod -U dan
+```
+当然用户dan第一次登录，就会提示设置密码如下：
+```
+// Changing password for dan (current) UNIX
+$ su dan
+Password:
+You are required to change your password immediately (root enforced)
+password:
+New password:
+Retype new password:
+```
+本文摘自redhat官方文档！
+
+根据本人理解只需2步：
+
+1. 建立用户账户
+2. 强制用户帐号过期
+
+若需清空账户只需将/etc/shadow中相应用户的密码字段（字段以“：”分隔，第二个字段） 清空即可。
+
+##<a id="17"/>vim使用技巧
+![vim键盘图](/image/o_vim.png)
+![vim命令图解](/image/vim_cheet_sheet_full.png)
+
+
 
 [Table of Contents](#misc)
 
