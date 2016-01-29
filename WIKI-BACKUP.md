@@ -22,7 +22,9 @@
 文档:
 
 [Cubieboard开发环境、Uboot的SD启动卡制作、U-boot初步分析](http://blog.csdn.net/andy_wsj/article/details/8515197)
+
 [加载boot的问题](http://forum.cubietech.com/forum.php?mod=viewthread&tid=641)
+
 [Cubieboard2 Info](http://androtab.info/cubieboard2/)
 
 **ubuntu 64位下需要准备的软件包：**
@@ -78,22 +80,22 @@ $ sudo apt-get install libglapi-mesa-lts-saucy:i386
 ####准备linaro
 获取linaro toolchain
 ```
-$wget https://launchpad.net/linaro-toolchain-binaries/trunk/2013.04/+download/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2
+$ wget https://launchpad.net/linaro-toolchain-binaries/trunk/2013.04/+download/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2
 ```
 不使用gcc 4.8,与kernel有问题
 ```
-$tar xvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2
+$ tar xvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2
 ```
 配置PATH路径, 添加gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin
 ```
-$vi ~/.bashrc
+$ vi ~/.bashrc
 ```
 ####获取linux-sunxi工具链
 ```
-$git clone git://github.com/linux-sunxi/u-boot-sunxi.git
-$git clone git://github.com/linux-sunxi/linux-sunxi.git
-$git clone git://github.com/linux-sunxi/sunxi-tools.git
-$git clone git://github.com/linux-sunxi/sunxi-boards.git
+$ git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+$ git clone git://github.com/linux-sunxi/linux-sunxi.git
+$ git clone git://github.com/linux-sunxi/sunxi-tools.git
+$ git clone git://github.com/linux-sunxi/sunxi-boards.git
 ```
 准备uboot启动区，参考
 [U-Boot](http://linux-sunxi.org/U-Boot)
@@ -109,11 +111,10 @@ start|size|usage
 
 准备uboot
 ```
-$cd u-boot-sunxi
-$make cubieboard CROSS_COMPILE=arm-linux-gnueabihf-
+$ cd u-boot-sunxi
+$ make cubieboard CROSS_COMPILE=arm-linux-gnueabihf-
 ```
 可用的boardtype为
-
 boardtype|remark
 ---------|------
 sun4i|Generic A10
@@ -131,10 +132,10 @@ som-a13|MarsBoard SOM-A13 (SPL)
 
 重新准备boot.scr和script.bin文件
 ```
-$cd sunxi-tools
-$make fex2bin
-$cd ../sunxi-boards/sys_config/a10
-$../../../sunxi-tools/fex2bin cubieboard.fex script.bin
+$ cd sunxi-tools
+$ make fex2bin
+$ cd ../sunxi-boards/sys_config/a10
+$ ../../../sunxi-tools/fex2bin cubieboard.fex script.bin
 ```
 把如下内容写入boot.cmd文件
 ```
@@ -145,41 +146,41 @@ bootm 0x48000000
 ```
 然后执行
 ```
-$mkimage -C none -A arm -T script -d boot.cmd boot.scr
+$ mkimage -C none -A arm -T script -d boot.cmd boot.scr
 ```
 生成boot.scr文件 
 ####在sdcard中预制android系统，启动cubieboard盒子步骤：
 准备64位ubuntu
 下载android源代码
 ```
-$wget http://dl.cubieboard.org/software/sources/cubieboard_opentv.tar.gz
+$ wget http://dl.cubieboard.org/software/sources/cubieboard_opentv.tar.gz
 ```
 编译代码
 ```
-$tar -zxf cubieboard_opentv.tar.gz
-$cd cubieboard_opentv/
-$source build/envsetup.sh && lunch #select cubieboard
-$make -j4
+$ tar -zxf cubieboard_opentv.tar.gz
+$ cd cubieboard_opentv/
+$ source build/envsetup.sh && lunch #select cubieboard
+$ make -j4
 ```
 生成image
 ```
-$tools/pack-cm.sh
+$ tools/pack-cm.sh
 ```
 准备android工具
 ```
-$wget http://dl.linux-sunxi.org/users/arete74/tools.tar.gz
-$tar -zxvf tools.tar.gz
+$ wget http://dl.linux-sunxi.org/users/arete74/tools.tar.gz
+$ tar -zxvf tools.tar.gz
 ```
 准备awutils
 ```
-$git clone https://github.com/Ithamar/awutils.git
-$cd awutils
+$ git clone https://github.com/Ithamar/awutils.git
+$ cd awutils
 ```
 从android image中提取文件
 
 假设android image文件名是android.img
 ```
-$awimage -u android.img
+$ awimage -u android.img
 ```
 生成文件夹android.dump,进入文件夹，找到如下文件:
 ```
@@ -190,11 +191,11 @@ RFSFAT16_BOOTLOADER_00000 (the bootloader partition)
 ```
 复制相应文件:
 ```
-cp android.img.dump/RFSFAT16_BOOT_00000000000 ../boot.img
-cp android.img.dump/RFSFAT16_RECOVERY_0000000 ../recovery.img
-cp android.img.dump/RFSFAT16_SYSTEM_000000000 ../system.img
-cp android.img.dump/RFSFAT16_BOOTLOADER_00000 ../bootloader.img
-cd ..
+$ cp android.img.dump/RFSFAT16_BOOT_00000000000 ../boot.img
+$ cp android.img.dump/RFSFAT16_RECOVERY_0000000 ../recovery.img
+$ cp android.img.dump/RFSFAT16_SYSTEM_000000000 ../system.img
+$ cp android.img.dump/RFSFAT16_BOOTLOADER_00000 ../bootloader.img
+$ cd ..
 ```
 提起kernel文件和ramdisk文件
 ```
@@ -385,7 +386,6 @@ static int __init fb_console_setup(char *this_opt);
 ```
 只是去初始化变量initial_rotation，然后initial_rotation会传递给其他需要的结构。
 注意：参考$(kernel)/documentation/fb/fbcon.txt
-
 2. android OS旋转屏幕
 系统默认是针对竖屏的，而MID使用的是横屏，所以需要做一个转换的动作。
 ```
