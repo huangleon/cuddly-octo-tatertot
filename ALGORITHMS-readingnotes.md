@@ -28,3 +28,20 @@ Scientific Method
 3. Predict events using the hypothesis
 4. Verify predictions by making further observation
 5. Validate by repeating until the hypothesis and observations agree.
+
+Useful approximations for the analysis of algorithms
+
+description|approximation
+----|----
+harmonic sum|<img src="http://latex.codecogs.com/svg.latex?H_{N}=1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots +\frac{1}{N}\sim \ln N" border="0"/>
+triangular sum|<img src="http://latex.codecogs.com/svg.latex?1+2+3+4+\cdots +N\sim \frac{N^{2}}{2}" border="0"/>
+geometric sum|<img src="http://latex.codecogs.com/svg.latex?1+2+4+8+\cdots +N=2N-1\sim 2N \; when N=2^{n}" border="0"/>
+Stirling's approximation|<img src="http://latex.codecogs.com/svg.latex?\lg N!=\lg 1+ \lg 2+ \lg 3 + \lg 4 + \cdots + \lg N \sim N\lg N" border="0"/>
+binomial coefficients|<img src="http://latex.codecogs.com/svg.latex?\binom{N}{k} \sim \frac{N^{k}}{k!} \; when\; k\; is\; a\; small\; constant" border="0"/>
+exponential|<img src="http://latex.codecogs.com/svg.latex?\left(1-\frac{1}{x} \right )^{x}\sim \frac{1}{\mathrm{e}}" border="0"/>
+
+
+
+
+
+
