@@ -33,6 +33,7 @@ Useful approximations for the analysis of algorithms
 
 description|approximation
 ----|----
+test|![](http://latex.codecogs.com/svg.latex?H_%7BN%7D=1+%5Cfrac%7B1%7D%7B2%7D+%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B4%7D+%5Ccdots%20+%5Cfrac%7B1%7D%7BN%7D%5Csim%20%5Cln%20N)
 harmonic sum|<img src="http://latex.codecogs.com/svg.latex?H_{N}=1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots +\frac{1}{N}\sim \ln N" border="0"/>
 triangular sum|<img src="http://latex.codecogs.com/svg.latex?1+2+3+4+\cdots +N\sim \frac{N^{2}}{2}" border="0"/>
 geometric sum|<img src="http://latex.codecogs.com/svg.latex?1+2+4+8+\cdots +N=2N-1\sim 2N \; when N=2^{n}" border="0"/>
