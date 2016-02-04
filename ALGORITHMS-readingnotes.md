@@ -41,7 +41,20 @@ Stirling's approximation|<img src="http://latex.codecogs.com/svg.latex?\lg N!=\l
 binomial coefficients|<img src="http://latex.codecogs.com/svg.latex?\binom{N}{k} \sim \frac{N^{k}}{k!} \; when\; k\; is\; a\; small\; constant" border="0"/>
 exponential|<img src="http://latex.codecogs.com/svg.latex?\left(1-\frac{1}{x} \right )^{x}\sim \frac{1}{\mathrm{e}}" border="0"/>
 
-
+Sorting
+1. Elementary sorts
+    1. Selection sort
+    2. Insertion sort
+    3. Shell sort(h-sort of insertion sort)
+2. Mergesort & Bottom-up mergesort(used in linked-list sort, in place)
+    Use insertion sort for small subarrays. (N < 15)
+    Test whether the array is already in order. (test a[mid] < a[mid+1] ?)
+    Computational complexity of sorting:
+    N itmes sorting, N! sequence result. Compare tree, number of leaves
+    N! <= number of leaves <= 2^h
+    h >= ln(N!) ~ NlnN (Stirling approximation)
+    Compare-based sorting algorithm lower bound of number of compares.
+3. Quicksort
 
 
 
