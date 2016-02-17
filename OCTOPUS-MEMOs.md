@@ -8,6 +8,7 @@
 * [VPN相关](#5)
 * [Markdown相关](#6)
 * [VIM配置](#7)
+* [Exact String Matching Algorithms](#8)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -80,5 +81,9 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 [2](https://wiki.archlinux.org/index.php/IPsec-based_VPN_Server_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29)
 [3](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html)
 [4](https://zh.opensuse.org/index.php?title=SDB:Setup_Ipsec_VPN_with_Strongswan&variant=zh#ipsec.secrets)
+
+
+##<a id="8"/>Exact String Matching Algorithms
+[Exact String Matching Algorithms](http://www-igm.univ-mlv.fr/~lecroq/string/)
 
 [\[Table of Contents\]](#toc)
