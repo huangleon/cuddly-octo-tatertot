@@ -95,8 +95,23 @@ namespace Algorithms {
             void sort();
             void dump();
     };
-    // Definition of Heap
+    // Definition of min-Heap
     class Heap {
+        private:
+            const int COUNT;
+            int* mData;
+            int mSize;
+            void exch(int i, int j);
+            void heapify(int i);
+        public:
+            Heap(int count);
+            virtual ~Heap();
+
+            bool empty() const { return mSize == 0; }
+            void put(int val);
+            int getMin() const { return mData[1]; }
+            void delMin();
+            void dump();
     };
     // definition of HeapSort
     class HeapSort {

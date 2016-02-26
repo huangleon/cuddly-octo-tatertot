@@ -212,22 +212,120 @@ namespace Algorithms {
     }
     void QuickSort::sort(int lo, int hi)
     {
+        std::cout << "sort: " << lo << ", " << hi << std::endl;
         if (lo < hi)
         {
             // partition
             int mid = partition(lo, hi);
-            sort(lo, mid);
+            dump();
+            sort(lo, mid - 1);
             sort(mid + 1, hi);
         }
     }
     int QuickSort::partition(int lo, int hi)
     {
+        // take hi as pivot
+        // [lo, q) less than pivot
+        // [q ~ i) larger than or equal to  pivot
+        int pivot = hi;
+        int q = lo;
+        for (int i = lo; i < hi; i++)
+        {
+            if ( mData.compare(i, pivot) < 0 )
+            {
+                mData.exch(q++, i);
+            }
+        }
+        mData.exch(q, pivot);
+        return q;
     }
     void QuickSort::dump()
     {
         mData.dump();
     }
     // Implementation of Heap
+    Heap::Heap(int count)
+        : COUNT(count)
+          , mSize(0)
+    {
+        mData = new int[count];
+    }
+    Heap::~Heap()
+    {
+        delete[] mData;
+    }
+    void Heap::exch(int i, int j)
+    {
+        if ( i != j )
+        {
+            int val = mData[i];
+            mData[i] = mData[j];
+            mData[j] = val;
+        }
+    }
+    void Heap::put(int val)
+    {
+        // use 1..n as index, index 0 is useless.
+        if ( mSize < COUNT - 1 )
+        {
+            mData[1 + mSize++] = val;
+            int i = mSize;
+            int parent = i / 2;
+            while (parent > 0)
+            {
+                if (mData[i] < mData[parent])
+                {
+                    exch(i, parent);
+                    i = parent;
+                    parent = i / 2;
+                }
+                else
+                    break;
+            }
+        }
+    }
+    void Heap::delMin()
+    {
+        if ( mSize > 0 )
+        {
+            exch(1, mSize);
+            mSize --;
+            heapify(1);
+        }
+    }
+    void Heap::heapify(int i)
+    {
+        int left = i * 2, right = i * 2 + 1;
+        if ( left < mSize && right <= mSize )
+        {
+            int min = i;
+            if (mData[left] < mData[right])
+                min = left;
+            else
+                min = right;
+            if (mData[i] < mData[min])
+                min = i;
+            if (min != i)
+            {
+                exch(min, i);
+                heapify(min);
+            }
+        }
+        else if ( left <= mSize && right > mSize )
+        {
+            if (mData[left] < mData[i])
+            {
+                exch(left, i);
+                heapify(left);
+            }
+        }
+    }
+    void Heap::dump()
+    {
+        for (int i = 0; i < COUNT; i++)
+            std::cout << mData[i] << " ";
+        std::cout << std::endl;
+    }
     // Implementation of HeapSort
 } // end namespace Algorithms
 
@@ -237,7 +335,20 @@ int main()
 //    Algorithms::InsertionSort sorttest(10);
 //    Algorithms::SelectionSort sorttest(10);
 //    Algorithms::ShellSort sorttest(10);
-    Algorithms::MergeSort sorttest(32);
+//    Algorithms::MergeSort sorttest(32);
+    Algorithms::QuickSort sorttest(1);
+    Algorithms::Heap heap(32);
+    for (int i = 10; i > 0; i--)
+    {
+        heap.put(i);
+        heap.dump();
+    }
+    while ( !heap.empty() )
+    {
+        std::cout << heap.getMin() << std::endl;
+        heap.delMin();
+        heap.dump();
+    }
 
     std::cout << "array before sort" << std::endl;
     sorttest.dump();
