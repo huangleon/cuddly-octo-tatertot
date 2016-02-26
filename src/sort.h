@@ -21,7 +21,15 @@ namespace Algorithms {
                 else return 1;
             }
             void exch(int i, int j);
+            void copyTo(int* target, int i, int count);
+            // void copyFrom(int* source, int i, int count);
+
+            void setValue(int i, int val) { mNumbers[i] = val; }
+            int getValue(int i) const { return mNumbers[i]; }
+
             void dump();
+            // aux function for shellsort
+            void dump(int i, int count);
     };
     // Definition of InsertionSort
     class InsertionSort {
@@ -34,6 +42,7 @@ namespace Algorithms {
             void sort();
             void dump();
     };
+    // Definition of SelectionSort
     class SelectionSort {
         // sort arrays using selection sort.
         private:
@@ -44,6 +53,7 @@ namespace Algorithms {
             void sort();
             void dump();
     };
+    // Definition of ShellSort
     class ShellSort {
         // sort arrays using selection sort.
         private:
@@ -53,6 +63,43 @@ namespace Algorithms {
 
             void sort();
             void dump();
+            // dump array data in step h
+            void dump(int h);
+    };
+    // Definition of MergeSort
+    class MergeSort {
+        private:
+            Sort mData;
+            int * mAux;
+            // sort from i to j.
+            void sort(int lo, int hi);
+
+            // merge [low, mid], [mid + 1, hi]
+            void merge(int lo, int mid, int hi);
+        public:
+            MergeSort(int count);
+            virtual ~MergeSort();
+
+            void sort();
+            void dump();
+    };
+    // Definition of QuickSort
+    class QuickSort {
+        private:
+            Sort mData;
+            void sort(int lo, int hi);
+            int partition(int lo, int hi);
+        public:
+            QuickSort(int count);
+
+            void sort();
+            void dump();
+    };
+    // Definition of Heap
+    class Heap {
+    };
+    // definition of HeapSort
+    class HeapSort {
     };
 }
 #endif // end of __SORT_H__
