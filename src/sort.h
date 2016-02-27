@@ -96,7 +96,7 @@ namespace Algorithms {
             void dump();
     };
     // Definition of min-Heap
-    class Heap {
+    class PriorityQueue{
         private:
             const int COUNT;
             int* mData;
@@ -104,8 +104,8 @@ namespace Algorithms {
             void exch(int i, int j);
             void heapify(int i);
         public:
-            Heap(int count);
-            virtual ~Heap();
+            PriorityQueue(int count);
+            virtual ~PriorityQueue();
 
             bool empty() const { return mSize == 0; }
             void put(int val);
@@ -115,6 +115,14 @@ namespace Algorithms {
     };
     // definition of HeapSort
     class HeapSort {
+        private:
+            Sort mData;
+            PriorityQueue mPq;
+        public:
+            HeapSort(int count);
+
+            void sort();
+            void dump();
     };
 }
 #endif // end of __SORT_H__

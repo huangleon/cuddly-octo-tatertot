@@ -243,18 +243,27 @@ namespace Algorithms {
     {
         mData.dump();
     }
-    // Implementation of Heap
-    Heap::Heap(int count)
+    // Implementation of PriorityQueue
+    PriorityQueue::PriorityQueue(int count)
         : COUNT(count)
           , mSize(0)
     {
         mData = new int[count];
+        // generate a random shuffled array.
+//        srand(time(NULL));
+//        int * nums = new int[COUNT - 1];
+//        for (int i = 0; i < COUNT - 1; i++)
+//            nums[i] = i;
+//        std::random_shuffle(nums, nums + COUNT - 1);
+//        for (int i = 0; i < COUNT - 1; i++)
+//            put(nums[i]);
+//        delete[] nums;
     }
-    Heap::~Heap()
+    PriorityQueue::~PriorityQueue()
     {
         delete[] mData;
     }
-    void Heap::exch(int i, int j)
+    void PriorityQueue::exch(int i, int j)
     {
         if ( i != j )
         {
@@ -263,7 +272,7 @@ namespace Algorithms {
             mData[j] = val;
         }
     }
-    void Heap::put(int val)
+    void PriorityQueue::put(int val)
     {
         // use 1..n as index, index 0 is useless.
         if ( mSize < COUNT - 1 )
@@ -284,7 +293,7 @@ namespace Algorithms {
             }
         }
     }
-    void Heap::delMin()
+    void PriorityQueue::delMin()
     {
         if ( mSize > 0 )
         {
@@ -293,7 +302,7 @@ namespace Algorithms {
             heapify(1);
         }
     }
-    void Heap::heapify(int i)
+    void PriorityQueue::heapify(int i)
     {
         int left = i * 2, right = i * 2 + 1;
         if ( left < mSize && right <= mSize )
@@ -320,13 +329,33 @@ namespace Algorithms {
             }
         }
     }
-    void Heap::dump()
+    void PriorityQueue::dump()
     {
-        for (int i = 0; i < COUNT; i++)
+        for (int i = 1; i < COUNT; i++)
             std::cout << mData[i] << " ";
         std::cout << std::endl;
     }
     // Implementation of HeapSort
+    HeapSort::HeapSort(int count)
+        : mData(count)
+          , mPq(count + 1)
+    {
+    }
+    void HeapSort::sort()
+    {
+        for (int i = 0; i < mData.count(); i++)
+            mPq.put(mData.getValue(i));
+        for (int i = 0; i < mData.count(); i++)
+        {
+            mData.setValue(i, mPq.getMin());
+            mPq.delMin();
+        }
+    }
+    void HeapSort::dump()
+    {
+        mData.dump();
+    }
+
 } // end namespace Algorithms
 
 int main()
@@ -336,19 +365,20 @@ int main()
 //    Algorithms::SelectionSort sorttest(10);
 //    Algorithms::ShellSort sorttest(10);
 //    Algorithms::MergeSort sorttest(32);
-    Algorithms::QuickSort sorttest(1);
-    Algorithms::Heap heap(32);
-    for (int i = 10; i > 0; i--)
-    {
-        heap.put(i);
-        heap.dump();
-    }
-    while ( !heap.empty() )
-    {
-        std::cout << heap.getMin() << std::endl;
-        heap.delMin();
-        heap.dump();
-    }
+//    Algorithms::QuickSort sorttest(1);
+    Algorithms::HeapSort sorttest(64);
+//    Algorithms::PriorityQueue pq(32);
+//    for (int i = 10; i > 0; i--)
+//    {
+//        pq.put(i);
+//        pq.dump();
+//    }
+//    while ( !pq.empty() )
+//    {
+//        std::cout << heap.getMin() << std::endl;
+//        heap.delMin();
+//        heap.dump();
+//    }
 
     std::cout << "array before sort" << std::endl;
     sorttest.dump();
