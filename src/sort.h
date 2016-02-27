@@ -124,5 +124,54 @@ namespace Algorithms {
             void sort();
             void dump();
     };
+    // definition of Red-Black-Tree
+    class RbTree {
+        private:
+            enum {
+                E_NULL = 0,
+                E_TRAVERSE_PREORDER,
+                E_TRAVERSE_INORDER,
+                E_TRAVERSE_POSTORDER,
+            };
+            // size of the static array
+            const int COUNT;
+            int * mNode;
+            int * mParent;
+            int * mLeft;
+            int * mRight;
+            int * mValue;
+            // color of node, true: red, false, black
+            bool * mRed;
+
+            // head of free list, freelist is single-linked list
+            int mfree;
+            // root of the tree
+            int mroot;
+
+            // traverse order
+            int mTraverseOrder;
+
+            // alloc new node from free list
+            int new_node();
+            // free node and put it back to free list.
+            void del_node(int);
+
+            // insert value into the sub-tree and return the root of new sub-tree.
+            int insert_val(int node, int value);
+            // dump sub-tree
+            void dump_subtree(int);
+            // dump node
+            void dump_node(int);
+        public:
+            RbTree(int reserve);
+            virtual ~RbTree();
+
+            void dump();
+
+            // return node inserted.
+            int insertValue(int value);
+            bool contains(int value);
+            void delValue(int value);
+    };
 }
 #endif // end of __SORT_H__

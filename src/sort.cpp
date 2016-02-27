@@ -355,6 +355,89 @@ namespace Algorithms {
     {
         mData.dump();
     }
+    // Implementation of Red-Black-Tree
+    RbTree::RbTree(int reserve)
+        : COUNT(reserve)
+    {
+        mNode = new int[COUNT];
+        mParent = new int[COUNT];
+        mLeft = new int[COUNT];
+        mRight = new int[COUNT];
+        mValue = new int[COUNT];
+        mRed = new bool[COUNT];
+
+        // put 0 as null node.
+        mroot = mNode[0] = mParent[0] = mLeft[0] = mRight[0] = mValue[0] = E_NULL;
+        // prepare the free list
+        for (int i = 1; i < COUNT; i++)
+            mNode[i] = i - 1;
+        mfree = COUNT - 1;
+
+        mTraverseOrder = E_TRAVERSE_PREORDER;
+    }
+    RbTree::~RbTree()
+    {
+        delete[] mNode;
+        delete[] mParent;
+        delete[] mLeft;
+        delete[] mRight;
+        delete[] mRed;
+    }
+    int RbTree::new_node()
+    {
+        int result = mfree;
+
+        if (mfree != E_NULL)
+        {
+            // set new node value
+            mParent[mfree] = E_NULL;
+            mLeft[mfree] = E_NULL;
+            mRight[mfree] = E_NULL;
+            mRed[mfree] = true;
+        }
+
+        // forward the free head.
+        mfree = mNode[mfree];
+        return result;
+    }
+    void RbTree::del_node(int node)
+    {
+        mNode[node] = mfree;
+        mfree = node;
+    }
+    void RbTree::dump_node(int node)
+    {
+        std::cout << "node (" << node << ", " << mValue[node] << ")" << std::endl;
+    }
+    void RbTree::dump_subtree(int node)
+    {
+        if (node != E_NULL)
+        {
+            if ( E_TRAVERSE_PREORDER == mTraverseOrder )
+                dump_node(node);
+            dump_subtree(mLeft[node]);
+            if ( E_TRAVERSE_INORDER == mTraverseOrder )
+                dump_node(node);
+            dump_subtree(mRight[node]);
+            if ( E_TRAVERSE_POSTORDER == mTraverseOrder )
+                dump_node(node);
+        }
+    }
+    void RbTree::dump()
+    {
+        dump_subtree(mroot);
+    }
+    int RbTree::insert_val(int node, int value)
+    {
+        if ( E_NULL == node )
+        {
+
+        }
+    }
+    int RbTree::insertValue(int value)
+    {
+        insert_val(mroot, value);
+    }
 
 } // end namespace Algorithms
 
