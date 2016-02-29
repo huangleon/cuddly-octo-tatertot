@@ -365,9 +365,13 @@ namespace Algorithms {
         mRight = new int[COUNT];
         mValue = new int[COUNT];
         mRed = new bool[COUNT];
+        mDepth = new int[COUNT];
 
         // put 0 as null node.
         mroot = mNode[0] = mParent[0] = mLeft[0] = mRight[0] = mValue[0] = E_NULL;
+        // null node is black
+        mRed[E_NULL] = false;
+
         // prepare the free list
         for (int i = 1; i < COUNT; i++)
             mNode[i] = i - 1;
@@ -382,6 +386,7 @@ namespace Algorithms {
         delete[] mLeft;
         delete[] mRight;
         delete[] mRed;
+        delete[] mDepth;
     }
     int RbTree::new_node()
     {
@@ -407,7 +412,16 @@ namespace Algorithms {
     }
     void RbTree::dump_node(int node)
     {
-        std::cout << "node (" << node << ", " << mValue[node] << ")" << std::endl;
+        for (int i = 0; i < mDepth[node]; i++)
+            std::cout << "    ";
+
+        std::cout << "node ( " << node <<
+            ", " << mParent[node] <<
+            ", " << mLeft[node] <<
+            ", " << mRight[node] <<
+            ", " << mValue[node] <<
+            ", " << mRed[node] <<
+            " )" << std::endl;
     }
     void RbTree::dump_subtree(int node)
     {
@@ -427,18 +441,217 @@ namespace Algorithms {
     {
         dump_subtree(mroot);
     }
+    void RbTree::updateDepth()
+    {
+        update_depth(mroot, 0);
+    }
+    void RbTree::update_depth(int node, int depth)
+    {
+        if ( E_NULL != node )
+        {
+            mDepth[node] = depth;
+            update_depth(mLeft[node], depth + 1);
+            update_depth(mRight[node], depth + 1);
+        }
+    }
+
+    int RbTree::rotate_left(int node)
+    {
+        // rotate counter-clock wise
+        // up-rise the right child
+        // only rotate to left-lean red node
+
+        // before rotation, be sure A, C 's not NULL
+        //     P
+        //      \
+        //       A
+        //      / \
+        //     B   C
+        //    / \ / \
+
+        //     P
+        //      \
+        //       C
+        //      / \
+        //     A
+
+        // changes:
+        // P's child
+        // A's parent
+        // A's right
+        // C's parent
+        // C's left
+
+        const int parent = mParent[node];
+        const int left = mLeft[node];
+        const int right = mRight[node];
+
+        // P's child
+        if (E_NULL != parent)
+            if ( node == mLeft[parent] )
+                mLeft[parent] = right;
+            else
+                mRight[parent] = right;
+
+        // A's parent and right
+        mParent[node] = right;
+        mRight[node] = mLeft[right];
+        if ( E_NULL != mRight[node] )
+            mParent[mRight[node]] = node;
+
+        // C's parent and left
+        mLeft[right] = node;
+        mParent[right] = parent;
+
+        // color part is special trick in RB-tree
+        // change color
+        // in this sit, C's color is red, after, change A's color red
+        int color = mRed[node];
+        mRed[node] = mRed[right];
+        mRed[right] = color;
+
+        return right;
+    }
+    int RbTree::rotate_right(int node)
+    {
+        // rotate clock wise
+        // up-rise the left child
+        // only rotate to left-lean red node
+
+        // before rotation, be sure A, B 's not NULL
+        //     P
+        //      \
+        //       A
+        //      / \
+        //     B   C
+        //    / \ / \
+
+        //     P
+        //      \
+        //       B
+        //      / \
+        //         A
+
+        // changes:
+        // P's child
+        // A's parent
+        // A's left
+        // B's parent
+        // B's right
+
+        const int parent = mParent[node];
+        const int left = mLeft[node];
+        const int right = mRight[node];
+
+        // P's child
+        if (E_NULL != parent)
+            if ( node == mLeft[parent] )
+                mLeft[parent] = left;
+            else
+                mRight[parent] = left;
+
+        // A's parent and left
+        mParent[node] = left;
+        mLeft[node] = mRight[left];
+        if ( E_NULL != mLeft[node] )
+            mParent[mLeft[node]] = node;
+
+        // B's parent and left
+        mRight[left] = node;
+        mParent[left] = parent;
+
+        // color part is special trick in RB-tree
+        // change color
+        // in this sit, C's color is red, after, change A's color red
+        bool color = mRed[node];
+        mRed[node] = mRed[left];
+        mRed[left] = color;
+
+        return left;
+    }
     int RbTree::insert_val(int node, int value)
     {
+        int nnode = E_NULL;
+        // insert to null node
         if ( E_NULL == node )
         {
-
+            nnode = new_node();
+            if ( E_NULL != nnode )
+            {
+                mLeft[nnode] = E_NULL;
+                mRight[nnode] = E_NULL;
+                mRed[nnode] = true;
+                mValue[nnode] = value;
+            }
+            return nnode;
         }
+
+        // insert
+        if ( value < mValue[node] )
+        {
+            nnode = insert_val(mLeft[node], value);
+            mLeft[node] = nnode;
+            mParent[nnode] = node;
+        }
+        else if ( value > mValue[node] )
+        {
+            nnode = insert_val(mRight[node], value);
+            mRight[node] = nnode;
+            mParent[nnode] = node;
+        }
+        // else
+
+        // color and rotation part
+        const int left = mLeft[node];
+        const int right = mRight[node];
+        if ( !mRed[left] && mRed[right] )
+            nnode = rotate_left(node);
+        else if ( mRed[left] && mRed[mLeft[left]] )
+        {
+            nnode = rotate_right(node);
+            flip_colors(nnode);
+        }
+        else if ( mRed[left] && mRed[right] )
+        {
+            nnode = node;
+            flip_colors(nnode);
+        }
+        else
+            return node;
+
+        return nnode;
+    }
+    void RbTree::flip_colors(int node)
+    {
+        // split one 4-node to 2-node/3-node
+        mRed[mLeft[node]] = mRed[mRight[node]] = false;
+        mRed[node] = true;
     }
     int RbTree::insertValue(int value)
     {
-        insert_val(mroot, value);
+        mroot = insert_val(mroot, value);
+        mRed[mroot] = false;
     }
-
+    bool RbTree::contains(int value)
+    {
+        return find_node(mroot, value) != E_NULL;
+    }
+    int RbTree::find_node(int node, int value)
+    {
+        if ( E_NULL != node )
+        {
+            if ( value == mValue[node] )
+                return node;
+            if ( value < mValue[node] )
+                return find_node(mLeft[node], value);
+            if ( value > mValue[node] )
+                return find_node(mRight[node], value);
+        }
+        return E_NULL;
+    }
+    void RbTree::delValue(int value)
+    {
+    }
 } // end namespace Algorithms
 
 int main()
@@ -449,8 +662,30 @@ int main()
 //    Algorithms::ShellSort sorttest(10);
 //    Algorithms::MergeSort sorttest(32);
 //    Algorithms::QuickSort sorttest(1);
-    Algorithms::HeapSort sorttest(64);
+//    Algorithms::HeapSort sorttest(64);
 //    Algorithms::PriorityQueue pq(32);
+    Algorithms::RbTree rbtree(1024);
+    const int TREESIZE = 10;
+    int raw[TREESIZE];
+    for (int i = 0; i < TREESIZE; i++)
+        raw[i] = i;
+    srand(time(NULL));
+    std::random_shuffle(raw, raw + TREESIZE);
+    for (int i = 0; i < TREESIZE; i++)
+    {
+        std::cout << raw[i] << " ";
+        rbtree.insertValue(raw[i]);
+    }
+    std::cout << std::endl;
+
+//    rbtree.updateDepth();
+//    rbtree.dump();
+    for (int i = 0; i < 2 * TREESIZE; i++)
+    {
+        if ( !rbtree.contains(i) )
+            std::cout << "Ooops!" << i << std::endl;
+    }
+
 //    for (int i = 10; i > 0; i--)
 //    {
 //        pq.put(i);
@@ -463,9 +698,9 @@ int main()
 //        heap.dump();
 //    }
 
-    std::cout << "array before sort" << std::endl;
-    sorttest.dump();
-    sorttest.sort();
-    std::cout << "array after sort" << std::endl;
-    sorttest.dump();
+//    std::cout << "array before sort" << std::endl;
+//    sorttest.dump();
+//    sorttest.sort();
+//    std::cout << "array after sort" << std::endl;
+//    sorttest.dump();
 }

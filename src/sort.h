@@ -142,6 +142,7 @@ namespace Algorithms {
             int * mValue;
             // color of node, true: red, false, black
             bool * mRed;
+            int * mDepth;
 
             // head of free list, freelist is single-linked list
             int mfree;
@@ -162,11 +163,23 @@ namespace Algorithms {
             void dump_subtree(int);
             // dump node
             void dump_node(int);
+
+            // node rotation
+            int rotate_left(int node);
+            int rotate_right(int node);
+
+            // split 4-node to 2-node/3-node
+            void flip_colors(int node);
+            void update_depth(int node, int depth);
+
+            // find node with value, return E_NULL if not match
+            int find_node(int node, int value);
         public:
             RbTree(int reserve);
             virtual ~RbTree();
 
             void dump();
+            void updateDepth();
 
             // return node inserted.
             int insertValue(int value);
