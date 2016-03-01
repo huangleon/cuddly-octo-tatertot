@@ -10,6 +10,7 @@
 * [VIM配置](#7)
 * [Exact String Matching Algorithms](#8)
 * [General Purpose Hash Function Algorithms](#9)
+* [有用的博客](#10)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -90,6 +91,10 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 ##<a id="9"/>General Purpose Hash Function Algorithms
 [hash function](http://www.partow.net/programming/hashfunctions/)
+
+
+##<a id="10"/>有用的博客
+[菜鸟的自留地](http://blog.csdn.net/yang_yulei)
 
 
 [\[Table of Contents\]](#toc)
