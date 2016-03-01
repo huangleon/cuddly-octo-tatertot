@@ -155,14 +155,14 @@ namespace Algorithms {
             // alloc new node from free list
             int new_node();
             // free node and put it back to free list.
-            void del_node(int);
+            void del_node(int node);
 
             // insert value into the sub-tree and return the root of new sub-tree.
             int insert_val(int node, int value);
             // dump sub-tree
-            void dump_subtree(int);
+            void dump_subtree(int node);
             // dump node
-            void dump_node(int);
+            void dump_node(int node);
 
             // node rotation
             int rotate_left(int node);
@@ -174,6 +174,12 @@ namespace Algorithms {
 
             // find node with value, return E_NULL if not match
             int find_node(int node, int value);
+
+            // return node's successor
+            int successor(int node);
+
+            // delete minimium value in the subtree
+            int del_min(int node);
         public:
             RbTree(int reserve);
             virtual ~RbTree();
@@ -182,9 +188,23 @@ namespace Algorithms {
             void updateDepth();
 
             // return node inserted.
-            int insertValue(int value);
+            void insertValue(int value);
             bool contains(int value);
             void delValue(int value);
+    };
+    // definition of graph
+    class Graph {
+        // graph contains Edges and Vertexes.
+        public:
+            Graph();
+            virtual ~Graph();
+
+        public:
+            void addEdge(int v, int w);
+    };
+    class DepthFirstSearch {
+    };
+    class BreadthFirstSearch {
     };
 }
 #endif // end of __SORT_H__

@@ -599,25 +599,39 @@ namespace Algorithms {
             mRight[node] = nnode;
             mParent[nnode] = node;
         }
-        // else
+        else
+        {
+            return node;
+        }
 
         // color and rotation part
+        //  |
+        // / \
+        // check 3 links color
         const int left = mLeft[node];
         const int right = mRight[node];
         if ( !mRed[left] && mRed[right] )
+        {
+            // change to left-lean red node
             nnode = rotate_left(node);
+        }
         else if ( mRed[left] && mRed[mLeft[left]] )
         {
+            // split 4-node to two 2-nodes
             nnode = rotate_right(node);
             flip_colors(nnode);
         }
         else if ( mRed[left] && mRed[right] )
         {
+            // split 4-node to two 2-nodes
             nnode = node;
             flip_colors(nnode);
         }
         else
+        {
+            // other case, no need to change or rotate
             return node;
+        }
 
         return nnode;
     }
@@ -627,7 +641,7 @@ namespace Algorithms {
         mRed[mLeft[node]] = mRed[mRight[node]] = false;
         mRed[node] = true;
     }
-    int RbTree::insertValue(int value)
+    void RbTree::insertValue(int value)
     {
         mroot = insert_val(mroot, value);
         mRed[mroot] = false;
@@ -665,7 +679,7 @@ int main()
 //    Algorithms::HeapSort sorttest(64);
 //    Algorithms::PriorityQueue pq(32);
     Algorithms::RbTree rbtree(1024);
-    const int TREESIZE = 10;
+    const int TREESIZE = 40;
     int raw[TREESIZE];
     for (int i = 0; i < TREESIZE; i++)
         raw[i] = i;
@@ -678,13 +692,13 @@ int main()
     }
     std::cout << std::endl;
 
-//    rbtree.updateDepth();
-//    rbtree.dump();
-    for (int i = 0; i < 2 * TREESIZE; i++)
-    {
-        if ( !rbtree.contains(i) )
-            std::cout << "Ooops!" << i << std::endl;
-    }
+    rbtree.updateDepth();
+    rbtree.dump();
+//    for (int i = 0; i < 2 * TREESIZE; i++)
+//    {
+//        if ( !rbtree.contains(i) )
+//            std::cout << "Ooops!" << i << std::endl;
+//    }
 
 //    for (int i = 10; i > 0; i--)
 //    {
