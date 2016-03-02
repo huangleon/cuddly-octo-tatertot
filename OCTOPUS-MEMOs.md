@@ -11,6 +11,7 @@
 * [Exact String Matching Algorithms](#8)
 * [General Purpose Hash Function Algorithms](#9)
 * [有用的博客](#10)
+* [多路归并外排相关](#11)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -95,6 +96,10 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 ##<a id="10"/>有用的博客
 [菜鸟的自留地](http://blog.csdn.net/yang_yulei)
+
+
+##<a id="11"/>
+[多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
 
 
 [\[Table of Contents\]](#toc)
