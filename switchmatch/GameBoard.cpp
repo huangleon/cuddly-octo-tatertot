@@ -39,7 +39,31 @@ namespace game {
             }
         }
         // check change count >= 3
-        if ( right - left + 1 >= 3
+        if (right - left + 1 >= 3)
+        {
+            for (int i = left; i <= right; i++)
+                mTiles[i][y].setMatched(true);
+        }
         // vertical check
+        for (bool changed = true; changed;)
+        {
+            changed = false;
+            if (low > 0 && color_equals(x, low - 1, x, y))
+            {
+                --low;
+                changed = true;
+            }
+            if (high < BOARD_SIZE - 1 && color_equals(x, high + 1, x, y))
+            {
+                ++high;
+                changed = true;
+            }
+        }
+        // check change count >= 3
+        if (high - low + 1 >= 3)
+        {
+            for (int i = low; i <= high; i++)
+                mTiles[x][i].setMatched(true);
+        }
     }
 } // end namespace game
