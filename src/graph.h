@@ -6,13 +6,16 @@
 // adjacent vertex list
 #include <set>
 #include <string>
+#include <vector>
 
 namespace Algorithms {
+    //////////////////////////////////////////////////
+    // definition of graph
     typedef std::set<int> TVertexSet;
     typedef std::map<int, TVertexSet*> TVertex;
 
-    // definition of graph
     class Graph {
+        friend class DepthFirstSearch;
         private:
             // graph contains Edges and Vertexes.
             // adjacent vertex list
@@ -38,11 +41,38 @@ namespace Algorithms {
             // add edge for directed graph, edge v->w
             void addDirectedEdge(int v, int w);
 
+            TVertex::size_type getVertexCount() const { return mVertex.size(); }
+            void getVertexes(std::map<int, int>& vertex);
+
             // dump graph
             void dump();
     };
+
+    //////////////////////////////////////////////////
+    // definition of DFS
     class DepthFirstSearch {
+        typedef std::vector<int> TArray;
+        typedef std::map<int, int> TSymbolTable;
         // build the search tree
+        private:
+            Graph mGraph;
+            // symbol table, vertex to index mapping
+            TSymbolTable mST;
+            // store the parent node for each tree node
+            TArray mEdgeTo;
+            TArray mMarked;
+        public:
+            DepthFirstSearch(const std::string& filename);
+            virtual ~DepthFirstSearch();
+
+        public:
+            // dump the search tree
+            void dump();
+
+            // dfs the whole graph
+            void dfs();
+            // dfs from the single source vertex
+            void dfs(int vertex);
     };
     class BreadthFirstSearch {
         // build the search tree

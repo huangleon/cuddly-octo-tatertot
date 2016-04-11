@@ -5,6 +5,8 @@
 #include <fstream>
 
 namespace Algorithms {
+    ////////////////////////////////////////////////////////////////////////////////
+    // implementation of graph
     Graph::Graph()
     {
     }
@@ -71,6 +73,62 @@ namespace Algorithms {
     void Graph::dump_adj(TVertexSet::const_reference celem)
     {
         std::cout << celem << ", ";
+    }
+    void Graph::getVertexes(std::map<int, int>& vertex)
+    {
+        vertex.clear();
+        TVertex::const_iterator citr;
+        int i = 0;
+        for(citr = mVertex.begin(); citr != mVertex.end(); ++citr)
+        {
+            vertex.insert(
+                    std::make_pair<int, int>(citr->first, vertex.size())
+                    );
+        }
+    }
+
+    //////////////////////////////////////////////////
+    // implementation of DFS
+    DepthFirstSearch::DepthFirstSearch(const std::string& filename)
+    {
+        mGraph.importFromFile(filename);
+        mGraph.getVertexes(mST);
+        for (TArray::size_type i = 0; i < mST.size(); i++)
+        {
+            mEdgeTo.push_back(i);
+            mMarked.push_back(0);
+        }
+    }
+    DepthFirstSearch::~DepthFirstSearch()
+    {
+    }
+    void DepthFirstSearch::dump()
+    {
+        for (TArray::size_type i = 0; i < mEdgeTo.size(); i++)
+        {
+            std::cout << "edge[" << i << "]: " << mEdgeTo[i] << std::endl;
+        }
+    }
+    void DepthFirstSearch::dfs()
+    {
+        TVertex::const_iterator citr;
+        for (citr = mGraph.mVertex.begin(); citr != mGraph.mVertex.end(); ++citr)
+        {
+            if ( !mMarked[mST[citr->first]] )
+                dfs(citr->first);
+        }
+    }
+    void DepthFirstSearch::dfs(int vertex)
+    {
+        mMarked[mST[vertex]] = 1;
+        TVertexSet::const_iterator citr;
+        TVertexSet * pAdj = mGraph.mVertex[vertex];
+        if ( pAdj )
+            for (citr = pAdj->begin(); citr != pAdj->end(); ++citr)
+            {
+                if ( !mMarked[mST[*citr]] )
+                    dfs(*citr);
+            }
     }
 } // end namespace Algorithms
 
