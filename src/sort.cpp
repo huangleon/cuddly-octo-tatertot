@@ -667,57 +667,6 @@ namespace Algorithms {
     {
     }
 
-    Graph::Graph(int count)
-        : COUNT(count)
-          , mSize(0)
-          , mHead(0)
-    {
-        mVertex = new int[COUNT];
-        mVertex[0] = E_NULL;
-        for (int i = 1; i < COUNT; i++)
-            mVertex[i] = i - 1;
-        mfree = COUNT - 1;
-
-        mAdjs = new int[COUNT];
-        mNode = new int[COUNT * COUNT];
-
-        for (int i = 0; i < COUNT + 1; i++)
-            mAdjs[i] = E_NULL;
-
-        mNode[0] = E_NULL;
-        for (int i = 0; i < (COUNT + 1) * (COUNT + 1); i++)
-            mNode[i] = i - 1;
-    }
-    Graph::~Graph()
-    {
-        delete[] mAdjs;
-        delete[] mNode;
-    }
-//    int Graph::new_node()
-//    {
-//        int result = mfree;
-//
-//        // forward the free head.
-//        mfree = mNode[mfree];
-//        return result;
-//
-//    }
-//    void Graph::del_node(int node)
-//    {
-//        mNode[node] = mfree;
-//        mfree = node;
-//    }
-    void Graph::addEdge(int v, int w)
-    {
-        for (int i = 0; i < mSize; i++)
-        {
-            if ( v == mAdjs[i].node )
-            {
-            }
-        }
-        mAdjs[mSize++]
-
-    }
 } // end namespace Algorithms
 
 int main()

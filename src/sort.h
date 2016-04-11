@@ -192,57 +192,6 @@ namespace Algorithms {
             bool contains(int value);
             void delValue(int value);
     };
-    // definition of graph
-    class Graph {
-        private:
-            enum {
-                E_NULL = 0,
-            };
-            // preserved vertex count
-            const int COUNT;
-            int mSize;
-            // graph contains Edges and Vertexes.
-            // adjacent arrays
-            // 0 is preserved for NULL
-            // array index id is the vertex, with 0 .. COUNT -1
-            // array value point to the adjacent vertex list.
-
-            // vertex list, a forward list to store all vertex
-            // array index is vertex id, array value is next vertex.
-            int * mVertex;
-            // head of the vertex list
-            int mhead, mfree;
-
-
-            // store the adj list for each vertex
-            // array index is vertex id, array value is adjacent vertex list which
-            // contains vertexes adjacent to this vertex
-            int * mAdjs;
-
-            // free node list
-            // should be size of COUNT*COUNT
-            // mNode[] is a forward list to store adj list
-            int * mNode;
-
-            // alloc new node from free list
-//            int new_node();
-            // free node and put it back to free list.
-//            void del_node(int node);
-
-// set mNode[][] value
-            int get_value(int i, int j) const { return *(mNode + i * COUNT + j); }
-            void set_value(int i, int j, int value) { *(mNode + i * COUNT + j) = value; }
-        public:
-            Graph(int count);
-            virtual ~Graph();
-
-        public:
-            void addEdge(int v, int w);
-    };
-    class DepthFirstSearch {
-    };
-    class BreadthFirstSearch {
-    };
 
     // prepare LoserTree for external-sort.
     class WinnerTree {
