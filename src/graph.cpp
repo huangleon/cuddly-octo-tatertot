@@ -140,14 +140,15 @@ namespace Algorithms {
     }
     void BreadthFirstSearch::bfs(const Graph& g, int v)
     {
+        mMarked[v] = true;
+        mCount ++;
+        mEdgeTo[v] = v;
         mQueue.push_back(v);
 
         while ( !mQueue.empty() )
         {
             int w = mQueue.front();
             mQueue.pop_front();
-            mMarked[w] = true;
-            mCount ++;
 
             TAdjacentList::const_iterator citr;
             const TAdjacentList& adj = g.getAdjs(w);
@@ -155,8 +156,11 @@ namespace Algorithms {
             {
                 if ( !mMarked[*citr] )
                 {
-                    mQueue.push_back(*citr);
+                    mMarked[*citr] = true;
+                    mCount ++;
                     mEdgeTo[*citr] = w;
+
+                    mQueue.push_back(*citr);
                 }
             }
         }

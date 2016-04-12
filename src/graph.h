@@ -104,6 +104,8 @@ namespace Algorithms {
                 return mCount;
             }
     };
+    //////////////////////////////////////////////////
+    // definition of BFS
     class BreadthFirstSearch : public Search {
         // build the search tree
         private:
@@ -129,7 +131,6 @@ namespace Algorithms {
                 return mCount;
             }
     };
-
 } // end namespace Algorithms
 #endif // end of __GRAPH_H__
 
