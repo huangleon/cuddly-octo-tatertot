@@ -7,15 +7,30 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <deque>
 
 namespace Algorithms {
     //////////////////////////////////////////////////
     // definition of graph
-    typedef std::set<int> TVertexSet;
-    typedef std::map<int, TVertexSet*> TVertex;
+    typedef std::set<int> TAdjacentList;
+    typedef std::vector<TAdjacentList> TVertex;
+    // typedef std::map<int, TAdjacentList*> TVertex;
+    // symbol table from vertex id to array index
+    typedef std::map<int, int> TSymbolTable;
+    typedef std::vector<bool> TMarked;
+    typedef std::vector<int> TArray;
+    typedef std::deque<int> TQueue;
 
     class Graph {
-        friend class DepthFirstSearch;
+        public:
+            virtual ~Graph() {};
+        public:
+            virtual void addEdge(int v, int w) = 0;
+            virtual int getVertexCount() const = 0;
+            virtual const TAdjacentList& getAdjs(int v) const = 0;
+    };
+    class UndirectedGraph : public Graph {
+        // friend class DepthFirstSearch;
         private:
             // graph contains Edges and Vertexes.
             // adjacent vertex list
@@ -24,58 +39,95 @@ namespace Algorithms {
             // internal utility function for adding edge.
             // it adds directed edge.
             void add_edge(int v, int w);
+            // import from file
+            void importFromFile(const std::string& fname);
+
+//            static
+//                void release_vertex_adj(TVertex::reference elem);
             static
-            void release_vertex_adj(TVertex::reference elem);
-            static
-            void dump_vertex(TVertex::const_reference celem);
-            static
-            void dump_adj(TVertexSet::const_reference celem);
+                void dump_adj(TAdjacentList::const_reference celem);
         public:
-            Graph();
-            virtual ~Graph();
+            explicit UndirectedGraph(const std::string& fname);
+            virtual ~UndirectedGraph();
 
         public:
-            void importFromFile(const std::string& filename);
             // add edge for undirected graph
-            void addEdge(int v, int w);
-            // add edge for directed graph, edge v->w
-            void addDirectedEdge(int v, int w);
+            virtual void addEdge(int v, int w);
 
-            TVertex::size_type getVertexCount() const { return mVertex.size(); }
-            void getVertexes(std::map<int, int>& vertex);
+            virtual int getVertexCount() const {
+                return mVertex.size();
+            }
+            virtual const TAdjacentList& getAdjs(int v) const {
+                return mVertex[v];
+            }
 
             // dump graph
             void dump();
     };
+    //////////////////////////////////////////////////
+    // definition of Search
+    class Search {
+        public:
+            // search of graph g from single source s
+            explicit Search (const Graph& g, int s) {}
+            virtual ~Search() {}
+        public:
+            // is v connected to s
+            virtual bool marked(int v) const = 0;
+            // how many vertices are connected to s
+            virtual int count() const  = 0;
+    };
 
     //////////////////////////////////////////////////
     // definition of DFS
-    class DepthFirstSearch {
-        typedef std::vector<int> TArray;
-        typedef std::map<int, int> TSymbolTable;
+    class DepthFirstSearch : public Search {
         // build the search tree
         private:
-            Graph mGraph;
             // symbol table, vertex to index mapping
-            TSymbolTable mST;
             // store the parent node for each tree node
             TArray mEdgeTo;
-            TArray mMarked;
-        public:
-            DepthFirstSearch(const std::string& filename);
-            virtual ~DepthFirstSearch();
+            TMarked mMarked;
+            int mCount;
 
+            // dfs from the single source vertex
+            void dfs(const Graph& g, int v);
+        public:
+            explicit DepthFirstSearch(const Graph& g, int s);
+            virtual ~DepthFirstSearch();
         public:
             // dump the search tree
             void dump();
-
-            // dfs the whole graph
-            void dfs();
-            // dfs from the single source vertex
-            void dfs(int vertex);
+            virtual bool marked(int v) const {
+                return mMarked[v];
+            }
+            virtual int count() const {
+                return mCount;
+            }
     };
-    class BreadthFirstSearch {
+    class BreadthFirstSearch : public Search {
         // build the search tree
+        private:
+            // symbol table, vertex to index mapping
+            // store the parent node for each tree node
+            TArray mEdgeTo;
+            TMarked mMarked;
+            TQueue mQueue;
+            int mCount;
+
+            // dfs from the single source vertex
+            void bfs(const Graph& g, int v);
+        public:
+            explicit BreadthFirstSearch(const Graph& g, int s);
+            virtual ~BreadthFirstSearch();
+        public:
+            // dump the search tree
+            void dump();
+            virtual bool marked(int v) const {
+                return mMarked[v];
+            }
+            virtual int count() const {
+                return mCount;
+            }
     };
 
 } // end namespace Algorithms

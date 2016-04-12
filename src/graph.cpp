@@ -3,30 +3,35 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <sstream>
 
 namespace Algorithms {
     ////////////////////////////////////////////////////////////////////////////////
     // implementation of graph
-    Graph::Graph()
+    UndirectedGraph::UndirectedGraph(const std::string& fname)
     {
+        importFromFile(fname);
     }
-    Graph::~Graph()
+    UndirectedGraph::~UndirectedGraph()
     {
-        std::for_each(mVertex.begin(), mVertex.end()
-                , release_vertex_adj);
-        mVertex.clear();
+//        std::for_each(mVertex.begin(), mVertex.end()
+//                , release_vertex_adj);
+//        mVertex.clear();
     }
-    void Graph::release_vertex_adj(TVertex::reference elem)
-    {
-        if (elem.second)
-            delete elem.second;
-        elem.second = NULL;
-    }
-    void Graph::importFromFile(const std::string& filename)
+//    void UndirectedGraph::release_vertex_adj(TVertex::reference elem)
+//    {
+//        if (elem)
+//            delete elem;
+//        elem = NULL;
+//    }
+    void UndirectedGraph::importFromFile(const std::string& fname)
     {
         std::ifstream ifs;
-        ifs.open(filename.c_str());
-
+        ifs.open(fname.c_str());
+        // vertex count and edge count
+        int vcount, ecount;
+        ifs >> vcount >> ecount;
+        mVertex.assign(vcount, TAdjacentList());
         while ( !ifs.eof() )
         {
             int v, w;
@@ -36,105 +41,140 @@ namespace Algorithms {
 
         ifs.close();
     }
-    void Graph::add_edge(int v, int w)
+    void UndirectedGraph::add_edge(int v, int w)
     {
-        TVertex::iterator itr = mVertex.find(v);
-        if ( mVertex.end() == itr )
-        {
-            TVertexSet * p = new TVertexSet;
-            p->insert(w);
-            mVertex.insert( TVertex::value_type(v, p) );
-        }
-        else
-        {
-            itr->second->insert(w);
-        }
+        mVertex[v].insert(w);
     }
-    void Graph::addEdge(int v, int w)
+    void UndirectedGraph::addEdge(int v, int w)
     {
         // for undirected graph
         add_edge(v, w);
         add_edge(w, v);
     }
-    void Graph::dump()
+    void UndirectedGraph::dump()
     {
-        TVertex::const_iterator citr;
-        std::for_each(mVertex.begin(), mVertex.end()
-                , dump_vertex);
-    }
-    void Graph::dump_vertex(TVertex::const_reference celem)
-    {
-        std::cout << "vertex[" << celem.first << "]: ";
-        if (celem.second)
-        std::for_each(celem.second->begin(), celem.second->end()
-                , dump_adj);
+        for (TVertex::size_type i = 0; i < mVertex.size(); i++)
+        {
+            std::cout << "vertex[" << i << "]: ";
+            std::for_each(mVertex[i].begin()
+                    , mVertex[i].end()
+                    , dump_adj);
+        }
         std::cout << std::endl;
     }
-    void Graph::dump_adj(TVertexSet::const_reference celem)
+    void UndirectedGraph::dump_adj(TAdjacentList::const_reference celem)
     {
         std::cout << celem << ", ";
-    }
-    void Graph::getVertexes(std::map<int, int>& vertex)
-    {
-        vertex.clear();
-        TVertex::const_iterator citr;
-        int i = 0;
-        for(citr = mVertex.begin(); citr != mVertex.end(); ++citr)
-        {
-            vertex.insert(
-                    std::make_pair<int, int>(citr->first, vertex.size())
-                    );
-        }
     }
 
     //////////////////////////////////////////////////
     // implementation of DFS
-    DepthFirstSearch::DepthFirstSearch(const std::string& filename)
+    DepthFirstSearch::DepthFirstSearch(const Graph& g, int s)
+        : Search(g, s)
+          , mCount(0)
     {
-        mGraph.importFromFile(filename);
-        mGraph.getVertexes(mST);
-        for (TArray::size_type i = 0; i < mST.size(); i++)
-        {
-            mEdgeTo.push_back(i);
-            mMarked.push_back(0);
-        }
+        mEdgeTo.assign(g.getVertexCount(), 0);
+        mMarked.assign(g.getVertexCount(), false);
+
+        dfs(g, s);
+        mEdgeTo[s] = s;
     }
     DepthFirstSearch::~DepthFirstSearch()
     {
     }
     void DepthFirstSearch::dump()
     {
+        std::cout << "depth first search dump:" << std::endl;
+        std::cout << "connected count: " << mCount << std::endl;
         for (TArray::size_type i = 0; i < mEdgeTo.size(); i++)
         {
-            std::cout << "edge[" << i << "]: " << mEdgeTo[i] << std::endl;
+            std::cout << "edge["
+                << i
+                << "]: "
+                << mEdgeTo[i]
+                << std::endl;
         }
     }
-    void DepthFirstSearch::dfs()
+    void DepthFirstSearch::dfs(const Graph& g, int v)
     {
-        TVertex::const_iterator citr;
-        for (citr = mGraph.mVertex.begin(); citr != mGraph.mVertex.end(); ++citr)
+        mMarked[v] = true;
+        mCount ++;
+        TAdjacentList::const_iterator citr;
+        const TAdjacentList& adj = g.getAdjs(v);
+        for (citr = adj.begin(); citr != adj.end(); ++citr)
         {
-            if ( !mMarked[mST[citr->first]] )
-                dfs(citr->first);
+            if ( !mMarked[*citr] )
+            {
+                dfs(g, *citr);
+                mEdgeTo[*citr] = v;
+            }
         }
     }
-    void DepthFirstSearch::dfs(int vertex)
+    //////////////////////////////////////////////////
+    // implementation of BreadthFirstSearch
+    BreadthFirstSearch::BreadthFirstSearch(const Graph& g, int s)
+        : Search(g, s)
+          , mCount(0)
     {
-        mMarked[mST[vertex]] = 1;
-        TVertexSet::const_iterator citr;
-        TVertexSet * pAdj = mGraph.mVertex[vertex];
-        if ( pAdj )
-            for (citr = pAdj->begin(); citr != pAdj->end(); ++citr)
+        mEdgeTo.assign(g.getVertexCount(), 0);
+        mMarked.assign(g.getVertexCount(), false);
+
+        bfs(g, s);
+        mEdgeTo[s] = s;
+    }
+    BreadthFirstSearch::~BreadthFirstSearch()
+    {
+    }
+    void BreadthFirstSearch::dump()
+    {
+        std::cout << "breadth first search dump:" << std::endl;
+        std::cout << "connected count: " << mCount << std::endl;
+        for (TArray::size_type i = 0; i < mEdgeTo.size(); i++)
+        {
+            std::cout << "edge["
+                << i
+                << "]: "
+                << mEdgeTo[i]
+                << std::endl;
+        }
+    }
+    void BreadthFirstSearch::bfs(const Graph& g, int v)
+    {
+        mQueue.push_back(v);
+
+        while ( !mQueue.empty() )
+        {
+            int w = mQueue.front();
+            mQueue.pop_front();
+            mMarked[w] = true;
+            mCount ++;
+
+            TAdjacentList::const_iterator citr;
+            const TAdjacentList& adj = g.getAdjs(w);
+            for (citr = adj.begin(); citr != adj.end(); ++citr)
             {
-                if ( !mMarked[mST[*citr]] )
-                    dfs(*citr);
+                if ( !mMarked[*citr] )
+                {
+                    mQueue.push_back(*citr);
+                    mEdgeTo[*citr] = w;
+                }
             }
+        }
     }
 } // end namespace Algorithms
 
-int main()
+int main(int argc, char* argv[])
 {
-    Algorithms::Graph g;
-    g.importFromFile("testgraph.txt");
-    g.dump();
+    int s = 0;
+    if ( argc > 1 )
+    {
+        std::stringstream ss;
+        ss << argv[1];
+        ss >> s;
+    }
+    Algorithms::UndirectedGraph g("testgraph.txt");
+    Algorithms::DepthFirstSearch dfs(g, s);
+    Algorithms::BreadthFirstSearch bfs(g, s);
+    dfs.dump();
+    bfs.dump();
 }
