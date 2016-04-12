@@ -6,7 +6,7 @@
 #include <sstream>
 
 namespace Algorithms {
-    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////
     // implementation of graph
     UndirectedGraph::UndirectedGraph(const std::string& fname)
     {
@@ -14,16 +14,7 @@ namespace Algorithms {
     }
     UndirectedGraph::~UndirectedGraph()
     {
-//        std::for_each(mVertex.begin(), mVertex.end()
-//                , release_vertex_adj);
-//        mVertex.clear();
     }
-//    void UndirectedGraph::release_vertex_adj(TVertex::reference elem)
-//    {
-//        if (elem)
-//            delete elem;
-//        elem = NULL;
-//    }
     void UndirectedGraph::importFromFile(const std::string& fname)
     {
         std::ifstream ifs;
@@ -41,6 +32,7 @@ namespace Algorithms {
 
         ifs.close();
     }
+
     void UndirectedGraph::add_edge(int v, int w)
     {
         mVertex[v].insert(w);
@@ -66,7 +58,73 @@ namespace Algorithms {
     {
         std::cout << celem << ", ";
     }
+    //////////////////////////////////////////////////
+    // implementation of DirectedGraph
+    DirectedGraph::DirectedGraph()
+    {
+    }
+    DirectedGraph::DirectedGraph(const std::string& fname)
+    {
+        importFromFile(fname);
+    }
+    DirectedGraph::~DirectedGraph()
+    {
+    }
+    void DirectedGraph::importFromFile(const std::string& fname)
+    {
+        std::ifstream ifs;
+        ifs.open(fname.c_str());
+        // vertex count and edge count
+        int vcount, ecount;
+        ifs >> vcount >> ecount;
+        mVertex.assign(vcount, TAdjacentList());
+        while ( !ifs.eof() )
+        {
+            int v, w;
+            ifs >> v >> w;
+            addEdge(v, w);
+        }
 
+        ifs.close();
+    }
+
+    void DirectedGraph::add_edge(int v, int w)
+    {
+        mVertex[v].insert(w);
+    }
+    void DirectedGraph::addEdge(int v, int w)
+    {
+        add_edge(v, w);
+    }
+    void DirectedGraph::dump()
+    {
+        for (TVertex::size_type i = 0; i < mVertex.size(); i++)
+        {
+            std::cout << "vertex[" << i << "]: ";
+            std::for_each(mVertex[i].begin()
+                    , mVertex[i].end()
+                    , dump_adj);
+        }
+        std::cout << std::endl;
+    }
+    void DirectedGraph::dump_adj(TAdjacentList::const_reference celem)
+    {
+        std::cout << celem << ", ";
+    }
+    DirectedGraph DirectedGraph::reverse()
+    {
+        DirectedGraph res;
+        res.mVertex.assign(mVertex.size(), TAdjacentList());
+        for (TVertex::size_type i = 0; i < mVertex.size(); ++i)
+        {
+            TAdjacentList::const_iterator citr;
+            for (citr = mVertex[i].begin(); citr != mVertex[i].end(); ++citr)
+            {
+                res.addEdge(*citr, i);
+            }
+        }
+        return res;
+    }
     //////////////////////////////////////////////////
     // implementation of DFS
     DepthFirstSearch::DepthFirstSearch(const Graph& g, int s)
@@ -165,6 +223,80 @@ namespace Algorithms {
             }
         }
     }
+    //////////////////////////////////////////////////
+    // implementation of depth first order
+    DepthFirstOrder::DepthFirstOrder(const Graph& g)
+        : Search(g, 0)
+    {
+        mMarked.assign(g.getVertexCount(), false);
+        for (int i = 0; i < g.getVertexCount(); i++)
+            if ( !mMarked[i] )
+            {
+                mPre.push_back(i);
+                dfs(g, i);
+                mPost.push_back(i);
+                mReversePost.push_back(i);
+            }
+    }
+    DepthFirstOrder::~DepthFirstOrder()
+    {
+    }
+    void DepthFirstOrder::dfs(const Graph& g, int v)
+    {
+        mMarked[v] = true;
+        // mCount ++;
+        TAdjacentList::const_iterator citr;
+        const TAdjacentList& adj = g.getAdjs(v);
+        for (citr = adj.begin(); citr != adj.end(); ++citr)
+        {
+            if ( !mMarked[*citr] )
+            {
+                mPre.push_back(*citr);
+
+                dfs(g, *citr);
+                // mEdgeTo[*citr] = v;
+
+                mPost.push_back(*citr);
+                mReversePost.push_back(*citr);
+            }
+        }
+    }
+    TArray DepthFirstOrder::reversePost() const
+    {
+        TArray result;
+        TStack tmp = mReversePost;
+        while ( !tmp.empty() )
+        {
+            result.push_back(tmp.back());
+            tmp.pop_back();
+        }
+        return result;
+    }
+    void DepthFirstOrder::dump_vertex(TArray::const_reference elem)
+    {
+        std::cout << elem << ", ";
+    }
+    void DepthFirstOrder::dump_pre()
+    {
+        std::cout << "pre order: " << std::endl;
+        TArray dumped = pre();
+        std::for_each(dumped.begin(), dumped.end(), dump_vertex);
+        std::cout << std::endl;
+    }
+    void DepthFirstOrder::dump_post()
+    {
+        std::cout << "post order: " << std::endl;
+        TArray dumped = post();
+        std::for_each(dumped.begin(), dumped.end(), dump_vertex);
+        std::cout << std::endl;
+    }
+    void DepthFirstOrder::dump_reversePost()
+    {
+        std::cout << "reversePost order: " << std::endl;
+        TArray dumped = reversePost();
+        std::for_each(dumped.begin(), dumped.end(), dump_vertex);
+        std::cout << std::endl;
+    }
 } // end namespace Algorithms
 
 int main(int argc, char* argv[])
@@ -177,8 +309,14 @@ int main(int argc, char* argv[])
         ss >> s;
     }
     Algorithms::UndirectedGraph g("testgraph.txt");
+    Algorithms::DirectedGraph dg("ordergraph.txt");
     Algorithms::DepthFirstSearch dfs(g, s);
     Algorithms::BreadthFirstSearch bfs(g, s);
+    Algorithms::DepthFirstOrder order(dg);
     dfs.dump();
     bfs.dump();
+
+    order.dump_pre();
+    order.dump_post();
+    order.dump_reversePost();
 }

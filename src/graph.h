@@ -14,12 +14,12 @@ namespace Algorithms {
     // definition of graph
     typedef std::set<int> TAdjacentList;
     typedef std::vector<TAdjacentList> TVertex;
-    // typedef std::map<int, TAdjacentList*> TVertex;
     // symbol table from vertex id to array index
     typedef std::map<int, int> TSymbolTable;
     typedef std::vector<bool> TMarked;
     typedef std::vector<int> TArray;
     typedef std::deque<int> TQueue;
+    typedef std::deque<int> TStack;
 
     class Graph {
         public:
@@ -29,8 +29,9 @@ namespace Algorithms {
             virtual int getVertexCount() const = 0;
             virtual const TAdjacentList& getAdjs(int v) const = 0;
     };
+    //////////////////////////////////////////////////
+    // definition of UndirectedGraph
     class UndirectedGraph : public Graph {
-        // friend class DepthFirstSearch;
         private:
             // graph contains Edges and Vertexes.
             // adjacent vertex list
@@ -41,9 +42,6 @@ namespace Algorithms {
             void add_edge(int v, int w);
             // import from file
             void importFromFile(const std::string& fname);
-
-//            static
-//                void release_vertex_adj(TVertex::reference elem);
             static
                 void dump_adj(TAdjacentList::const_reference celem);
         public:
@@ -60,6 +58,44 @@ namespace Algorithms {
             virtual const TAdjacentList& getAdjs(int v) const {
                 return mVertex[v];
             }
+
+            // dump graph
+            void dump();
+    };
+    //////////////////////////////////////////////////
+    // definition of DirectedGraph
+    class DirectedGraph : public Graph {
+        private:
+            // graph contains Edges and Vertexes.
+            // adjacent vertex list
+            TVertex mVertex;
+
+            // internal utility function for adding edge.
+            // it adds directed edge.
+            void add_edge(int v, int w);
+            // import from file
+            void importFromFile(const std::string& fname);
+
+            static
+                void dump_adj(TAdjacentList::const_reference celem);
+        public:
+            DirectedGraph();
+            explicit DirectedGraph(const std::string& fname);
+            virtual ~DirectedGraph();
+
+        public:
+            // add edge for undirected graph
+            virtual void addEdge(int v, int w);
+
+            virtual int getVertexCount() const {
+                return mVertex.size();
+            }
+            virtual const TAdjacentList& getAdjs(int v) const {
+                return mVertex[v];
+            }
+
+            // return reversed directed graph
+            DirectedGraph reverse();
 
             // dump graph
             void dump();
@@ -130,6 +166,48 @@ namespace Algorithms {
             virtual int count() const {
                 return mCount;
             }
+    };
+    //////////////////////////////////////////////////
+    // definition of depth first order
+    class DepthFirstOrder : public Search {
+        private:
+            TMarked mMarked;
+            TQueue mPre, mPost;
+            TStack mReversePost;
+
+            // dfs
+            void dfs(const Graph& g, int v);
+            static void dump_vertex(TArray::const_reference elem);
+        public:
+            explicit DepthFirstOrder(const Graph& g);
+            virtual ~DepthFirstOrder();
+        public:
+            virtual bool marked(int v) const {
+                return mMarked[v];
+            }
+            virtual int count() const {
+                return mPre.size();
+            }
+            // return the pre-order, post-order, reversePost-order
+            TArray pre() const {
+                return TArray(mPre.begin(), mPre.end());
+            }
+            TArray post() const {
+                return TArray(mPost.begin(), mPost.end());
+            }
+            TArray reversePost() const;
+
+            void dump_pre();
+            void dump_post();
+            void dump_reversePost();
+    };
+    //////////////////////////////////////////////////
+    // definition of Kosaraju algorithm
+    class KosarajuSCC {
+        private:
+            TMarked mMarked;
+            TArray mId;
+            int mCount;
     };
 } // end namespace Algorithms
 #endif // end of __GRAPH_H__
