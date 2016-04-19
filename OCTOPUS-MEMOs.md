@@ -12,6 +12,7 @@
 * [General Purpose Hash Function Algorithms](#9)
 * [有用的博客](#10)
 * [多路归并外排相关](#11)
+* [ssh配置](#12)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -100,6 +101,9 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 ##<a id="11"/>
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
+
+##<a id="12"/>
+[ssh配置](http://blog.chinaunix.net/uid-20710081-id-3266103.html)
 
 
 [\[Table of Contents\]](#toc)
