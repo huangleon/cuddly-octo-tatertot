@@ -7,7 +7,8 @@
 #include <set>
 #include <string>
 #include <vector>
-#include <deque>
+//#include <deque>
+#include <queue>
 
 namespace Algorithms {
     //////////////////////////////////////////////////
@@ -18,8 +19,8 @@ namespace Algorithms {
     typedef std::map<int, int> TSymbolTable;
     typedef std::vector<bool> TMarked;
     typedef std::vector<int> TArray;
-    typedef std::deque<int> TQueue;
-    typedef std::deque<int> TStack;
+    typedef std::queue<int> TQueue;
+    typedef std::queue<int> TStack;
 
     class Graph {
         public:
@@ -63,6 +64,60 @@ namespace Algorithms {
             void dump();
     };
     //////////////////////////////////////////////////
+    // Edge
+    class Edge {
+        friend class EdgeComp;
+        private:
+            // edge vertex, from v to w
+            int mV, mW;
+            float mWeight;
+        public:
+            explicit Edge(int v, int w, float weight);
+            int either() { return mV; }
+            int from(int v) {
+                if ( v == mV )
+                    return mW;
+                else if ( v == mW )
+                    return mV;
+                else
+                    return -1;
+            }
+    };
+    class EdgeComp {
+        public:
+            EdgeComp() {}
+            bool operator () (const Edge& lhs, const Edge& rhs) const {
+                return lhs.mWeight < rhs.mWeight;
+            }
+    };
+    typedef std::priority_queue<Edge,
+            std::vector<Edge>,
+            EdgeComp> TEdgeHeap;
+    typedef std::set<Edge, EdgeComp> TEdgeAdjList;
+    typedef std::vector<TEdgeAdjList> TVertics;
+
+    //////////////////////////////////////////////////
+    // edge-weighted graph, undirected graph
+    class EdgeWeightedGraph {
+        private:
+            TVertics mVertics;
+        public:
+            EdgeWeightedGraph();
+            explicit EdgeWeightedGraph(const std::string& fname);
+            virtual ~EdgeWeightedGraph();
+
+        public:
+            void addEdge(int v, int w, float weight);
+            int getVertexCount() const;
+            const TEdgeAdjList& getAdjs() const;
+
+    };
+    //////////////////////////////////////////////////
+    // edge-weighted digraph
+
+    class EdgeWeightedDigraph {
+    };
+    //////////////////////////////////////////////////
     // definition of DirectedGraph
     class DirectedGraph : public Graph {
         private:
@@ -95,7 +150,7 @@ namespace Algorithms {
             }
 
             // return reversed directed graph
-            DirectedGraph reverse();
+            DirectedGraph reverse() const;
 
             // dump graph
             void dump();
@@ -202,13 +257,44 @@ namespace Algorithms {
             void dump_reversePost();
     };
     //////////////////////////////////////////////////
+    // definition of CC
+    // connected component for graph
+    class CC {
+        private:
+            TMarked mMarked;
+            TArray mId;
+            int mCount;
+            void dfs(const UndirectedGraph& g, int v);
+            void bfs(const UndirectedGraph& g, int v);
+        public:
+            CC(const UndirectedGraph& g);
+            int id(int v) const { return mId[v]; }
+            bool connected(int v, int w) const {
+                return mId[v] == mId[w];
+            }
+    };
+    //////////////////////////////////////////////////
     // definition of Kosaraju algorithm
+    // for finding strong component for digraph
     class KosarajuSCC {
         private:
             TMarked mMarked;
             TArray mId;
             int mCount;
+
+            void dfs(const DirectedGraph& g, int v);
+        public:
+            KosarajuSCC(const DirectedGraph& g);
+        public:
+            int id(int v) const { return mId[v]; }
+            bool stronglyConnected(int v, int w) {
+                return mId[v] == mId[w];
+            }
     };
+    //////////////////////////////////////////////////
+    // MST minimum spanning tree (edge-weighted graph)
+    // Prim-lazy/Prim-eager/Kruskal algorithm
+    // SP single source shortest path (edge-weighted graph)
 } // end namespace Algorithms
 #endif // end of __GRAPH_H__
 

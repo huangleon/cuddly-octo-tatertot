@@ -59,6 +59,14 @@ namespace Algorithms {
         std::cout << celem << ", ";
     }
     //////////////////////////////////////////////////
+    // implementation of weighted edge
+    Edge::Edge(int v, int w, float weight)
+        : mV(v),
+        mW(w),
+        mWeight(weight)
+    {
+    }
+    //////////////////////////////////////////////////
     // implementation of DirectedGraph
     DirectedGraph::DirectedGraph()
     {
@@ -111,7 +119,7 @@ namespace Algorithms {
     {
         std::cout << celem << ", ";
     }
-    DirectedGraph DirectedGraph::reverse()
+    DirectedGraph DirectedGraph::reverse() const
     {
         DirectedGraph res;
         res.mVertex.assign(mVertex.size(), TAdjacentList());
@@ -296,6 +304,89 @@ namespace Algorithms {
         TArray dumped = reversePost();
         std::for_each(dumped.begin(), dumped.end(), dump_vertex);
         std::cout << std::endl;
+    }
+    //////////////////////////////////////////////////
+    // implementation of CC
+    CC::CC(const UndirectedGraph& g)
+        : mCount(0)
+    {
+        mMarked.assign(g.getVertexCount(), false);
+        mId.assign(g.getVertexCount(), 0);
+
+        for (int v = 0; v < g.getVertexCount(); v++) {
+            if ( !mMarked[v] ) {
+                dfs(g, v);
+                // bfs(g, v);
+                mCount ++;
+            }
+        }
+    }
+    void CC::dfs(const UndirectedGraph& g, int v)
+    {
+        mId[v] = mCount;
+        mMarked[v] = true;
+        const TAdjacentList& adjs = g.getAdjs(v);
+        TAdjacentList::const_iterator citr;
+        for (citr = adjs.begin(); citr != adjs.end(); ++citr) {
+            if ( !mMarked[v] ) {
+                dfs(g, v);
+            }
+        }
+    }
+    void CC::bfs(const UndirectedGraph& g, int v)
+    {
+        mId[v] = mCount;
+        mMarked[v] = true;
+        TQueue vq;
+        vq.push_back(v);
+
+        while ( !vq.empty() ) {
+            int v = vq.front();
+            vq.pop_front();
+
+            const TAdjacentList& adjs = g.getAdjs(v);
+            TAdjacentList::const_iterator citr;
+            for (citr = adjs.begin(); citr != adjs.end(); ++citr) {
+                if ( !mMarked[*citr] ) {
+                    mId[*citr] = mCount;
+                    mMarked[*citr] = true;
+                    vq.push_back(*citr);
+                }
+            } // end for
+        } // end while
+    }
+    //////////////////////////////////////////////////
+    // implementation of Kosaraju algorithm
+    KosarajuSCC::KosarajuSCC(const DirectedGraph& g)
+    {
+        // get the post reverse order of g's reverse
+        // that is topological order of g's reverse
+        // then dfs(g) with the order of this order to get 
+        // strongly connected component
+        DirectedGraph rg = g.reverse();
+        DepthFirstOrder order(rg);
+
+        TArray toporder = order.reversePost();
+        TArray::const_iterator citr;
+        for (citr = toporder.begin(); citr != toporder.end(); ++citr)
+        {
+            if ( !mMarked[*citr] ) {
+                dfs(g, *citr);
+                mCount++;
+            }
+        }
+    }
+    void KosarajuSCC::dfs(const DirectedGraph& g, int v)
+    {
+        mId[v] = mCount;
+        mMarked[v] = true;
+        const TAdjacentList& adjs = g.getAdjs(v);
+        TAdjacentList::const_iterator citr;
+        for (citr = adjs.begin(); citr != adjs.end(); ++citr) {
+            if ( !mMarked[v] ) {
+                dfs(g, v);
+            }
+        }
     }
 } // end namespace Algorithms
 
