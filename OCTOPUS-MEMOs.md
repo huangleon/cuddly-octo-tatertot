@@ -13,6 +13,7 @@
 * [有用的博客](#10)
 * [多路归并外排相关](#11)
 * [ssh配置](#12)
+* [apt-get using http_proxy](#13)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -105,5 +106,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 ##<a id="12"/>
 [ssh配置](http://blog.chinaunix.net/uid-20710081-id-3266103.html)
 
+##<a id="13"/>
+[apt-get using http_proxy](https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy)
 
 [\[Table of Contents\]](#toc)
