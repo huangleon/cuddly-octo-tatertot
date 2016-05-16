@@ -108,5 +108,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 ##<a id="13"/>
 [apt-get using http_proxy](https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy)
+包括sudo是http_proxy的使用,在/etc/sudoers文件中修改.
+
 
 [\[Table of Contents\]](#toc)
