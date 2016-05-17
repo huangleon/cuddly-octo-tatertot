@@ -14,6 +14,7 @@
 * [多路归并外排相关](#11)
 * [ssh配置](#12)
 * [apt-get using http_proxy](#13)
+* [常用samba设置](#14)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -110,5 +111,27 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 [apt-get using http_proxy](https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy)
 包括sudo是http_proxy的使用,在/etc/sudoers文件中修改.
 
+
+##<a id="14"/>
+常用samba设置
+```
+#设置 server 显示名称
+netbios name = NASERVER
+#设置访问方式
+security = user
+#设置软链接访问
+allow insecure wide links = yes
+
+ [share]
+public = no
+comment = NAS share
+path = /home/huangleon/share
+force user = huangleon
+valid users = huangleon
+read only = no
+writable = yes
+browsable = yes
+wide links = yes
+```
 
 [\[Table of Contents\]](#toc)
