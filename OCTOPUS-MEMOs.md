@@ -15,6 +15,7 @@
 * [ssh配置](#12)
 * [apt-get using http_proxy](#13)
 * [常用samba设置](#14)
+* [linux查看端口占用情况](#15)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -133,5 +134,11 @@ writable = yes
 browsable = yes
 wide links = yes
 ```
+
+##<a id="15"/>
+linux查看端口占用情况
+同时需要必要的root权限
+查看端口占用情况的命令：lsof -i
+查看某一端口的占用情况： lsof -i:端口号
 
 [\[Table of Contents\]](#toc)
