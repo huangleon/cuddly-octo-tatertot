@@ -136,9 +136,13 @@ wide links = yes
 ```
 
 ##<a id="15"/>
+
 linux查看端口占用情况
+
 同时需要必要的root权限
+
 查看端口占用情况的命令：lsof -i
+
 查看某一端口的占用情况： lsof -i:端口号
 
 [\[Table of Contents\]](#toc)
