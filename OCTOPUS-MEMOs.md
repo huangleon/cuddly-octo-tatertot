@@ -17,6 +17,7 @@
 * [常用samba设置](#14)
 * [linux查看端口占用情况](#15)
 * [docker相关](#16)
+* [using proxy in pip](#17)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -153,6 +154,15 @@ docker相关
 [docker文档](https://docs.docker.com)
 
 [通过http_proxy访问docker时的配置](https://docs.docker.com/engine/admin/systemd/#http-proxy)
+
+##<a id="17"/>
+[using proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
+
+Prefered using, (note its HTTPS_PROXY, not HTTP_PROXY)
+```
+export https_proxy=...
+sudo -E pip install...
+```
 
 
 [\[Table of Contents\]](#toc)
