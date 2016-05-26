@@ -17,7 +17,7 @@
 * [常用samba设置](#14)
 * [linux查看端口占用情况](#15)
 * [docker相关](#16)
-* [using proxy in pip](#17)
+* [using http_proxy](#17)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -156,7 +156,8 @@ docker相关
 [通过http_proxy访问docker时的配置](https://docs.docker.com/engine/admin/systemd/#http-proxy)
 
 ##<a id="17"/>
-[using proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
+Using HTTP_PROXY
+[using http_proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
 
 Prefered using, (note its HTTPS_PROXY, not HTTP_PROXY)
 ```
@@ -164,5 +165,20 @@ export https_proxy=...
 sudo -E pip install...
 ```
 
+using ssh through http_proxy
+```
+     ProxyCommand
+             Specifies the command to use to connect to the server.  The command string extends to the end of the line, and is executed using the user's shell ‘exec’ directive
+             to avoid a lingering shell process.
 
+             In the command string, any occurrence of ‘%h’ will be substituted by the host name to connect, ‘%p’ by the port, and ‘%r’ by the remote user name.  The command
+             can be basically anything, and should read from its standard input and write to its standard output.  It should eventually connect an sshd(8) server running on
+             some machine, or execute sshd -i somewhere.  Host key management will be done using the HostName of the host being connected (defaulting to the name typed by the
+             user).  Setting the command to “none” disables this option entirely.  Note that CheckHostIP is not available for connects with a proxy command.
+
+             This directive is useful in conjunction with nc(1) and its proxy support.  For example, the following directive would connect via an HTTP proxy at 192.0.2.0:
+
+                ProxyCommand /usr/bin/nc -X connect -x 192.0.2.0:8080 %h %p
+
+```
 [\[Table of Contents\]](#toc)
