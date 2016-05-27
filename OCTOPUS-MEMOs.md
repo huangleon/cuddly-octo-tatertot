@@ -102,6 +102,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 ##<a id="10"/>有用的博客
 [菜鸟的自留地](http://blog.csdn.net/yang_yulei)
+
 [gmarik](http://www.gmarik.info/)
 
 
