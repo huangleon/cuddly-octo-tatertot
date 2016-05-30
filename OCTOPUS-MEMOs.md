@@ -189,4 +189,10 @@ using ssh through http_proxy
                 ProxyCommand /usr/bin/nc -X connect -x 192.0.2.0:8080 %h %p
 
 ```
+
+How to use ntpdate behind a proxy?
+```
+sudo date -s "$(wget -S  "http://www.google.com/" 2>&1 | grep -E '^[[:space:]]*[dD]ate:' | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' | head -1l | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' | sed 's/,//')"
+```
+
 [\[Table of Contents\]](#toc)
