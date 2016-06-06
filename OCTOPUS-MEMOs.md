@@ -18,6 +18,10 @@
 * [linux查看端口占用情况](#15)
 * [docker相关](#16)
 * [using http_proxy](#17)
+* 
+##Development language
+* [C99 array initializaers](18)
+
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -194,5 +198,13 @@ How to use ntpdate behind a proxy?
 ```
 sudo date -s "$(wget -S  "http://www.google.com/" 2>&1 | grep -E '^[[:space:]]*[dD]ate:' | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' | head -1l | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' | sed 's/,//')"
 ```
+
+##<a id="18"/>
+[C99 array initializers](http://gcc.gnu.org/onlinedocs/gcc-4.1.2/gcc/Designated-Inits.html)
+
+```
+int array[1024] = {[0 ... 1023] = 5};
+```
+
 
 [\[Table of Contents\]](#toc)
