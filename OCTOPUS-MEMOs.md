@@ -20,6 +20,7 @@
 * [using http_proxy](#17)
 * [C99 array initializaers](#18)
 * [usage of sed](#19)
+* [usage of patch](#20)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
