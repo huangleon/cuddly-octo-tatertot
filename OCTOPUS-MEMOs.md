@@ -18,10 +18,8 @@
 * [linux查看端口占用情况](#15)
 * [docker相关](#16)
 * [using http_proxy](#17)
-* 
-##Development language
-* [C99 array initializaers](18)
-
+* [C99 array initializaers](#18)
+* [usage of sed](#19)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -200,11 +198,16 @@ sudo date -s "$(wget -S  "http://www.google.com/" 2>&1 | grep -E '^[[:space:]]*[
 ```
 
 ##<a id="18"/>
+Development language
 [C99 array initializers](http://gcc.gnu.org/onlinedocs/gcc-4.1.2/gcc/Designated-Inits.html)
 
 ```
 int array[1024] = {[0 ... 1023] = 5};
 ```
+
+##<a id="19"/>
+usage of sed
+[sed's RE is basic regular expression](http://unix.stackexchange.com/questions/90653/why-do-i-need-to-escape-regex-characters-in-sed-to-be-interpreted-as-regex-chara)
 
 
 [\[Table of Contents\]](#toc)
