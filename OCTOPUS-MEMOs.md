@@ -211,4 +211,11 @@ usage of sed
 [sed's RE is basic regular expression](http://unix.stackexchange.com/questions/90653/why-do-i-need-to-escape-regex-characters-in-sed-to-be-interpreted-as-regex-chara)
 
 
+##<a id="20"/>
+use 'patch' to patch code
+
+```
+patch -p1 -l --dry-run --verbose < patchfile
+```
+
 [\[Table of Contents\]](#toc)
