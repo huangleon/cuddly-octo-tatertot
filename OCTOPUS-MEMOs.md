@@ -166,6 +166,12 @@ docker相关
 
 [通过http_proxy访问docker时的配置](https://docs.docker.com/engine/admin/systemd/#http-proxy)
 
+docker的网络配置可以通过
+```
+docker run -it --net=host
+```
+来设置
+
 ##<a id="17"/>
 Using HTTP_PROXY
 [using http_proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
