@@ -21,6 +21,7 @@
 * [C99 array initializaers](#18)
 * [usage of sed](#19)
 * [usage of patch](#20)
+* [ubuntu init](#21)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -223,5 +224,9 @@ use 'patch' to patch code
 ```
 patch -p1 -l --dry-run --verbose < patchfile
 ```
+
+##<a id="21"/>
+[ubuntu init.d scripts](http://unix.stackexchange.com/questions/133961/can-not-execute-restart-networking-service-on-ubuntu-14-04)
+
 
 [\[Table of Contents\]](#toc)
