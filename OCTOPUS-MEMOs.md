@@ -23,6 +23,7 @@
 * [usage of patch](#20)
 * [ubuntu init](#21)
 * [screen使用技巧](#22)
+* [build kernel相关](#23)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -233,5 +234,27 @@ patch -p1 -l --dry-run --verbose < patchfile
 screen 记录log
 Ctrl-a H
 用more可以查看带escape标示的log文件
+
+##<a id="23"/>
+[在ubuntu平台上重新编译kernel及使用新kernel](https://www.howtoforge.com/kernel_compilation_ubuntu)
+用apt-get安装必要包,kernel-package libncurses5-dev fakeroot
+准备好linux kernel的source code(打好patch的)
+
+复制当前系统的kernel配置到source code目录下
+```
+cp /boot/config-`uname -r` ./.config
+```
+```
+make menuconfig
+```
+Load .config file from local directory and save.
+build kernel
+
+```
+make-kpkg clean
+fakeroot make-kpkg --initrd --append-to-version=-custom kernel_image kernel_headesr
+```
+build好deb之后,可以安装linux-image和linux-headers的deb包
+
 
 [\[Table of Contents\]](#toc)
