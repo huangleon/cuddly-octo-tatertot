@@ -24,6 +24,7 @@
 * [ubuntu init](#21)
 * [screen使用技巧](#22)
 * [build kernel相关](#23)
+* [使用lvm管理磁盘](#24)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -255,6 +256,10 @@ make-kpkg clean
 fakeroot make-kpkg --initrd --append-to-version=-custom kernel_image kernel_headesr
 ```
 build好deb之后,可以安装linux-image和linux-headers的deb包
+
+
+##<a id="24"/>
+[使用lvm管理磁盘扩容](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-adding-a-new-disk/)
 
 
 [\[Table of Contents\]](#toc)
