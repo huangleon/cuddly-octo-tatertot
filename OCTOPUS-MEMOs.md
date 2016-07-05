@@ -257,6 +257,16 @@ fakeroot make-kpkg --initrd --append-to-version=-custom kernel_image kernel_head
 ```
 build好deb之后,可以安装linux-image和linux-headers的deb包
 
+纯kernel的安装方法
+```
+# build kernel
+make
+# install zimage to boot
+sudo make install
+# install ko to /lib/modules
+sudo make modules_install
+```
+
 
 ##<a id="24"/>
 [使用lvm管理磁盘扩容](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-adding-a-new-disk/)
