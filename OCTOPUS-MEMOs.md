@@ -265,8 +265,11 @@ make
 sudo make install
 # install ko to /lib/modules
 sudo make modules_install
+# update /etc/default/grub for timeout variable
+# update grub list
+sudo update-grub
 # install headers to /usr/src
-sudo make headers_install
+INSTALL_HDR_PATH=/usr/src/linux-headers-$(uname -r) sudo make headers_install 
 ```
 
 
