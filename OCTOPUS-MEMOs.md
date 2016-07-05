@@ -265,6 +265,8 @@ make
 sudo make install
 # install ko to /lib/modules
 sudo make modules_install
+# install headers to /usr/src
+sudo make headers_install
 ```
 
 
