@@ -25,6 +25,7 @@
 * [screen使用技巧](#22)
 * [build kernel相关](#23)
 * [使用lvm管理磁盘](#24)
+* [Androdi相关](#25)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -275,6 +276,13 @@ INSTALL_HDR_PATH=/usr/src/linux-headers-$(uname -r) sudo make headers_install
 
 ##<a id="24"/>
 [使用lvm管理磁盘扩容](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-adding-a-new-disk/)
+
+
+##<a id="25"/>
+System UIDs inconsistent的解决方法
+
+Check the file /data/system/uiderrors.txt for inconsistent uids.
+
 
 
 [\[Table of Contents\]](#toc)
