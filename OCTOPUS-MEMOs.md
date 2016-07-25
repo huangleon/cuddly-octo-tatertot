@@ -26,6 +26,7 @@
 * [build kernel相关](#23)
 * [使用lvm管理磁盘](#24)
 * [Androdi相关](#25)
+* [python开发相关](#26)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -283,6 +284,29 @@ System UIDs inconsistent的解决方法
 
 Check the file /data/system/uiderrors.txt for inconsistent uids.
 
-
+##<a id="26"/>
+搭建虚拟开发环境
+```
+pip install virtualenv
+```
+创建开发环境
+```
+virtualenv flask
+cd flask
+source bin/activate
+pip install ...
+```
+退出开发环境
+```
+deactivate
+```
+导出开发环境需要的软件包
+```
+pip freeze > requirements.txt
+```
+导入开发环境需要的软件包
+```
+pip install -r requirements.txt
+```
 
 [\[Table of Contents\]](#toc)
