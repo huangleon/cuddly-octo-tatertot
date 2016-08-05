@@ -174,6 +174,12 @@ docker相关
 
 [修改docker data存储路径](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169)
 
+docker配置文件
+ubuntu:
+/etc/default/docker
+centos:
+/etc/sysconfig/docker
+/etc/sysconfig/docker-storage
 
 docker的网络配置可以通过
 ```
