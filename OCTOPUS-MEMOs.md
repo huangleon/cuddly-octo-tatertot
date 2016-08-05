@@ -176,6 +176,11 @@ docker相关
 
 [docker容器挂在volume,容器的数据(db)写出,permission denied问题](http://www.projectatomic.io/blog/2015/06/using-volumes-with-docker-can-cause-problems-with-selinux/)
 
+[docker运行log查看](http://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log)
+```
+sudo journalctl -fu docker.service
+```
+
 docker配置文件
 ubuntu:
 /etc/default/docker
