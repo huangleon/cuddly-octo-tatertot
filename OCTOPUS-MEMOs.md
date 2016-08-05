@@ -172,6 +172,9 @@ docker相关
 
 [通过http_proxy访问docker时的配置](https://docs.docker.com/engine/admin/systemd/#http-proxy)
 
+[修改docker data存储路径](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169)
+
+
 docker的网络配置可以通过
 ```
 docker run -it --net=host
