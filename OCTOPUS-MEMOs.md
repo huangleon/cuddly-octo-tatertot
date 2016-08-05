@@ -174,6 +174,8 @@ docker相关
 
 [修改docker data存储路径](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169)
 
+[docker容器挂在volume,容器的数据(db)写出,permission denied问题](http://www.projectatomic.io/blog/2015/06/using-volumes-with-docker-can-cause-problems-with-selinux/)
+
 docker配置文件
 ubuntu:
 /etc/default/docker
