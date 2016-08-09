@@ -184,6 +184,8 @@ sudo journalctl -fu docker.service
 [docker和selinux相关]()
 启动docker-daemon时的参数 --selinux-enabled 会导致一些permission denied的问题,在开发调试过程中我们可以把它关掉.如host和container要共享/var/run/docker.sock进行通信.
 
+[或者使用这个模块解决/var/run/docker.sock共享的问题](https://github.com/dpw/selinux-dockersock)
+
 [selinux相关内容](https://wiki.centos.org/HowTos/SELinux)
 
 docker配置文件
