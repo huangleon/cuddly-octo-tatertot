@@ -27,6 +27,7 @@
 * [使用lvm管理磁盘](#24)
 * [Androdi相关](#25)
 * [python开发相关](#26)
+* [SELinux相关](#27)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -331,5 +332,19 @@ pip freeze > requirements.txt
 ```
 pip install -r requirements.txt
 ```
+
+##<a id="27"/>
+关闭SELinux
+```
+sudo setenforce 0
+```
+
+SELinux 配置文件
+```
+sudo vim /etc/sysconfig/selinux
+#SELINUX=enforcing
+SELINUX=permissive
+```
+
 
 [\[Table of Contents\]](#toc)
