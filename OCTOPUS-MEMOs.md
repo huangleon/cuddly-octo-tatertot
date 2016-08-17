@@ -153,6 +153,8 @@ read only = no
 writable = yes
 browsable = yes
 wide links = yes
+create mask = 0664
+directory mask = 0775
 ```
 
 ##<a id="15"/>
