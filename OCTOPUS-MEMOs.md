@@ -127,6 +127,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 ##<a id="12"/>
 [ssh配置](http://blog.chinaunix.net/uid-20710081-id-3266103.html)
+[ssh auto-logout 在screen中自动退出的问题](http://www.adercon.com/ac/node/39)
 
 ##<a id="13"/>
 [apt-get using http_proxy](https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy)
