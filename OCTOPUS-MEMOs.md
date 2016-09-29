@@ -28,6 +28,7 @@
 * [Androdi相关](#25)
 * [python开发相关](#26)
 * [SELinux相关](#27)
+* [k8s相关](#28)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -348,6 +349,10 @@ sudo vim /etc/sysconfig/selinux
 #SELINUX=enforcing
 SELINUX=permissive
 ```
+
+##<a id="28"/>
+k8s相关
+[heapster无法获取时间不同步的node的metrics](https://github.com/kubernetes/heapster/issues/516)
 
 
 [\[Table of Contents\]](#toc)
