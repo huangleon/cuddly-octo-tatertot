@@ -352,7 +352,10 @@ SELINUX=permissive
 
 ##<a id="28"/>
 k8s相关
+
 [heapster无法获取时间不同步的node的metrics](https://github.com/kubernetes/heapster/issues/516)
+
+[heapster的'time synchronization'问题](https://github.com/kubernetes/heapster/issues/802)
 
 
 [\[Table of Contents\]](#toc)
