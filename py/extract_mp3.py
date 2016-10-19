@@ -15,12 +15,32 @@ __status__ = "in process"
 
 import requests
 import re
+from bs4 import BeautifulSoup
 
-def main():
-    print "hello world"
-
+def extract_urls():
     # request for page content
-    r = requests.get('http://www.ishuyin.com/player.php?mov_id=5204&look_id=186&player=down')
+    r = requests.get('http://www.ishuyin.com/show-5204.html')
+    r.raise_for_status()
+
+    soup = BeautifulSoup(r.text, 'html.parser')
+    urls = []
+    dicts = {}
+    for aTag in soup.find_all('a'):
+        if aTag.has_attr('href') and aTag.has_attr('target') and aTag.has_attr('title'):
+            urls.append('http://www.ishuyin.com/' + aTag['href'])
+            dicts[aTag['title']] = 'http://www.ishuyin.com/' + aTag['href']
+
+    # remove duplicate url
+    urls = list(set(urls))
+#    for k, v in dicts.items():
+#        print k
+#        print v
+    return dicts
+
+def extract_mp3(name, url):
+    # request for page content
+#    r = requests.get('http://www.ishuyin.com/player.php?mov_id=5204&look_id=186&player=down')
+    r = requests.get(url)
     r.raise_for_status()
 #    print r.text
 
@@ -34,8 +54,14 @@ def main():
     for ch in encoded_chars:
         if ch != u'':
             decoded_url += unichr(int(ch))
+    print name, decoded_url
 
-    print decoded_url
+
+def main():
+    print "hello world"
+    urls = extract_urls()
+    for name, url in urls.items():
+        extract_mp3(name, url)
 
 if __name__ == '__main__':
     main()
