@@ -73,6 +73,8 @@ photorec
 ##Linux运维 <a id="4"></a>
 [Linux运维网](http://www.linuxyunwei.com)
 
+[nginx配置中使用环境变量](https://docs.apitools.com/blog/2014/07/02/using-environment-variables-in-nginx-conf.html)
+
 ##VPN相关 <a id="5"></a>
 [使用 Strongswan 架设 Ipsec VPN](https://zh.opensuse.org/SDB:Setup_Ipsec_VPN_with_Strongswan)
 
