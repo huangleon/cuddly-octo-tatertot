@@ -16,6 +16,18 @@ __status__ = "in process"
 import requests
 import re
 from bs4 import BeautifulSoup
+import subprocess
+from urlparse import urlparse
+import os.path
+
+def start_download(filename, url):
+    print 'Download file', filename, url
+    p = subprocess.Popen(['wget',
+                          '--continue',
+                          '-O',
+                          filename,
+                          url])
+    p.wait()
 
 def extract_urls():
     # request for page content
@@ -54,14 +66,17 @@ def extract_mp3(name, url):
     for ch in encoded_chars:
         if ch != u'':
             decoded_url += unichr(int(ch))
-    print name, decoded_url
-
+            o = urlparse(decoded_url)
+            fa, ext = os.path.splitext(o.path)
+    return name + ext, decoded_url
 
 def main():
     print "hello world"
     urls = extract_urls()
     for name, url in urls.items():
-        extract_mp3(name, url)
+        filename, decoded_url = extract_mp3(name, url)
+        start_download(filename, decoded_url)
+
 
 if __name__ == '__main__':
     main()
