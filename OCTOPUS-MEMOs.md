@@ -29,6 +29,7 @@
 * [python开发相关](#26)
 * [SELinux相关](#27)
 * [k8s相关](#28)
+* [openssl使用](#29)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -360,6 +361,10 @@ k8s相关
 [heapster无法获取时间不同步的node的metrics](https://github.com/kubernetes/heapster/issues/516)
 
 [heapster的'time synchronization'问题](https://github.com/kubernetes/heapster/issues/802)
+
+##<a id="29"/>
+[openssl使用](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
+
 
 
 [\[Table of Contents\]](#toc)
