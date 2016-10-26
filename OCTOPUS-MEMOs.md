@@ -30,6 +30,7 @@
 * [SELinux相关](#27)
 * [k8s相关](#28)
 * [openssl使用](#29)
+* [curl使用](#30)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -365,6 +366,15 @@ k8s相关
 ##<a id="29"/>
 [openssl使用](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
 
+##<a id="30"/>
+##cURL的使用问题
 
+http_proxy的环境变量只能用小写,不能用大写,manpage里有说明
+>The environment variables can be specified in lower case or upper case. The lower case version has precedence. http_proxy is an exception as it is only available in lower case.
+
+设置了http_proxy之后,不使用proxy可以用如下:
+```
+curl --noproxy '*' ...
+```
 
 [\[Table of Contents\]](#toc)
