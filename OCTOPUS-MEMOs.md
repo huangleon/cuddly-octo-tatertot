@@ -31,6 +31,7 @@
 * [k8s相关](#28)
 * [openssl使用](#29)
 * [curl使用](#30)
+* [C++ vtable](#31)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -376,5 +377,9 @@ http_proxy的环境变量只能用小写,不能用大写,manpage里有说明
 ```
 curl --noproxy '*' ...
 ```
+
+##<a id="31"/>
+[c++ vtable](http://shaharmike.com/cpp/)
+
 
 [\[Table of Contents\]](#toc)
