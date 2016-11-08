@@ -381,5 +381,7 @@ curl --noproxy '*' ...
 ##<a id="31"/>
 [c++ vtable](http://shaharmike.com/cpp/)
 
+[C++相关](http://blog.csdn.net/anzhsoft)
+
 
 [\[Table of Contents\]](#toc)
