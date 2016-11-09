@@ -32,6 +32,7 @@
 * [openssl使用](#29)
 * [curl使用](#30)
 * [C++ vtable](#31)
+* [算法和数据结构](#32)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -383,5 +384,11 @@ curl --noproxy '*' ...
 
 [C++相关](http://blog.csdn.net/anzhsoft)
 
+##<a id="32"/>
+[算法和数据结构](http://lib.csdn.net/base/datastructure)
+
+[海量和数据处理](http://blog.csdn.net/v_july_v/article/details/7382693)
+
+[算法在线课程](http://julyedu.com)
 
 [\[Table of Contents\]](#toc)
