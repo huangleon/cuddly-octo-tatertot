@@ -31,7 +31,7 @@
 * [k8s相关](#28)
 * [openssl使用](#29)
 * [curl使用](#30)
-* [C++ vtable](#31)
+* [C++ 相关](#31)
 * [算法和数据结构](#32)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
@@ -383,6 +383,8 @@ curl --noproxy '*' ...
 [c++ vtable](http://shaharmike.com/cpp/)
 
 [C++相关](http://blog.csdn.net/anzhsoft)
+
+[C++ faq from BJ](http://www.stroustrup.com/bs_faq2.html)
 
 ##<a id="32"/>
 [算法和数据结构](http://lib.csdn.net/base/datastructure)
