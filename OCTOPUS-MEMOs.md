@@ -386,6 +386,8 @@ curl --noproxy '*' ...
 
 [C++ faq from BJ](http://www.stroustrup.com/bs_faq2.html)
 
+[右值引用](http://thbecker.net/articles/rvalue_references/section_01.html)
+
 ##<a id="32"/>
 [算法和数据结构](http://lib.csdn.net/base/datastructure)
 
