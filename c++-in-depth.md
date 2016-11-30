@@ -9,3 +9,7 @@
 * Match with ellipsis
 
 Overload resolution occurs **after** template argument deduction.
+
+###Refining the Perfect Match
+* `T` and `T const&` both match equally well for an **rvalue** of type T.
+* `T` and `T&` both match equally well for a **lvalue** of type T.
