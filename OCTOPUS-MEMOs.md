@@ -33,6 +33,7 @@
 * [curl使用](#30)
 * [C++ 相关](#31)
 * [算法和数据结构](#32)
+* [git相关](#33)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -396,5 +397,8 @@ curl --noproxy '*' ...
 [海量和数据处理](http://blog.csdn.net/v_july_v/article/details/7382693)
 
 [算法在线课程](http://julyedu.com)
+
+##<a id="33"/>
+[gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
 
 [\[Table of Contents\]](#toc)
