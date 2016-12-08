@@ -25,7 +25,7 @@
 * [screen使用技巧](#22)
 * [build kernel相关](#23)
 * [使用lvm管理磁盘](#24)
-* [Androdi相关](#25)
+* [Android相关](#25)
 * [python开发相关](#26)
 * [SELinux相关](#27)
 * [k8s相关](#28)
@@ -319,6 +319,8 @@ INSTALL_HDR_PATH=/usr/src/linux-headers-$(uname -r) sudo make headers_install
 System UIDs inconsistent的解决方法
 
 Check the file /data/system/uiderrors.txt for inconsistent uids.
+
+[You Need MANAGE_USERS permission](http://forum.xda-developers.com/showthread.php?t=1999383)
 
 ##<a id="26"/>
 搭建虚拟开发环境
