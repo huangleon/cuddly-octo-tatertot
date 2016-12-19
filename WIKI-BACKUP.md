@@ -557,6 +557,8 @@ android_root/bionic/libc/include/sys/__system_properties.h
         framewors/base/services/java/com/android/server/am/ActivityManagerService.java
         ```
         的函数startProcessLocked()，其中取其组信息的具本语句是 mContext.getPackageManager().getPackageGids(app.info.packageName);
+        
+[Android用户名与用户权限的hardcode映射](http://stackoverflow.com/questions/23454000/how-to-get-username-using-uid-on-android)
 
 ###Android系统签名
 
