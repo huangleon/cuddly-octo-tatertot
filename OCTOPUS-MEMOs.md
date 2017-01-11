@@ -29,7 +29,7 @@
 * [python开发相关](#26)
 * [SELinux相关](#27)
 * [k8s相关](#28)
-* [openssl使用](#29)
+* [openssl相关](#29)
 * [curl使用](#30)
 * [C++ 相关](#31)
 * [算法和数据结构](#32)
@@ -372,6 +372,7 @@ k8s相关
 ##<a id="29"/>
 [openssl使用](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
 [Android上(certificate recovation list)未检查的问题](https://commonsware.com/blog/2014/04/18/more-android-revoked-ssl-certificates.html)
+[der/pem/crt/cer file type](http://info.ssl.com/article.aspx?id=12149)
 
 ##<a id="30"/>
 ##cURL的使用问题
