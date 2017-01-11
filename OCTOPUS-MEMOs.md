@@ -371,6 +371,7 @@ k8s相关
 
 ##<a id="29"/>
 [openssl使用](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
+[Android上(certificate recovation list)未检查的问题](https://commonsware.com/blog/2014/04/18/more-android-revoked-ssl-certificates.html)
 
 ##<a id="30"/>
 ##cURL的使用问题
