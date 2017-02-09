@@ -35,6 +35,7 @@
 * [算法和数据结构](#32)
 * [git相关](#33)
 * [工具相关](#34)
+* [usage of jinja2](#35)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -410,6 +411,10 @@ curl --noproxy '*' ...
 
 ##<a id="34"/>
 [绘制sequence diagram](https://www.websequencediagrams.com)
+
+##<a id="35"/>
+[shoggoth produce multiple variables using jinja2](http://jinja.pocoo.org/docs/2.9/templates/#assignments)
+[jinja variables scope in block](http://stackoverflow.com/questions/4870346/can-a-jinja-variables-scope-extend-beyond-in-an-inner-block)
 
 
 [\[Table of Contents\]](#toc)
