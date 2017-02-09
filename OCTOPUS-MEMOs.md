@@ -275,7 +275,10 @@ patch -p1 -l --dry-run --verbose < patchfile
 screen 记录log
 Ctrl-a H
 用more可以查看带escape标示的log文件
-【putty上使用screen后的scrollback】（http://serverfault.com/questions/32313/putty-and-screen-and-scroll-back-buffer）
+
+[putty上使用screen后的scrollback](http://serverfault.com/questions/32313/putty-and-screen-and-scroll-back-buffer)
+
+[clear screen after using vim in screen](http://serverfault.com/questions/270103/gnu-screen-clearing-on-vim-less-etc-exit)
 
 ##<a id="23"/>
 [在ubuntu平台上重新编译kernel及使用新kernel](https://www.howtoforge.com/kernel_compilation_ubuntu)
