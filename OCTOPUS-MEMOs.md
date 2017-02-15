@@ -36,6 +36,7 @@
 * [git相关](#33)
 * [工具相关](#34)
 * [usage of jinja2](#35)
+* [C++ coding style](#36)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -407,14 +408,25 @@ curl --noproxy '*' ...
 [算法在线课程](http://julyedu.com)
 
 ##<a id="33"/>
+
 [gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
 
 ##<a id="34"/>
+
 [绘制sequence diagram](https://www.websequencediagrams.com)
 
 ##<a id="35"/>
+
 [shoggoth produce multiple variables using jinja2](http://jinja.pocoo.org/docs/2.9/templates/#assignments)
+
 [jinja variables scope in block](http://stackoverflow.com/questions/4870346/can-a-jinja-variables-scope-extend-beyond-in-an-inner-block)
 
+##<a id="36"/>
+
+[C++ coding style](http://geosoft.no/development/cppstyle.html)
+
+[Prefer suffix than prefix underscore](http://stackoverflow.com/questions/1228161/why-use-prefixes-on-member-variables-in-c-classes#1228199)
+
+[Guru of the Week](http://www.gotw.ca/gotw/)
 
 [\[Table of Contents\]](#toc)
