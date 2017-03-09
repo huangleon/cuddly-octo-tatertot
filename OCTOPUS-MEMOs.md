@@ -37,6 +37,7 @@
 * [工具相关](#34)
 * [usage of jinja2](#35)
 * [C++ coding style](#36)
+* [linux相关](#37)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -428,5 +429,11 @@ curl --noproxy '*' ...
 [Prefer suffix than prefix underscore](http://stackoverflow.com/questions/1228161/why-use-prefixes-on-member-variables-in-c-classes#1228199)
 
 [Guru of the Week](http://www.gotw.ca/gotw/)
+
+
+##<a id="37"/>
+
+[fstab格式](https://wiki.archlinux.org/index.php/fstab)
+
 
 [\[Table of Contents\]](#toc)
