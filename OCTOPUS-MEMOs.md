@@ -409,8 +409,12 @@ curl --noproxy '*' ...
 [算法在线课程](http://julyedu.com)
 
 ##<a id="33"/>
+git 相关
 
 [gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
+
+[git patch](http://stackoverflow.com/questions/5120038/is-it-possible-to-cherry-pick-a-commit-from-another-git-repository#9507417)
+
 
 ##<a id="34"/>
 
