@@ -333,6 +333,8 @@ Check the file /data/system/uiderrors.txt for inconsistent uids.
 
 [How to replace java 8 with java 7 on Mac OS](https://www.java.com/en/download/help/mac_uninstall_java.xml)
 
+[How to switch java version on Mac OS](http://stackoverflow.com/questions/21964709/how-to-set-or-change-the-default-java-jdk-version-on-os-x#24657630)
+
 
 ##<a id="26"/>
 搭建虚拟开发环境
