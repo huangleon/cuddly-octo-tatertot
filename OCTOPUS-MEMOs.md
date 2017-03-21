@@ -331,6 +331,9 @@ Check the file /data/system/uiderrors.txt for inconsistent uids.
 
 [You Need MANAGE_USERS permission](http://forum.xda-developers.com/showthread.php?t=1999383)
 
+[How to replace java 8 with java 7 on Mac OS](https://www.java.com/en/download/help/mac_uninstall_java.xml)
+
+
 ##<a id="26"/>
 搭建虚拟开发环境
 ```
