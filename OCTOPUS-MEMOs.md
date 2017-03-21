@@ -418,6 +418,8 @@ git 相关
 
 [git patch](http://stackoverflow.com/questions/5120038/is-it-possible-to-cherry-pick-a-commit-from-another-git-repository#9507417)
 
+[convert git patch to svn patch](http://stackoverflow.com/questions/708202/git-format-patch-to-be-svn-compatible#13377540)
+
 
 ##<a id="34"/>
 
