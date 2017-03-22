@@ -335,6 +335,8 @@ Check the file /data/system/uiderrors.txt for inconsistent uids.
 
 [How to switch java version on Mac OS](http://stackoverflow.com/questions/21964709/how-to-set-or-change-the-default-java-jdk-version-on-os-x#24657630)
 
+[How to remove java 8 on MacOS](http://stackoverflow.com/questions/17885494/how-can-i-change-mac-oss-default-java-vm-returned-from-usr-libexec-java-home#20994919)
+
 [How to check java version in ant](http://www.asjava.com/ant/how-to-check-java-version-in-ant/)
 
 
