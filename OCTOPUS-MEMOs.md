@@ -38,6 +38,7 @@
 * [usage of jinja2](#35)
 * [C++ coding style](#36)
 * [linux相关](#37)
+* [File permission and ACLs](#38)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -450,5 +451,11 @@ git 相关
 
 [fstab格式](https://wiki.archlinux.org/index.php/fstab)
 
+
+##<a id="38"/>
+
+Windows
+
+[How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
 
 [\[Table of Contents\]](#toc)
