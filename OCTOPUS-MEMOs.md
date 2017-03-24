@@ -402,6 +402,13 @@ http_proxy的环境变量只能用小写,不能用大写,manpage里有说明
 curl --noproxy '*' ...
 ```
 
+About reuse connections in cURL
+
+[Connection reuse](https://ec.haxx.se/libcurl-connectionreuse.html)
+
+[How to reuse connect in cURL](http://stackoverflow.com/questions/972925/persistent-keepalive-http-with-the-php-curl-library/982556#982556)
+
+
 ##<a id="31"/>
 [c++ vtable](http://shaharmike.com/cpp/)
 
