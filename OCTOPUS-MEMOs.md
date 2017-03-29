@@ -408,6 +408,7 @@ About reuse connections in cURL
 
 [How to reuse connect in cURL](http://stackoverflow.com/questions/972925/persistent-keepalive-http-with-the-php-curl-library/982556#982556)
 
+[How to link libcurl statically](http://stackoverflow.com/questions/20461682/linking-project-with-statically-build-curl#20467476)
 
 ##<a id="31"/>
 [c++ vtable](http://shaharmike.com/cpp/)
