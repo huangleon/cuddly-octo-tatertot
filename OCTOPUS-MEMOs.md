@@ -39,6 +39,7 @@
 * [C++ coding style](#36)
 * [linux相关](#37)
 * [File permission and ACLs](#38)
+* [HTTP 协议相关](#39)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -467,5 +468,13 @@ git 相关
 Windows
 
 [How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
+
+
+##<a id="39"/>
+
+HTTP 协议相关
+
+[If password in url contains '@', encode '@' with '%40'](http://serverfault.com/questions/371907/can-you-pass-user-pass-for-http-basic-authentication-in-url-parameters#comment-838925)
+
 
 [\[Table of Contents\]](#toc)
