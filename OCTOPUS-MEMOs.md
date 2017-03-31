@@ -417,6 +417,8 @@ About reuse connections in cURL
 
 [C++ faq from BJ](http://www.stroustrup.com/bs_faq2.html)
 
+[Differences between 'static' and 'extern'](http://stackoverflow.com/questions/92546/variable-declarations-in-header-files-static-or-not#93663)
+
 [右值引用](http://thbecker.net/articles/rvalue_references/section_01.html)
 
 ##<a id="32"/>
