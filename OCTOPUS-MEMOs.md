@@ -446,6 +446,8 @@ git 相关
 
 [绘制sequence diagram](https://www.websequencediagrams.com)
 
+[How to select different network adapter to use in windows 10](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/adapter-priority-setting-unavailable-in-windows-10/d2b63caa-e77c-4b46-88b5-eeeaee00c306#ThreadAnswers)
+
 ##<a id="35"/>
 
 [shoggoth produce multiple variables using jinja2](http://jinja.pocoo.org/docs/2.9/templates/#assignments)
