@@ -412,6 +412,7 @@ About reuse connections in cURL
 [How to link libcurl statically](http://stackoverflow.com/questions/20461682/linking-project-with-statically-build-curl#20467476)
 
 ##<a id="31"/>
+
 [c++ vtable](http://shaharmike.com/cpp/)
 
 [C++相关](http://blog.csdn.net/anzhsoft)
@@ -421,6 +422,8 @@ About reuse connections in cURL
 [Differences between 'static' and 'extern'](http://stackoverflow.com/questions/92546/variable-declarations-in-header-files-static-or-not#93663)
 
 [右值引用](http://thbecker.net/articles/rvalue_references/section_01.html)
+
+[const and linkage](http://stackoverflow.com/questions/12042549/constants-only-header-file-c#12043198)
 
 ##<a id="32"/>
 [算法和数据结构](http://lib.csdn.net/base/datastructure)
