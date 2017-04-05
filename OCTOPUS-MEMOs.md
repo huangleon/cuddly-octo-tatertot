@@ -446,6 +446,8 @@ git 相关
 
 [convert git patch to svn patch](http://stackoverflow.com/questions/708202/git-format-patch-to-be-svn-compatible#13377540)
 
+[convert svn patch to git](http://stackoverflow.com/questions/659467/how-to-apply-svn-diff-to-git#38655007)
+
 
 ##<a id="34"/>
 
