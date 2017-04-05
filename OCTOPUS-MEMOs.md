@@ -490,7 +490,10 @@ HTTP 协议相关
 ##<a id="40"/>
 
 scons相关
+
 [编译器标志对应 Env 变量](http://scons.org/doc/production/HTML/scons-man.html#f-ParseFlags)
+
+[Print Env Dump](http://scons.org/doc/1.2.0/HTML/scons-user/x4613.html)
 
 
 [\[Table of Contents\]](#toc)
