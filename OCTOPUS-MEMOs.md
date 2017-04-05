@@ -40,6 +40,7 @@
 * [linux相关](#37)
 * [File permission and ACLs](#38)
 * [HTTP 协议相关](#39)
+* [scons相关](#40)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -485,6 +486,11 @@ Windows
 HTTP 协议相关
 
 [If password in url contains '@', encode '@' with '%40'](http://serverfault.com/questions/371907/can-you-pass-user-pass-for-http-basic-authentication-in-url-parameters#comment-838925)
+
+##<a id="40"/>
+
+scons相关
+[编译器标志对应 Env 变量](http://scons.org/doc/production/HTML/scons-man.html#f-ParseFlags)
 
 
 [\[Table of Contents\]](#toc)
