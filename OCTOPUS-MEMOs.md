@@ -41,6 +41,7 @@
 * [File permission and ACLs](#38)
 * [HTTP 协议相关](#39)
 * [scons相关](#40)
+* [编译器相关](#41)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -496,6 +497,11 @@ scons相关
 [编译器标志对应 Env 变量](http://scons.org/doc/production/HTML/scons-man.html#f-ParseFlags)
 
 [Print Env Dump](http://scons.org/doc/1.2.0/HTML/scons-user/x4613.html)
+
+##<a id="41"/>
+
+编译器相关
+[options '-rpath' and '-rpath-link'](https://sourceware.org/binutils/docs/ld/Options.html#Options)
 
 
 [\[Table of Contents\]](#toc)
