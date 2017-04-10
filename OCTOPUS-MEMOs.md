@@ -42,6 +42,7 @@
 * [HTTP 协议相关](#39)
 * [scons相关](#40)
 * [编译器相关](#41)
+* [VMWare相关](#42)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -502,6 +503,12 @@ scons相关
 
 编译器相关
 [options '-rpath' and '-rpath-link'](https://sourceware.org/binutils/docs/ld/Options.html#Options)
+
+
+##<a id="42"/>
+
+VMWare相关
+[Issue about vsphere client open console resolution](http://serverfault.com/questions/806914/vsphere-client-console-missing-bottom-and-right-of-screen#818466)
 
 
 [\[Table of Contents\]](#toc)
