@@ -452,12 +452,12 @@ git/svn 相关
 [convert svn patch to git](http://stackoverflow.com/questions/659467/how-to-apply-svn-diff-to-git#38655007)
 
 svn propset 的语法
-{{{
+
+```
 svn ps svn:externals PROP_VALUE PATH
-}}}
 PROP_VALUE: '^/thirdparty-allversions/external/libcurl/source/scripts scripts'
 PATH: .\source\libcurl-7.50.3\jenkins\
-
+```
 
 ##<a id="34"/>
 
