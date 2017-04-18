@@ -33,7 +33,7 @@
 * [curl使用](#30)
 * [C++ 相关](#31)
 * [算法和数据结构](#32)
-* [git相关](#33)
+* [git/svn相关](#33)
 * [工具相关](#34)
 * [usage of jinja2](#35)
 * [C++ coding style](#36)
@@ -440,7 +440,8 @@ About reuse connections in cURL
 [算法在线课程](http://julyedu.com)
 
 ##<a id="33"/>
-git 相关
+
+git/svn 相关
 
 [gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
 
@@ -449,6 +450,13 @@ git 相关
 [convert git patch to svn patch](http://stackoverflow.com/questions/708202/git-format-patch-to-be-svn-compatible#13377540)
 
 [convert svn patch to git](http://stackoverflow.com/questions/659467/how-to-apply-svn-diff-to-git#38655007)
+
+svn propset 的语法
+{{{
+svn ps svn:externals PROP_VALUE PATH
+}}}
+PROP_VALUE: '^/thirdparty-allversions/external/libcurl/source/scripts scripts'
+PATH: .\source\libcurl-7.50.3\jenkins\
 
 
 ##<a id="34"/>
