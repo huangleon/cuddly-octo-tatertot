@@ -514,9 +514,8 @@ scons相关
 [options '-rpath' and '-rpath-link'](https://sourceware.org/binutils/docs/ld/Options.html#Options)
 
 [gcc link order](https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html)
-```
-It makes a difference where in the command you write this option; the linker searches and processes libraries and object files in the order they are specified. Thus, ‘foo.o -lz bar.o’ searches library ‘z’ after file foo.o but before bar.o. If bar.o refers to functions in ‘z’, those functions may not be loaded.
-```
+
+> It makes a difference where in the command you write this option; the linker searches and processes libraries and object files in the order they are specified. Thus, ‘foo.o -lz bar.o’ searches library ‘z’ after file foo.o but before bar.o. If bar.o refers to functions in ‘z’, those functions may not be loaded.
 
 [gcc static link dependency](http://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking)
 
