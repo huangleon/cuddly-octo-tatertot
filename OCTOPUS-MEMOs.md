@@ -43,6 +43,7 @@
 * [scons相关](#40)
 * [编译器相关](#41)
 * [VMWare相关](#42)
+* [Networking相关](#43)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -524,6 +525,14 @@ scons相关
 
 VMWare相关
 [Issue about vsphere client open console resolution](http://serverfault.com/questions/806914/vsphere-client-console-missing-bottom-and-right-of-screen#818466)
+
+
+##<a id="43"/>
+
+Networking相关
+
+[What is address 169.254.x.x](https://superuser.com/questions/840388/i-am-using-windows-7-and-i-get-a-169-254-x-x-ip-address#840406)
+[Automatic Private IP addressing](http://www.webopedia.com/TERM/A/APIPA.html)
 
 
 [\[Table of Contents\]](#toc)
