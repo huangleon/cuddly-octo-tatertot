@@ -45,6 +45,7 @@
 * [VMWare相关](#42)
 * [Networking相关](#43)
 * [Windows debugging](#44)
+* [iOS相关](#45)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -544,5 +545,11 @@ Windows debugging
 [Crash Dump Analysis](https://msdn.microsoft.com/en-us/library/windows/desktop/ee416349(v=vs.85).aspx)
 [Specify Symbols in Visual Studio](https://msdn.microsoft.com/en-us/library/ms241613.aspx)
 
+
+##<a id="45"/>
+
+iOS相关
+[iOS Simulator containers](http://stackoverflow.com/questions/6480607/is-there-any-way-to-see-the-file-system-on-the-ios-simulator)
+[iOS Simulator containers 2](http://stackoverflow.com/questions/1108076/where-does-the-iphone-simulator-store-its-data)
 
 [\[Table of Contents\]](#toc)
