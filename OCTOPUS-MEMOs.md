@@ -44,6 +44,7 @@
 * [编译器相关](#41)
 * [VMWare相关](#42)
 * [Networking相关](#43)
+* [Windows debugging](#44)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -533,6 +534,15 @@ Networking相关
 
 [What is address 169.254.x.x](https://superuser.com/questions/840388/i-am-using-windows-7-and-i-get-a-169-254-x-x-ip-address#840406)
 [Automatic Private IP addressing](http://www.webopedia.com/TERM/A/APIPA.html)
+
+
+##<a id="44"/>
+
+Windows debugging
+[Show external code in visual studio](https://blogs.msdn.microsoft.com/zainnab/2010/10/24/show-external-code/)
+[Download windows symbols](https://developer.microsoft.com/en-us/windows/hardware/download-symbols)
+[Crash Dump Analysis](https://msdn.microsoft.com/en-us/library/windows/desktop/ee416349(v=vs.85).aspx)
+[Specify Symbols in Visual Studio](https://msdn.microsoft.com/en-us/library/ms241613.aspx)
 
 
 [\[Table of Contents\]](#toc)
