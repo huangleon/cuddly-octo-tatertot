@@ -456,6 +456,8 @@ git/svn 相关
 
 [convert svn patch to git](http://stackoverflow.com/questions/659467/how-to-apply-svn-diff-to-git#38655007)
 
+[Mirror copy a git repo](http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/)
+
 svn propset 的语法
 
 ```
