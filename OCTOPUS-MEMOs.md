@@ -190,6 +190,8 @@ linux查看端口占用情况
 
 查看某一端口的占用情况： lsof -i:端口号
 
+[How to list opened ports](https://apple.stackexchange.com/questions/117644/how-can-i-list-my-open-network-ports-with-netstat)
+
 
 ##<a id="16"/>
 
