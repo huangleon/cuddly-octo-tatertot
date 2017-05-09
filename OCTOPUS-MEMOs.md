@@ -554,6 +554,14 @@ Windows debugging
 
 iOS相关
 [iOS Simulator containers](http://stackoverflow.com/questions/6480607/is-there-any-way-to-see-the-file-system-on-the-ios-simulator)
+
 [iOS Simulator containers 2](http://stackoverflow.com/questions/1108076/where-does-the-iphone-simulator-store-its-data)
+
+[How to build ipa file with command line](http://blog.octo.com/en/automating-over-the-air-deployment-for-iphone/)
+
+[Build ipa from command line](http://stackoverflow.com/questions/2664885/xcode-build-and-archive-from-command-line)
+
+[How to build iOS App without developer account](http://stackoverflow.com/questions/40730051/how-to-build-an-ipa-without-signing-in-xcode-8)
+
 
 [\[Table of Contents\]](#toc)
