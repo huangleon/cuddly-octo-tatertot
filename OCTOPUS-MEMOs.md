@@ -569,4 +569,6 @@ iOS相关
 [How to build iOS App without developer account](http://stackoverflow.com/questions/40730051/how-to-build-an-ipa-without-signing-in-xcode-8)
 
 
+[iPad connect/disconnect mac rapidly](https://discussions.apple.com/thread/5523411?start=0&tstart=0)
+
 [\[Table of Contents\]](#toc)
