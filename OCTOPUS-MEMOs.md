@@ -571,4 +571,9 @@ iOS相关
 
 [iPad connect/disconnect mac rapidly](https://discussions.apple.com/thread/5523411?start=0&tstart=0)
 
+
+[Convert plist between xml and binary](http://osxdaily.com/2016/03/10/convert-plist-file-xml-binary-mac-os-x-plutil/)
+
+
+
 [\[Table of Contents\]](#toc)
