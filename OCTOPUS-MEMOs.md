@@ -575,5 +575,10 @@ iOS相关
 [Convert plist between xml and binary](http://osxdaily.com/2016/03/10/convert-plist-file-xml-binary-mac-os-x-plutil/)
 
 
+[Generate unsigned ipa](http://stackoverflow.com/questions/25396299/generating-an-unsigned-ipa-ios-application)
+
+
+[How to build ipa without signing it](http://stackoverflow.com/questions/40730051/how-to-build-an-ipa-without-signing-in-xcode-8)
+
 
 [\[Table of Contents\]](#toc)
