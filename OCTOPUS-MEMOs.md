@@ -581,4 +581,9 @@ iOS相关
 [How to build ipa without signing it](http://stackoverflow.com/questions/40730051/how-to-build-an-ipa-without-signing-in-xcode-8)
 
 
+[How to analyze ios ips crash file](http://stackoverflow.com/questions/40447722/analysing-app-ips-file-in-xcode)
+
+
+
+
 [\[Table of Contents\]](#toc)
