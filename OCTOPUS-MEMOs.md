@@ -584,6 +584,10 @@ iOS相关
 [How to analyze ios ips crash file](http://stackoverflow.com/questions/40447722/analysing-app-ips-file-in-xcode)
 
 
-
+After sync iOS device with iTunes, on Windows, the sync files are located at
+```
+%APPDATA%\Apple Computer
+```
+[How to retrieve ips file from device](https://www.careiphone.com/how-to-retrieve-crash-file-ips-from-iphone-ipad-or-ipod-touch/)
 
 [\[Table of Contents\]](#toc)
