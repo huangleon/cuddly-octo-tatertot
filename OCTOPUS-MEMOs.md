@@ -458,6 +458,8 @@ git/svn 相关
 
 [Mirror copy a git repo](http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/)
 
+[SVN diff doesnot contain 'new added directory'](http://stackoverflow.com/questions/4248768/including-new-files-in-svn-diff)
+
 svn propset 的语法
 
 ```
