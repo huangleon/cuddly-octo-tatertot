@@ -350,6 +350,9 @@ Check the file /data/system/uiderrors.txt for inconsistent uids.
 [How to check java version in ant](http://www.asjava.com/ant/how-to-check-java-version-in-ant/)
 
 
+[Ant error 'javac1.8 class not found'](http://stackoverflow.com/questions/20702626/javac1-8-class-not-found)
+
+
 ##<a id="26"/>
 搭建虚拟开发环境
 ```
