@@ -595,4 +595,8 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 ```
 [How to retrieve ips file from device](https://www.careiphone.com/how-to-retrieve-crash-file-ips-from-iphone-ipad-or-ipod-touch/)
 
+
+[When an iOS application goes to the background, are lengthy tasks paused?](http://stackoverflow.com/questions/6650717/when-an-ios-application-goes-to-the-background-are-lengthy-tasks-paused)
+
+
 [\[Table of Contents\]](#toc)
