@@ -599,4 +599,6 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 [When an iOS application goes to the background, are lengthy tasks paused?](http://stackoverflow.com/questions/6650717/when-an-ios-application-goes-to-the-background-are-lengthy-tasks-paused)
 
 
+[How to install multiple versions of Xcode](https://medium.com/@YogevSitton/install-xcode-7-and-xcode-8-side-by-side-5bf40ea8f5ac)
+
 [\[Table of Contents\]](#toc)
