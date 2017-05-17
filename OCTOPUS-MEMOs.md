@@ -440,6 +440,11 @@ About reuse connections in cURL
 
 [Some issues about libc++ and libstdc++ on MAC](http://stackoverflow.com/questions/19637164/c-linking-error-after-upgrading-to-mac-os-x-10-9-xcode-5-0-1)
 
+STL
+
+[How to securely clear containers data](http://stackoverflow.com/questions/3785582/how-to-write-a-password-safe-class)
+
+
 ##<a id="32"/>
 [算法和数据结构](http://lib.csdn.net/base/datastructure)
 
