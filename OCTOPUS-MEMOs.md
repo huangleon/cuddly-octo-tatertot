@@ -502,6 +502,9 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 [fstab格式](https://wiki.archlinux.org/index.php/fstab)
 
 
+[Touchscreen HID USB protocol](https://forum.pjrc.com/threads/32331-USB-HID-Touchscreen-support-needed)
+
+
 ##<a id="38"/>
 
 Windows
