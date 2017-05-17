@@ -445,6 +445,9 @@ STL
 [How to securely clear containers data](http://stackoverflow.com/questions/3785582/how-to-write-a-password-safe-class)
 
 
+[Secure programming in C++](http://etutorials.org/Programming/secure+programming/)
+
+
 ##<a id="32"/>
 [算法和数据结构](http://lib.csdn.net/base/datastructure)
 
