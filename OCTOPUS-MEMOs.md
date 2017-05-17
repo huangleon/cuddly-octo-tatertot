@@ -233,6 +233,9 @@ docker run -it --net=host
 Using HTTP_PROXY
 [using http_proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
 
+[using socks5 proxy](https://askubuntu.com/questions/35223/syntax-for-socks-proxy-in-apt-conf)
+
+
 Prefered using, (note its HTTPS_PROXY, not HTTP_PROXY)
 ```
 export https_proxy=...
