@@ -628,4 +628,7 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 [Xcode build without provisioning profile](http://iphonedevwiki.net/index.php/Xcode#Developing_without_Provisioning_Profile)
 
 
+[About xcrun](http://stackoverflow.com/questions/2664885/xcode-build-and-archive-from-command-line)
+
+
 [\[Table of Contents\]](#toc)
