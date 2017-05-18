@@ -15,7 +15,7 @@
 * [ssh配置](#12)
 * [apt-get using http_proxy](#13)
 * [常用samba设置](#14)
-* [linux查看端口占用情况](#15)
+* [linux查看端口/文件占用情况](#15)
 * [docker相关](#16)
 * [using http_proxy](#17)
 * [C99 array initializaers](#18)
@@ -189,6 +189,9 @@ linux查看端口占用情况
 查看端口占用情况的命令：lsof -i
 
 查看某一端口的占用情况： lsof -i:端口号
+
+查看文件占用情况: fuser filename
+
 
 [How to list opened ports](https://apple.stackexchange.com/questions/117644/how-can-i-list-my-open-network-ports-with-netstat)
 
