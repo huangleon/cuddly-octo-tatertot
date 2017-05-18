@@ -624,4 +624,8 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [how to set different swift that xcodebuild uses](http://stackoverflow.com/questions/39884323/where-is-xcodes-toolchains-set)
 
+
+[Xcode build without provisioning profile](http://iphonedevwiki.net/index.php/Xcode#Developing_without_Provisioning_Profile)
+
+
 [\[Table of Contents\]](#toc)
