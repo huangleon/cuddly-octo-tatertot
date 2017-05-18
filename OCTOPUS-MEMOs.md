@@ -618,4 +618,10 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [How to install multiple versions of Xcode](https://medium.com/@YogevSitton/install-xcode-7-and-xcode-8-side-by-side-5bf40ea8f5ac)
 
+
+[use xcode-select to select different version of Xcode](http://stackoverflow.com/questions/37867753/change-carthage-swift-version)
+
+
+[how to set different swift that xcodebuild uses](http://stackoverflow.com/questions/39884323/where-is-xcodes-toolchains-set)
+
 [\[Table of Contents\]](#toc)
