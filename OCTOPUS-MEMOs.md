@@ -643,4 +643,7 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 [Analyzing ios crash report](https://developer.apple.com/library/content/technotes/tn2151/_index.html)
 
 
+[iOS files accessing](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html)
+
+
 [\[Table of Contents\]](#toc)
