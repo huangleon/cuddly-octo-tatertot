@@ -631,4 +631,16 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 [About xcrun](http://stackoverflow.com/questions/2664885/xcode-build-and-archive-from-command-line)
 
 
+[how to write voip sockets on ios](http://techqa.info/programming/question/27631748/configuring-ios-voip-application-to-run-in-sleep/background-mode)
+
+
+[Basics about background task and networking on ios TN2277](https://developer.apple.com/library/content/technotes/tn2277/_index.html)
+
+
+[More details about specific feature of ios app](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/StrategiesforImplementingYourApp/StrategiesforImplementingYourApp.html)
+
+
+[Analyzing ios crash report](https://developer.apple.com/library/content/technotes/tn2151/_index.html)
+
+
 [\[Table of Contents\]](#toc)
