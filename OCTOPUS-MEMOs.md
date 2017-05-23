@@ -649,5 +649,6 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 [symbolicate ios crash](https://stackoverflow.com/questions/1460892/symbolicating-iphone-app-crash-reports/4954949#4954949)
 
 
+[More about thread](https://ohadsc.wordpress.com/2015/01/27/the-case-of-the-crashing-stdthread-destructor-and-why-you-should-use-tasks-instead-of-threads/)
 
 [\[Table of Contents\]](#toc)
