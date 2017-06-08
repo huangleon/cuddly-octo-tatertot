@@ -528,6 +528,9 @@ HTTP 协议相关
 
 [If password in url contains '@', encode '@' with '%40'](http://serverfault.com/questions/371907/can-you-pass-user-pass-for-http-basic-authentication-in-url-parameters#comment-838925)
 
+[Quick Reference about HTTP header](https://www.cs.tut.fi/~jkorpela/http.html)
+
+
 ##<a id="40"/>
 
 scons相关
