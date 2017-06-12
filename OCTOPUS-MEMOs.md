@@ -384,6 +384,9 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
+[lldb not working with brewed python](https://github.com/Homebrew/legacy-homebrew/issues/47201)
+
+
 ##<a id="27"/>
 关闭SELinux
 ```
