@@ -464,6 +464,10 @@ STL
 
 [算法在线课程](http://julyedu.com)
 
+
+[Concurrency VS Parallelism](https://www.quora.com/What-is-the-difference-between-concurrency-and-parallelism)
+
+
 ##<a id="33"/>
 
 git/svn 相关
