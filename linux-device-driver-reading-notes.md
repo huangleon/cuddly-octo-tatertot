@@ -87,5 +87,30 @@ struct file_operations scull_fops = {
 };
 ```
 ![file operation](http://www.srinivasbt.com/linux/drivers/image002.jpg)
+
 3. file structure and inode structure
 file structure in kernel-space is party to FILE* in user-space.
+
+4. Char device registration and un-registration.
+```C
+struct scull_dev {
+  struct scull_qset *data; /* Pointer to first quantum set */
+  int quantum; /* the current quantum size */
+  int qset; /* the current array size */
+  unsigned long size; /* amount of data stored here */
+  unsigned int access_key; /* used by sculluid and scullpriv */
+  struct semaphore sem; /* mutual exclusion semaphore */
+  struct cdev cdev; /* Char device structure */
+};
+static void scull_setup_cdev(struct scull_dev *dev, int index)
+{
+  int err, devno = MKDEV(scull_major, scull_minor + index);
+  cdev_init(&dev->cdev, &scull_fops);
+  dev->cdev.owner = THIS_MODULE;
+  dev->cdev.ops = &scull_fops;
+  err = cdev_add (&dev->cdev, devno, 1);
+  /* Fail gracefully if need be */
+  if (err)
+    printk(KERN_NOTICE "Error %d adding scull%d", err, index);
+}
+```
