@@ -23,6 +23,9 @@ develop and to adapt to particular needs.
 
 character device, block device, networking device
 
+
+**All code and api resides in kernel source tree include folder.**
+
 Typical code snipet of device initialization and cleanup code.
 key word **__init**, **__exit** and macro **module_init**, **module_exit**.
 ```
@@ -39,6 +42,7 @@ static void __exit cleanup_function(void)
 module_exit(cleanup_function);
 ```
 
+## Differences between user-space driver and kernel-space driver
 User-space driver has full C library linked, but kernel space program has only limited library.
 User-space driver hang, just kill it. Kernel-space driver hang, system crash.
 User-space memory is swappable, unlike kernel-space memory.
@@ -49,3 +53,24 @@ Interrupts are not available in user-space driver.
 Direct access to memory is not availabe in user-space driver.
 Response time slower in user-space driver.
 Some most import device cannot be helded in user-space, like networking device and blocking device. And some(libusb) may use user-space driver.
+
+
+## character device
+1. register/allocate device node with major/minor number
+register_chrdev_region/alloc_chrdev_region
+```
+if (scull_major) {
+  dev = MKDEV(scull_major, scull_minor);
+  result = register_chrdev_region(dev, scull_nr_devs, "scull");
+} else {
+  result = alloc_chrdev_region(&dev, scull_minor, scull_nr_devs,
+  "scull");
+  scull_major = MAJOR(dev);
+}
+if (result < 0) {
+  printk(KERN_WARNING "scull: can't get major %d\n", scull_major);
+  return result;
+}
+```
+1. connect device node with file operation.
+
