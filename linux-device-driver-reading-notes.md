@@ -54,9 +54,10 @@ Direct access to memory is not availabe in user-space driver.
 Response time slower in user-space driver.
 Some most import device cannot be helded in user-space, like networking device and blocking device. And some(libusb) may use user-space driver.
 
+![user-space and kernel-space](https://image.slidesharecdn.com/linux-kernel-development-22001/95/linux-kernel-development-26-728.jpg?cb=1170880820)
 
 ## character device
-1. register/allocate device node with major/minor number
+1. register/allocate device node with major/minor device number
 register_chrdev_region/alloc_chrdev_region
 ```C
 if (scull_major) {
@@ -73,4 +74,18 @@ if (result < 0) {
 }
 ```
 2. connect device node with file operation.
-
+File operations include open/release/read/write/lseek/aio_read/aio_write/readdir/poll/ioctl/mmap/flush/fsync/fasync/aio_fsync/lock/...
+```C
+struct file_operations scull_fops = {
+  .owner = THIS_MODULE,
+  .llseek = scull_llseek,
+  .read = scull_read,
+  .write = scull_write,
+  .ioctl = scull_ioctl,
+  .open = scull_open,
+  .release = scull_release,
+};
+```
+![file operation](http://www.srinivasbt.com/linux/drivers/image002.jpg)
+3. file structure and inode structure
+file structure in kernel-space is party to FILE* in user-space.
