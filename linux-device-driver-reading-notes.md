@@ -1,5 +1,24 @@
 # Linux Device Driver
 
+## Policy and mechanism
+The distinction between mechanism and policy is one of the best ideas behind the
+Unix design. Most programming problems can indeed be split into two parts: “what
+capabilities are to be provided” (the mechanism) and “how those capabilities can be
+used” (the policy). If the two issues are addressed by different parts of the program,
+or even by different programs altogether, the software package is much easier to
+develop and to adapt to particular needs.
+
+[Separation of mechanism and policy](https://en.wikipedia.org/wiki/Separation_of_mechanism_and_policy)
+
+[Policy vs mechanism](https://sites.google.com/site/mylokesh/policyvsmechanism)
+
+## Splitting the Kernel
+* Process Management
+* Memory Management
+* Filesystem
+* Device control
+* Networking
+
 ![A split view of kernel](http://www.xml.com/ldd/chapter/book/figs/ldr2_0101.gif)
 
 character device, block device, networking device
