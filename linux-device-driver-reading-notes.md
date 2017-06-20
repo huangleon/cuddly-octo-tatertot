@@ -28,7 +28,7 @@ character device, block device, networking device
 
 Typical code snipet of device initialization and cleanup code.
 key word **__init**, **__exit** and macro **module_init**, **module_exit**.
-```
+```C
 static int __init initialization_function(void)
 {
 /* Initialization code here */
@@ -58,7 +58,7 @@ Some most import device cannot be helded in user-space, like networking device a
 ## character device
 1. register/allocate device node with major/minor number
 register_chrdev_region/alloc_chrdev_region
-```
+```C
 if (scull_major) {
   dev = MKDEV(scull_major, scull_minor);
   result = register_chrdev_region(dev, scull_nr_devs, "scull");
@@ -72,5 +72,5 @@ if (result < 0) {
   return result;
 }
 ```
-1. connect device node with file operation.
+2. connect device node with file operation.
 
