@@ -114,3 +114,36 @@ static void scull_setup_cdev(struct scull_dev *dev, int index)
     printk(KERN_NOTICE "Error %d adding scull%d", err, index);
 }
 ```
+
+## Concurrency and Race condition
+
+Semaphores are a well-understood concept in computer science. At its core, a semaphore is a single integer value combined with a pair of functions that are typically
+called P and V. A process wishing to enter a critical section will call P on the relevant
+semaphore; if the semaphore’s value is greater than zero, that value is decremented
+by one and the process continues. If, instead, the semaphore’s value is 0 (or less), the
+process must wait until somebody else releases the semaphore. Unlocking a semaphore is accomplished by calling V; this function increments the value of the semaphore and, if necessary, wakes up processes that are waiting.
+
+When semaphores are used for mutual exclusion—keeping multiple processes from
+running within a critical section simultaneously—their value will be initially set to 1.
+Such a semaphore can be held only by a single process or thread at any given time. A
+semaphore used in this mode is sometimes called a mutex, which is, of course, an
+abbreviation for “mutual exclusion.” Almost all semaphores found in the Linux kernel are used for mutual exclusion.
+
+### Read/write Semophore
+An rwsem allows either one writer or an unlimited number of readers to hold the
+semaphore. Writers get priority; as soon as a writer tries to enter the critical section,
+no readers will be allowed in until all writers have completed their work. This implementation can lead to reader starvation—where readers are denied access for a long
+time—if you have a large number of writers contending for the semaphore. For this
+reason, rwsems are best used when write access is required only rarely, and writer
+access is held for short periods of time.
+
+## Spinlock
+
+Spinlocks are, by their nature, intended for use on multiprocessor systems, although
+a uniprocessor workstation running a preemptive kernel behaves like SMP, as far as
+concurrency is concerned. If a nonpreemptive uniprocessor system ever went into a
+spin on a lock, it would spin forever; no other thread would ever be able to obtain
+the CPU to release the lock. For this reason, spinlock operations on uniprocessor systems without preemption enabled are optimized to do nothing, with the exception of
+the ones that change the IRQ masking status. Because of preemption, even if you
+never expect your code to run on an SMP system, you still need to implement proper
+locking.
