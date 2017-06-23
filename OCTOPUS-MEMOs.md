@@ -46,6 +46,7 @@
 * [Networking相关](#43)
 * [Windows debugging](#44)
 * [iOS相关](#45)
+* [Multi-threading](#46)
 
 ##What is the best way to merge mp3 files? <a id="1"></a>
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
@@ -660,5 +661,19 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 
 [More about thread](https://ohadsc.wordpress.com/2015/01/27/the-case-of-the-crashing-stdthread-destructor-and-why-you-should-use-tasks-instead-of-threads/)
+
+
+<a id="46" />
+
+## Multi-threading
+
+[Introduction to parallel computing](https://computing.llnl.gov/tutorials/parallel_comp/)
+
+[POSIX Threads Programming](https://computing.llnl.gov/tutorials/pthreads/)
+
+[Multi-threaded  performance pitfalls](http://www.ciaranmchale.com/training-courses.html#training-multi-threaded)
+
+[Generic synchronization policies](http://www.ciaranmchale.com/training-courses.html#training-gsp)
+
 
 [\[Table of Contents\]](#toc)
