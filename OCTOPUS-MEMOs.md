@@ -46,8 +46,7 @@
 * [iOS相关](#45)
 * [Multi-threading](#46)
 
-<a id="1" />
-## What is the best way to merge mp3 files ? 
+## What is the best way to merge mp3 files ? <a id="1" />
 
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
 
@@ -65,8 +64,7 @@ Finally, run them through the tool MP3Val to fix any stream errors without forci
 
 >mp3val output.mp3 -f -nb
 
-<a id="2" />
-## Cannot connect to samba shared files after 4.1.14-1 upgrade.
+## Cannot connect to samba shared files after 4.1.14-1 upgrade. <a id="2" />
 
 [\[SOLVED\]cannot connect to samba server after upgrade](https://bbs.archlinux.org/viewtopic.php?id=190592)
 [FS\#43015 - \[samba\] cannot connect to samba shared files after 4.1.14-1 upgrade](https://bugs.archlinux.org/task/43015)
@@ -81,8 +79,7 @@ See [\[SOLVED\] cannot connect to samba server after upgrade](https://bbs.archli
 
 [Troubleshooting Samba](https://www.samba.org/samba/docs/using_samba/ch12.html)
 
-<a id="3" />
-## Disk Utility in Linux
+## Disk Utility in Linux <a id="3" />
 
 ### Disk scanning for badblocks
 
@@ -94,8 +91,7 @@ safecopy
 testdisk
 photorec
 
-<a id="4" />
-## Linux运维
+## Linux运维 <a id="4" />
 
 [Linux运维网](http://www.linuxyunwei.com)
 
@@ -103,13 +99,11 @@ photorec
 
 [nginx.conf中替换环境变量](http://serverfault.com/questions/577370/how-can-i-use-environment-variables-in-nginx-conf)
 
-<a id="5" />
-## VPN相关
+## VPN相关 <a id="5" />
 
 [使用 Strongswan 架设 Ipsec VPN](https://zh.opensuse.org/SDB:Setup_Ipsec_VPN_with_Strongswan)
 
-<a id="6" />
-## Markdown相关
+## Markdown相关 <a id="6" />
 
 [Markdown Cheatsheet](http://assemble.io/docs/Cheatsheet-Markdown.html)
 
@@ -117,8 +111,7 @@ photorec
 
 [Markdown open a new window link](http://stackoverflow.com/questions/3492153/markdown-open-a-new-window-link)
 
-<a id="7" />
-## VIM配置
+## VIM配置 <a id="7" />
 
 常用vim配置
 ```
@@ -145,32 +138,27 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 [3](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html)
 [4](https://zh.opensuse.org/index.php?title=SDB:Setup_Ipsec_VPN_with_Strongswan&variant=zh#ipsec.secrets)
 
-<a id="8" />
-## Exact String Matching Algorithms
+## Exact String Matching Algorithms <a id="8" />
 
 [Exact String Matching Algorithms](http://www-igm.univ-mlv.fr/~lecroq/string/)
 
-<a id="9" />
-## General Purpose Hash Function Algorithms
+## General Purpose Hash Function Algorithms <a id="9" />
 
 [hash function](http://www.partow.net/programming/hashfunctions/)
 
-<a id="10"/>
-## 有用的博客
+## 有用的博客 <a id="10"/>
 
 [菜鸟的自留地](http://blog.csdn.net/yang_yulei)
 
 [gmarik](http://www.gmarik.info/)
 
-<a id="12"/>
-## ssh配置
+## ssh配置 <a id="12"/>
 
 [ssh配置](http://blog.chinaunix.net/uid-20710081-id-3266103.html)
 
 [ssh auto-logout 在screen中自动退出的问题](http://www.adercon.com/ac/node/39)
 
-<a id="14"/>
-## 常用samba设置
+## 常用samba设置 <a id="14"/>
 ```
 #设置 server 显示名称
 netbios name = NASERVER
@@ -193,8 +181,7 @@ create mask = 0664
 directory mask = 0775
 ```
 
-<a id="15"/>
-## linux查看端口占用情况
+## linux查看端口占用情况 <a id="15"/>
 
 同时需要必要的root权限
 
@@ -209,8 +196,7 @@ directory mask = 0775
 
 [How to list opened ports](https://apple.stackexchange.com/questions/117644/how-can-i-list-my-open-network-ports-with-netstat)
 
-<a id="16"/>
-## docker相关
+## docker相关 <a id="16"/>
 
 [docker文档](https://docs.docker.com)
 
@@ -245,8 +231,7 @@ docker run -it --net=host
 ```
 来设置
 
-<a id="17"/>
-## Using HTTP_PROXY
+## Using HTTP_PROXY <a id="17"/>
 
 [using http_proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
 
@@ -283,32 +268,28 @@ How to use ntpdate behind a proxy?
 sudo date -s "$(wget -S  "http://www.google.com/" 2>&1 | grep -E '^[[:space:]]*[dD]ate:' | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' | head -1l | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' | sed 's/,//')"
 ```
 
-<a id="18"/>
-## Development language
+## Development language <a id="18"/>
 [C99 array initializers](http://gcc.gnu.org/onlinedocs/gcc-4.1.2/gcc/Designated-Inits.html)
 
 ```
 int array[1024] = {[0 ... 1023] = 5};
 ```
 
-<a id="19"/>
-## usage of sed
+## usage of sed <a id="19"/>
+
 [sed's RE is basic regular expression](http://unix.stackexchange.com/questions/90653/why-do-i-need-to-escape-regex-characters-in-sed-to-be-interpreted-as-regex-chara)
 
-<a id="20"/>
-## use 'patch' to patch code
+## use 'patch' to patch code <a id="20"/>
 
 ```
 patch -p1 -l --dry-run --verbose < patchfile
 ```
 
-<a id="21"/>
-## ubuntu init
+## ubuntu init <a id="21"/>
 
 [ubuntu init.d scripts](http://unix.stackexchange.com/questions/133961/can-not-execute-restart-networking-service-on-ubuntu-14-04)
 
-<a id="22"/>
-## screen使用技巧
+## screen使用技巧 <a id="22"/>
 
 screen 记录log
 Ctrl-a H
@@ -318,8 +299,7 @@ Ctrl-a H
 
 [clear screen after using vim in screen](http://serverfault.com/questions/270103/gnu-screen-clearing-on-vim-less-etc-exit)
 
-<a id="23"/>
-## build kernel相关
+## build kernel相关 <a id="23"/>
 
 [在ubuntu平台上重新编译kernel及使用新kernel](https://www.howtoforge.com/kernel_compilation_ubuntu)
 
@@ -357,13 +337,11 @@ sudo update-grub
 INSTALL_HDR_PATH=/usr/src/linux-headers-$(uname -r) sudo make headers_install 
 ```
 
-<a id="24"/>
-## 使用lvm管理磁盘
+## 使用lvm管理磁盘 <a id="24"/>
 
 [使用lvm管理磁盘扩容](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-adding-a-new-disk/)
 
-<a id="25"/>
-## Android System UIDs inconsistent的解决方法
+## Android System UIDs inconsistent的解决方法 <a id="25"/>
 
 Check the file /data/system/uiderrors.txt for inconsistent uids.
 
@@ -380,8 +358,7 @@ Check the file /data/system/uiderrors.txt for inconsistent uids.
 
 [Ant error 'javac1.8 class not found'](http://stackoverflow.com/questions/20702626/javac1-8-class-not-found)
 
-<a id="26"/>
-## Python搭建虚拟开发环境
+## Python搭建虚拟开发环境 <a id="26"/>
 
 ```
 pip install virtualenv
@@ -408,8 +385,7 @@ pip install -r requirements.txt
 
 [lldb not working with brewed python](https://github.com/Homebrew/legacy-homebrew/issues/47201)
 
-<a id="27"/>
-## 关闭SELinux
+## 关闭SELinux <a id="27"/>
 ```
 sudo setenforce 0
 ```
@@ -420,15 +396,14 @@ sudo vim /etc/sysconfig/selinux
 #SELINUX=enforcing
 SELINUX=permissive
 ```
-<a id="28"/>
-## k8s相关
+
+## k8s相关 <a id="28"/>
 
 [heapster无法获取时间不同步的node的metrics](https://github.com/kubernetes/heapster/issues/516)
 
 [heapster的'time synchronization'问题](https://github.com/kubernetes/heapster/issues/802)
 
-<a id="29"/>
-## openssl 相关
+## openssl 相关 <a id="29"/>
 
 [openssl使用](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
 
@@ -436,8 +411,7 @@ SELINUX=permissive
 
 [der/pem/crt/cer file type](http://info.ssl.com/article.aspx?id=12149)
 
-<a id="30"/>
-## cURL的使用问题
+## cURL的使用问题 <a id="30"/>
 
 http_proxy的环境变量只能用小写,不能用大写,manpage里有说明
 >The environment variables can be specified in lower case or upper case. The lower case version has precedence. http_proxy is an exception as it is only available in lower case.
@@ -455,8 +429,7 @@ About reuse connections in cURL
 
 [How to link libcurl statically](http://stackoverflow.com/questions/20461682/linking-project-with-statically-build-curl#20467476)
 
-<a id="31"/>
-## C++相关
+## C++相关 <a id="31"/>
 
 [c++ vtable](http://shaharmike.com/cpp/)
 
@@ -481,8 +454,7 @@ STL
 
 [Secure programming in C++](http://etutorials.org/Programming/secure+programming/)
 
-<a id="32"/>
-## 算法相关
+## 算法相关 <a id="32"/>
 
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
 
@@ -494,8 +466,7 @@ STL
 
 [Concurrency VS Parallelism](https://www.quora.com/What-is-the-difference-between-concurrency-and-parallelism)
 
-<a id="33"/>
-## git/svn 相关
+## git/svn 相关 <a id="33"/>
 
 [gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
 
@@ -517,22 +488,19 @@ PROP_VALUE: '^/thirdparty-allversions/external/libcurl/source/scripts scripts'
 PATH: .\source\libcurl-7.50.3\jenkins\
 ```
 
-<a id="34"/>
-## 工具相关
+## 工具相关 <a id="34"/>
 
 [绘制sequence diagram](https://www.websequencediagrams.com)
 
 [How to select different network adapter to use in windows 10](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/adapter-priority-setting-unavailable-in-windows-10/d2b63caa-e77c-4b46-88b5-eeeaee00c306#ThreadAnswers)
 
-<a id="35"/>
-## About shoggoth
+## About shoggoth <a id="35"/>
 
 [shoggoth produce multiple variables using jinja2](http://jinja.pocoo.org/docs/2.9/templates/#assignments)
 
 [jinja variables scope in block](http://stackoverflow.com/questions/4870346/can-a-jinja-variables-scope-extend-beyond-in-an-inner-block)
 
-<a id="36"/>
-## Coding style
+## Coding style <a id="36"/>
 
 [C++ coding style](http://geosoft.no/development/cppstyle.html)
 
@@ -540,15 +508,13 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Guru of the Week](http://www.gotw.ca/gotw/)
 
-<a id="37"/>
-## linux相关
+## linux相关 <a id="37"/>
 
 [fstab格式](https://wiki.archlinux.org/index.php/fstab)
 
 [Touchscreen HID USB protocol](https://forum.pjrc.com/threads/32331-USB-HID-Touchscreen-support-needed)
 
-<a id="38"/>
-## Windows
+## Windows <a id="38"/>
 
 [How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
 
@@ -564,24 +530,19 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Specify Symbols in Visual Studio](https://msdn.microsoft.com/en-us/library/ms241613.aspx)
 
-
-<a id="39"/>
-## HTTP 协议相关
+## HTTP 协议相关 <a id="39"/>
 
 [If password in url contains '@', encode '@' with '%40'](http://serverfault.com/questions/371907/can-you-pass-user-pass-for-http-basic-authentication-in-url-parameters#comment-838925)
 
 [Quick Reference about HTTP header](https://www.cs.tut.fi/~jkorpela/http.html)
 
-
-<a id="40"/>
-## scons相关
+## scons相关 <a id="40"/>
 
 [编译器标志对应 Env 变量](http://scons.org/doc/production/HTML/scons-man.html#f-ParseFlags)
 
 [Print Env Dump](http://scons.org/doc/1.2.0/HTML/scons-user/x4613.html)
 
-<a id="41"/>
-## 编译器相关
+## 编译器相关 <a id="41"/>
 
 [options '-rpath' and '-rpath-link'](https://sourceware.org/binutils/docs/ld/Options.html#Options)
 
@@ -591,20 +552,17 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [gcc static link dependency](http://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking)
 
+## VMWare相关 <a id="42"/>
 
-<a id="42"/>
-## VMWare相关
 [Issue about vsphere client open console resolution](http://serverfault.com/questions/806914/vsphere-client-console-missing-bottom-and-right-of-screen#818466)
 
-
-<a id="43"/>
-## Networking相关
+## Networking相关 <a id="43"/>
 
 [What is address 169.254.x.x](https://superuser.com/questions/840388/i-am-using-windows-7-and-i-get-a-169-254-x-x-ip-address#840406)
+
 [Automatic Private IP addressing](http://www.webopedia.com/TERM/A/APIPA.html)
 
-<a id="45"/>
-## iOS相关
+## iOS相关 <a id="45"/>
 
 [iOS Simulator containers](http://stackoverflow.com/questions/6480607/is-there-any-way-to-see-the-file-system-on-the-ios-simulator)
 
@@ -658,8 +616,7 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [More about thread](https://ohadsc.wordpress.com/2015/01/27/the-case-of-the-crashing-stdthread-destructor-and-why-you-should-use-tasks-instead-of-threads/)
 
-<a id="46" />
-## Multi-threading
+## Multi-threading <a id="46" />
 
 [Introduction to parallel computing](https://computing.llnl.gov/tutorials/parallel_comp/)
 
