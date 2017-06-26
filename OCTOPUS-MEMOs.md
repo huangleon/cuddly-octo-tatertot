@@ -626,5 +626,6 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [Generic synchronization policies](http://www.ciaranmchale.com/training-courses.html#training-gsp)
 
+>To allow other threads to continue execution, the main thread should terminate by calling pthread_exit() rather than exit(3).
 
 [\[Table of Contents\]](#toc)
