@@ -628,4 +628,6 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 >To allow other threads to continue execution, the main thread should terminate by calling pthread_exit() rather than exit(3).
 
+[Signal handler execution on linux](https://stackoverflow.com/questions/6949025/how-are-asynchronous-signal-handlers-executed-on-linux)
+
 [\[Table of Contents\]](#toc)
