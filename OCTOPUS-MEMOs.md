@@ -630,4 +630,7 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [Signal handler execution on linux](https://stackoverflow.com/questions/6949025/how-are-asynchronous-signal-handlers-executed-on-linux)
 
+[Memory ordering model with atomic operation](https://gcc.gnu.org/wiki/Atomic/GCCMM/AtomicSync)
+
+
 [\[Table of Contents\]](#toc)
