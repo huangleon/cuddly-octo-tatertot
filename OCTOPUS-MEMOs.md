@@ -433,6 +433,8 @@ About reuse connections in cURL
 
 [c++ vtable](http://shaharmike.com/cpp/)
 
+[vptr initialization](https://stackoverflow.com/questions/6591859/when-does-the-vptr-pointing-to-vtable-get-initialized-for-a-polymorphic-class)
+
 [C++相关](http://blog.csdn.net/anzhsoft)
 
 [C++ faq from BJ](http://www.stroustrup.com/bs_faq2.html)
@@ -451,8 +453,8 @@ STL
 
 [How to securely clear containers data](http://stackoverflow.com/questions/3785582/how-to-write-a-password-safe-class)
 
-
 [Secure programming in C++](http://etutorials.org/Programming/secure+programming/)
+
 
 ## 算法相关 <a id="32"/>
 
