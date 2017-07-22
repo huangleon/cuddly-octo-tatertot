@@ -516,6 +516,11 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Touchscreen HID USB protocol](https://forum.pjrc.com/threads/32331-USB-HID-Touchscreen-support-needed)
 
+[container_of in linux kernel](https://stackoverflow.com/questions/15832301/understanding-container-of-macro-in-the-linux-kernel)
+
+[statement expression in GNU C](http://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html)
+
+
 ## Windows <a id="38"/>
 
 [How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
