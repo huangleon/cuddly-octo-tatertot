@@ -36,7 +36,7 @@
 * [工具相关](#34)
 * [usage of jinja2](#35)
 * [C++ coding style](#36)
-* [linux相关](#37)
+* [Linux相关](#37)
 * [File permission and ACLs](#38)
 * [HTTP 协议相关](#39)
 * [scons相关](#40)
@@ -510,7 +510,7 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Guru of the Week](http://www.gotw.ca/gotw/)
 
-## linux相关 <a id="37"/>
+## Linux相关 <a id="37"/>
 
 [fstab格式](https://wiki.archlinux.org/index.php/fstab)
 
@@ -519,6 +519,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 [container_of in linux kernel](https://stackoverflow.com/questions/15832301/understanding-container-of-macro-in-the-linux-kernel)
 
 [statement expression in GNU C](http://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html)
+
+[kernel init order at boot-up time](https://stackoverflow.com/questions/18605653/linux-module-init-vs-core-initcall-vs-early-initcall#18605952)
 
 
 ## Windows <a id="38"/>
