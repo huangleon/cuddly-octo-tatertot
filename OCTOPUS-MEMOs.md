@@ -522,6 +522,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [kernel init order at boot-up time](https://stackoverflow.com/questions/18605653/linux-module-init-vs-core-initcall-vs-early-initcall#18605952)
 
+[Linux Kernel Hash data-structure](https://lwn.net/Articles/510202/)
+
 
 ## Windows <a id="38"/>
 
