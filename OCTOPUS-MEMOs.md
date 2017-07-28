@@ -524,6 +524,7 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Linux Kernel Hash data-structure](https://lwn.net/Articles/510202/)
 
+[Linux Kernel Spinlock definitely has preemption disabled](http://www.linuxinternals.org/blog/2014/05/07/spinlock-implementation-in-linux-kernel/)
 
 ## Windows <a id="38"/>
 
