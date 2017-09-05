@@ -526,6 +526,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Linux Kernel Spinlock definitely has preemption disabled](http://www.linuxinternals.org/blog/2014/05/07/spinlock-implementation-in-linux-kernel/)
 
+[A filesystem reading list](https://lwn.net/Articles/196292/)
+
 ## Windows <a id="38"/>
 
 [How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
