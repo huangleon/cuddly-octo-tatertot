@@ -411,6 +411,8 @@ SELINUX=permissive
 
 [der/pem/crt/cer file type](http://info.ssl.com/article.aspx?id=12149)
 
+[how to install certificates on local](https://askubuntu.com/questions/645818/how-to-install-certificates-for-command-line)
+
 ## cURL的使用问题 <a id="30"/>
 
 http_proxy的环境变量只能用小写,不能用大写,manpage里有说明
