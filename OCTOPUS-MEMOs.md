@@ -121,6 +121,7 @@ set listchars=tab:>-,trail:-
 set list
 set expandtab
 set number
+set ruler
 
 set encoding=utf8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
