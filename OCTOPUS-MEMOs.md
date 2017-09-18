@@ -45,6 +45,7 @@
 * [Networking相关](#43)
 * [iOS相关](#45)
 * [Multi-threading](#46)
+* [vim/ctags/cscope](#47)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -648,6 +649,18 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 [Signal handler execution on linux](https://stackoverflow.com/questions/6949025/how-are-asynchronous-signal-handlers-executed-on-linux)
 
 [Memory ordering model with atomic operation](https://gcc.gnu.org/wiki/Atomic/GCCMM/AtomicSync)
+
+## vim/ctags/cscope <a id="47" />
+
+build ctags index:
+```
+ctags --exclude=.git -n -R .
+```
+in ~/.vimrc file, set tags searching order from ./tags file to /.
+```
+set tags=./tags;/
+```
+[setup ctags and cscope in vim](https://www.embeddedarm.com/blog/tag-jumping-in-a-codebase-using-ctags-and-cscope-in-vim/)
 
 
 [\[Table of Contents\]](#toc)
