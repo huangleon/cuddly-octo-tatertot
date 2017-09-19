@@ -122,10 +122,17 @@ set listchars=tab:>-,trail:-
 set list
 set expandtab
 set number
+" show cusor position
 set ruler
+" show status line
+set laststatus=2
 
 set encoding=utf8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+" high-light search result
+set hlsearch
+" set ctag file search path, from ./ to /
+set tags=./tags;/
 ```
 
 [turn off auto indent when pasting in vim](http://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim)
