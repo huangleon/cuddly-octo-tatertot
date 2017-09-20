@@ -147,6 +147,8 @@ set tags=./tags;/
 [3](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html)
 [4](https://zh.opensuse.org/index.php?title=SDB:Setup_Ipsec_VPN_with_Strongswan&variant=zh#ipsec.secrets)
 
+[5 essential vim plugins](http://joelhooks.com/blog/2013/04/23/5-essential-vim-plugins/)
+
 ## Exact String Matching Algorithms <a id="8" />
 
 [Exact String Matching Algorithms](http://www-igm.univ-mlv.fr/~lecroq/string/)
