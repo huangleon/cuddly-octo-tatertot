@@ -310,6 +310,8 @@ Ctrl-a H
 
 [clear screen after using vim in screen](http://serverfault.com/questions/270103/gnu-screen-clearing-on-vim-less-etc-exit)
 
+[Set screen-new-window path](https://stackoverflow.com/questions/1517414/how-to-make-gnu-screen-start-a-new-window-at-the-current-working-directory)
+
 ## build kernel相关 <a id="23"/>
 
 [在ubuntu平台上重新编译kernel及使用新kernel](https://www.howtoforge.com/kernel_compilation_ubuntu)
