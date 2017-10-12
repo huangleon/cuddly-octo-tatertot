@@ -315,6 +315,8 @@ Ctrl-a H
 
 [Set screen-new-window path](https://stackoverflow.com/questions/1517414/how-to-make-gnu-screen-start-a-new-window-at-the-current-working-directory)
 
+[screen key-bindings](http://www.pixelbeat.org/lkdb/screen.html)
+
 ## build kernel相关 <a id="23"/>
 
 [在ubuntu平台上重新编译kernel及使用新kernel](https://www.howtoforge.com/kernel_compilation_ubuntu)
