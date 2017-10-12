@@ -688,5 +688,7 @@ set tags=./tags;/
 
 [gdb pretty print](https://stackoverflow.com/questions/12618331/displaying-struct-values-in-gdb#12618396)
 
+[gdb toc](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html)
+
 
 [\[Table of Contents\]](#toc)
