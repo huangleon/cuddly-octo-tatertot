@@ -690,5 +690,8 @@ set tags=./tags;/
 
 [gdb toc](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html)
 
+[gdb thread](https://stackoverflow.com/questions/18391808/getting-the-backtrace-for-all-the-threads-in-gdb)
+
+[gdb logging](https://stackoverflow.com/questions/1707167/how-to-dump-the-entire-gdb-session-to-a-file-including-commands-i-type-and-thei)
 
 [\[Table of Contents\]](#toc)
