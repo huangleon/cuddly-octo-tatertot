@@ -48,6 +48,7 @@
 * [iOS相关](#45)
 * [Multi-threading](#46)
 * [vim/ctags/cscope](#47)
+* [gdb相关](#50)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -682,6 +683,10 @@ in ~/.vimrc file, set tags searching order from ./tags file to /.
 set tags=./tags;/
 ```
 [setup ctags and cscope in vim](https://www.embeddedarm.com/blog/tag-jumping-in-a-codebase-using-ctags-and-cscope-in-vim/)
+
+## gdb相关 <a id="50" />
+
+[gdb pretty print](https://stackoverflow.com/questions/12618331/displaying-struct-values-in-gdb#12618396)
 
 
 [\[Table of Contents\]](#toc)
