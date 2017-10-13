@@ -49,6 +49,7 @@
 * [Multi-threading](#46)
 * [vim/ctags/cscope](#47)
 * [gdb相关](#50)
+* [软件工程](#51)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -695,5 +696,9 @@ set tags=./tags;/
 [gdb thread](https://stackoverflow.com/questions/18391808/getting-the-backtrace-for-all-the-threads-in-gdb)
 
 [gdb logging](https://stackoverflow.com/questions/1707167/how-to-dump-the-entire-gdb-session-to-a-file-including-commands-i-type-and-thei)
+
+## 软件工程 <a id="51" />
+
+[backrev](https://everything2.com/title/backrev)
 
 [\[Table of Contents\]](#toc)
