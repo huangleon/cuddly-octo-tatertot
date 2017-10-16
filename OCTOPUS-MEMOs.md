@@ -697,6 +697,12 @@ set tags=./tags;/
 
 [gdb logging](https://stackoverflow.com/questions/1707167/how-to-dump-the-entire-gdb-session-to-a-file-including-commands-i-type-and-thei)
 
+[gdb gdbinit](https://stackoverflow.com/questions/15399265/how-do-i-load-gdbinit-on-gdb-startup)
+
+```
+gdb -x ./gdbinit
+```
+
 ## 软件工程 <a id="51" />
 
 [backrev](https://everything2.com/title/backrev)
