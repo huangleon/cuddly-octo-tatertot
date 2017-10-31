@@ -153,6 +153,9 @@ set tags=./tags;/
 
 [5 essential vim plugins](http://joelhooks.com/blog/2013/04/23/5-essential-vim-plugins/)
 
+[How to search visual selected text](https://stackoverflow.com/questions/8587136/how-do-i-search-for-the-selected-text)
+
+
 ## Exact String Matching Algorithms <a id="8" />
 
 [Exact String Matching Algorithms](http://www-igm.univ-mlv.fr/~lecroq/string/)
