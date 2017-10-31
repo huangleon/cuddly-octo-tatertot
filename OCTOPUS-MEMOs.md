@@ -21,7 +21,7 @@
 * [usage of sed](#19)
 * [usage of patch](#20)
 * [ubuntu init](#21)
-* [screen使用技巧](#22)
+* [screen and tmux使用技巧](#22)
 * [build kernel相关](#23)
 * [使用lvm管理磁盘](#24)
 * [Android相关](#25)
@@ -304,7 +304,7 @@ patch -p1 -l --dry-run --verbose < patchfile
 
 [ubuntu init.d scripts](http://unix.stackexchange.com/questions/133961/can-not-execute-restart-networking-service-on-ubuntu-14-04)
 
-## screen使用技巧 <a id="22"/>
+## screen and tmux使用技巧 <a id="22"/>
 
 screen 记录log
 Ctrl-a H
@@ -317,6 +317,8 @@ Ctrl-a H
 [Set screen-new-window path](https://stackoverflow.com/questions/1517414/how-to-make-gnu-screen-start-a-new-window-at-the-current-working-directory)
 
 [screen key-bindings](http://www.pixelbeat.org/lkdb/screen.html)
+
+[scroll in tmux](https://superuser.com/questions/209437/how-do-i-scroll-in-tmux)
 
 ## build kernel相关 <a id="23"/>
 
