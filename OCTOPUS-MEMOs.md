@@ -534,6 +534,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Prefer suffix than prefix underscore](http://stackoverflow.com/questions/1228161/why-use-prefixes-on-member-variables-in-c-classes#1228199)
 
+[do ... while(0)](https://stackoverflow.com/questions/154136/why-use-apparently-meaningless-do-while-and-if-else-statements-in-macros)
+
 [Guru of the Week](http://www.gotw.ca/gotw/)
 
 ## Linux相关 <a id="37"/>
