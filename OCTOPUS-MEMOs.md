@@ -155,6 +155,8 @@ set tags=./tags;/
 
 [How to search visual selected text](https://stackoverflow.com/questions/8587136/how-do-i-search-for-the-selected-text)
 
+[How to search multiple words...](https://stackoverflow.com/questions/19970974/how-to-highlight-multiple-words-in-vim)
+
 
 ## Exact String Matching Algorithms <a id="8" />
 
