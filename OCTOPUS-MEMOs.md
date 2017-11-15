@@ -137,6 +137,9 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set hlsearch
 " set ctag file search path, from ./ to /
 set tags=./tags;/
+
+" automatic center search result
+nmap n nzz
 ```
 
 [turn off auto indent when pasting in vim](http://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim)
