@@ -699,6 +699,45 @@ set tags=./tags;/
 ```
 [setup ctags and cscope in vim](https://www.embeddedarm.com/blog/tag-jumping-in-a-codebase-using-ctags-and-cscope-in-vim/)
 
+ctag/cscope update scripts.
+```
+#!/bin/bash
+
+# update ctags
+ctags --exclude=.git -a -n -R .
+
+/usr/local/bin/gentags
+
+huangleon@huangleon-virtual-machine:~/work/unity$ cat /usr/local/bin/gentags
+#!/bin/bash
+
+CSCOPE_DIR="$PWD/cscope"
+
+if [ ! -d "$CSCOPE_DIR" ]; then
+mkdir "$CSCOPE_DIR"
+fi
+
+echo "Finding files ..."
+find "$PWD" -name '*.[ch]' \
+-o -name '*.java' \
+-o -name '*properties' \
+-o -name '*.cpp' \
+-o -name '*.cc' \
+-o -name '*.hpp' \
+-o -name '*.cxx' \
+-o -name '*.hxx' \
+-o -name '*.js' \
+-o -name '*.py' \
+-o -name '*.pl' \
+-o -name '*.php' > "$CSCOPE_DIR/cscope.files"
+
+echo "Adding files to cscope db: $PWD/cscope.db ..."
+cscope -b -R -q -i "$CSCOPE_DIR/cscope.files"
+
+export CSCOPE_DB="$PWD/cscope.out"
+echo "Exported CSCOPE_DB to: '$CSCOPE_DB'"
+```
+
 ## gdb相关 <a id="50" />
 
 [gdb pretty print](https://stackoverflow.com/questions/12618331/displaying-struct-values-in-gdb#12618396)
