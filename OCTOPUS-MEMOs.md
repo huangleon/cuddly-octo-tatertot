@@ -486,6 +486,92 @@ STL
 
 [Secure programming in C++](http://etutorials.org/Programming/secure+programming/)
 
+[How does delete knows array size](https://isocpp.org/wiki/faq/freestore-mgmt#num-elems-in-new-array)
+
+```
+/// A example of new/delete access memory violation error
+#include <iostream>
+struct A {
+    A()
+    {
+        std::cout << "A called" << std::endl;
+    }
+    ~A()
+    {
+        std::cout << "~A called" << std::endl;
+    }
+};
+int main()
+{
+    A* pa = (A*)(new char[sizeof(A) * 2]);
+    delete [] (char*)pa;
+}
+```
+In the code above
+```
+(gdb) l
+2
+3       struct A {
+4           A()
+5           {
+6               std::cout << "A called" << std::endl;
+7           }
+8           ~A()
+9           {
+10              std::cout << "~A called" << std::endl;
+11          }
+(gdb) b 10
+Breakpoint 1 at 0x400a10: file test.cpp, line 10.
+(gdb) l
+12
+13      };
+14      int main()
+15      {
+16          A* pa = (A*)(new char[sizeof(A) * 2]);
+17          delete [] pa;
+18      }
+(gdb) b 17
+Breakpoint 2 at 0x400967: file test.cpp, line 17.
+(gdb) r
+Starting program: /home/c4dev/a.out
+Missing separate debuginfos, use: zypper install glibc-debuginfo-2.19-31.9.emc7065956.7065956.x86_64
+
+Breakpoint 2, main () at test.cpp:17
+17          delete [] pa;
+Missing separate debuginfos, use: zypper install libgcc_s1-debuginfo-5.2.1+r226025-4.1.x86_64 libstdc++6-debuginfo-5.2.1+r226025-4.1.x86_64
+(gdb) p pa
+$1 = (A *) 0x613c20
+(gdb) x/32xb 0x613c20-8
+0x613c18:       0x21    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x613c20:       0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x613c28:       0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x613c30:       0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+<<<<<<<<-------- 0x613c18 contains 8 bytes of cookie for size of memory of char, 0x21
+(gdb) p pa
+$2 = (A *) 0x613c20
+(gdb) p pa+1
+$3 = (A *) 0x613c21
+<<<<<<<<-------- 0x613c21 is the legal address of last element A in array
+(gdb) p pa+0x20
+$4 = (A *) 0x613c40
+(gdb) c
+Continuing.
+
+Breakpoint 1, A::~A (this=0x613c40, __in_chrg=<optimized out>) at test.cpp:10
+10              std::cout << "~A called" << std::endl;
+<<<<<<<<-------- 0x613c40 is pa + 0x20, which is falsely taken as last element by compiler, total elem count is 0x21
+(gdb) c
+Continuing.
+~A called
+
+Breakpoint 1, A::~A (this=0x613c3f, __in_chrg=<optimized out>) at test.cpp:10
+10              std::cout << "~A called" << std::endl;
+(gdb) p sizeof(A) * 2
+$5 = 2
+<<<<<<<<-------- call ~A on each of element in reverse order.
+
+This is overflow access of memory, the legal address range is [0x613c20, 0x613c22), 0x613c40 is out of that range.
+```
 
 ## 算法相关 <a id="32"/>
 
