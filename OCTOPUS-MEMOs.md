@@ -50,6 +50,7 @@
 * [vim/ctags/cscope](#47)
 * [gdb相关](#50)
 * [软件工程](#51)
+* [Misc](#52)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -843,5 +844,9 @@ gdb -x ./gdbinit
 ## 软件工程 <a id="51" />
 
 [backrev](https://everything2.com/title/backrev)
+
+## Misc <a id="52" />
+
+[Hex words](http://www.nsftools.com/tips/HexWords.htm)
 
 [\[Table of Contents\]](#toc)
