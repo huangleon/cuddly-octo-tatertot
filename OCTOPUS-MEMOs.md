@@ -837,6 +837,8 @@ echo "Exported CSCOPE_DB to: '$CSCOPE_DB'"
 
 [gdb gdbinit](https://stackoverflow.com/questions/15399265/how-do-i-load-gdbinit-on-gdb-startup)
 
+[load gdbinit external with gdb](https://stackoverflow.com/questions/14226563/how-to-read-and-execute-gdb-commands-from-a-file)
+
 ```
 gdb -x ./gdbinit
 ```
