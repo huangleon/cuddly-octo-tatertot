@@ -614,6 +614,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [How to select different network adapter to use in windows 10](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/adapter-priority-setting-unavailable-in-windows-10/d2b63caa-e77c-4b46-88b5-eeeaee00c306#ThreadAnswers)
 
+[How to draw c++ inheritance relationship graph on linux](https://stackoverflow.com/questions/8509243/class-hierarchy-dependency-diagram-generator-for-c-in-linux)
+
 ## About shoggoth <a id="35"/>
 
 [shoggoth produce multiple variables using jinja2](http://jinja.pocoo.org/docs/2.9/templates/#assignments)
