@@ -607,6 +607,11 @@ svn ps svn:externals PROP_VALUE PATH
 PROP_VALUE: '^/thirdparty-allversions/external/libcurl/source/scripts scripts'
 PATH: .\source\libcurl-7.50.3\jenkins\
 ```
+[vim with git](https://stackoverflow.com/questions/16232767/git-difftool-in-read-write-mode)
+
+[vim-git](https://github.com/tpope/vim-git)
+
+[fugitive](https://github.com/tpope/vim-fugitive)
 
 ## 工具相关 <a id="34"/>
 
