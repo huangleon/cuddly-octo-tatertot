@@ -131,6 +131,11 @@ set number
 set ruler
 " show status line
 set laststatus=2
+" set hilight cursor
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=DarkCyan ctermfg=white guibg=DarkCyan guifg=white
+hi CursorColumn cterm=NONE ctermbg=DarkCyan ctermfg=white guibg=DarkCyan guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 set encoding=utf8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
