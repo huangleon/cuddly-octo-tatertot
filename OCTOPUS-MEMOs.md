@@ -618,6 +618,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [fugitive](https://github.com/tpope/vim-fugitive)
 
+[Word by word diffs in git](https://idnotfound.wordpress.com/2009/05/09/word-by-word-diffs-in-git/)
+
 ## 工具相关 <a id="34"/>
 
 [绘制sequence diagram](https://www.websequencediagrams.com)
