@@ -880,6 +880,18 @@ x/100x $rbp
 
 [gdb-commands](http://www.yolinux.com/TUTORIALS/GDB-Commands.html)
 
+[x86 asm](http://ref.x86asm.net/)
+
+[x86 cheat-sheet](https://www.cs.uaf.edu/2005/fall/cs301/support/x86/index.html)
+
+[x86-cheat-sheet](https://stackoverflow.com/questions/1933801/x86-assembly-reference-sheet)
+
+[x86-cheat-sheet](https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf)
+
+[gdb-commands](http://www.yolinux.com/TUTORIALS/GDB-Commands.html)
+
+[x64 registers](https://stackoverflow.com/questions/1753602/what-are-the-names-of-the-new-x86-64-processors-registers)
+
 ## 软件工程 <a id="51" />
 
 [backrev](https://everything2.com/title/backrev)
