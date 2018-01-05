@@ -864,6 +864,19 @@ echo "Exported CSCOPE_DB to: '$CSCOPE_DB'"
 ```
 gdb -x ./gdbinit
 ```
+[show stack information](https://stackoverflow.com/questions/7848771/how-can-one-see-content-of-stack-with-gdb)
+```
+info frame
+x/100x $rbp
+```
+
+[understanding gdb assembly](https://www.recurse.com/blog/7-understanding-c-by-learning-assembly)
+
+[get SIG_SEGV addr](https://stackoverflow.com/questions/3003339/how-can-i-get-gdb-to-tell-me-what-address-caused-a-segfault)
+```
+(gdb) p $_siginfo._sifields._sigfault.si_addr
+```
+[gdb signals and SIG_SEGV](https://sourceware.org/gdb/onlinedocs/gdb/Signals.html)
 
 ## 软件工程 <a id="51" />
 
