@@ -878,6 +878,8 @@ x/100x $rbp
 ```
 [gdb signals and SIG_SEGV](https://sourceware.org/gdb/onlinedocs/gdb/Signals.html)
 
+[gdb-commands](http://www.yolinux.com/TUTORIALS/GDB-Commands.html)
+
 ## 软件工程 <a id="51" />
 
 [backrev](https://everything2.com/title/backrev)
