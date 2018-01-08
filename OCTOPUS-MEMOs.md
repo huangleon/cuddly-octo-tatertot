@@ -900,4 +900,6 @@ x/100x $rbp
 
 [Hex words](http://www.nsftools.com/tips/HexWords.htm)
 
+[Bash function](https://ryanstutorials.net/bash-scripting-tutorial/bash-functions.php)
+
 [\[Table of Contents\]](#toc)
