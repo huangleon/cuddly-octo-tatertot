@@ -336,6 +336,8 @@ Ctrl-a H
 
 [scroll in tmux](https://superuser.com/questions/209437/how-do-i-scroll-in-tmux)
 
+[set scrollback buffer size](https://stackoverflow.com/questions/8760346/how-do-i-increase-the-scrollback-buffer-in-a-running-screen-session)
+
 ## build kernel相关 <a id="23"/>
 
 [在ubuntu平台上重新编译kernel及使用新kernel](https://www.howtoforge.com/kernel_compilation_ubuntu)
