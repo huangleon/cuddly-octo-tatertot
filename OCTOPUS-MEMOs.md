@@ -702,6 +702,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Quick Reference about HTTP header](https://www.cs.tut.fi/~jkorpela/http.html)
 
+[URL-encoding](http://www.vermontdatabase.com/cloudwriter/url_encoding.htm)
+
 ## scons相关 <a id="40"/>
 
 [编译器标志对应 Env 变量](http://scons.org/doc/production/HTML/scons-man.html#f-ParseFlags)
