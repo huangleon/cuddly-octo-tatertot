@@ -908,4 +908,12 @@ x/100x $rbp
 
 [OS plumber](https://blog.fpmurphy.com/)
 
+[how to make make show gcc commands](https://stackoverflow.com/questions/5820303/how-do-i-force-make-gcc-to-show-me-the-commands)
+```
+# for CMAKE
+make VERBOSE=1
+# for GNU make
+make V=1
+```
+
 [\[Table of Contents\]](#toc)
