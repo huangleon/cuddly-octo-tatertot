@@ -896,6 +896,11 @@ x/100x $rbp
 
 [x64 registers](https://stackoverflow.com/questions/1753602/what-are-the-names-of-the-new-x86-64-processors-registers)
 
+Redirect 'ALL' gdb output to a logfile
+```
+gdb executable-file core-dump-file |& tee backtrace.log
+```
+
 ## 软件工程 <a id="51" />
 
 [backrev](https://everything2.com/title/backrev)
