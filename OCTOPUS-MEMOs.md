@@ -674,6 +674,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [大神Brendan Gregg](http://www.brendangregg.com/)
 
+[How to remove bytes from start of file](https://unix.stackexchange.com/questions/6852/best-way-to-remove-bytes-from-the-start-of-a-file?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+
 ## File system <a id="38" />
 
 ### Windows <a id="48"/>
