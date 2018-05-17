@@ -916,6 +916,11 @@ gdb executable-file core-dump-file |& tee backtrace.log
 [OS plumber](https://blog.fpmurphy.com/)
 
 [how to make make show gcc commands](https://stackoverflow.com/questions/5820303/how-do-i-force-make-gcc-to-show-me-the-commands)
+
+[base41](https://github.com/sveljko/base41)
+
+[MurmurHash & Smhasher](https://github.com/aappleby/smhasher)
+
 ```
 # for CMAKE
 make VERBOSE=1
