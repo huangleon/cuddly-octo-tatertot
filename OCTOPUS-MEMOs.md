@@ -654,6 +654,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Guru of the Week](http://www.gotw.ca/gotw/)
 
+[if (condition) statement](https://softwareengineering.stackexchange.com/questions/350472/developer-insists-if-statements-shouldnt-have-negated-conditions-and-should-al)
+
 ## Linux相关 <a id="37"/>
 
 [fstab格式](https://wiki.archlinux.org/index.php/fstab)
