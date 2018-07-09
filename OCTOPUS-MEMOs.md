@@ -486,6 +486,8 @@ About reuse connections in cURL
 
 [const and linkage](http://stackoverflow.com/questions/12042549/constants-only-header-file-c#12043198)
 
+[const and extern](https://stackoverflow.com/questions/14894698/why-does-extern-const-int-n-not-work-as-expected)
+
 [Differences between 'libstdc++' and 'libc++'](http://stackoverflow.com/questions/14972425/should-i-use-libc-or-libstdc)
 
 [Some issues about libc++ and libstdc++ on MAC](http://stackoverflow.com/questions/19637164/c-linking-error-after-upgrading-to-mac-os-x-10-9-xcode-5-0-1)
