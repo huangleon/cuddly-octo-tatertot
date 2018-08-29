@@ -909,6 +909,11 @@ Redirect 'ALL' gdb output to a logfile
 gdb executable-file core-dump-file |& tee backtrace.log
 ```
 
+[how-to-view-a-pointer-like-an-array-in-gdb](https://stackoverflow.com/questions/14502236/how-to-view-a-pointer-like-an-array-in-gdb)
+```
+p *array@len
+```
+
 ## 软件工程 <a id="51" />
 
 [backrev](https://everything2.com/title/backrev)
