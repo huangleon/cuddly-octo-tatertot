@@ -585,6 +585,8 @@ $5 = 2
 This is overflow access of memory, the legal address range is [0x613c20, 0x613c22), 0x613c40 is out of that range.
 ```
 
+[elide-constructors](https://stackoverflow.com/questions/23854249/temporary-objects-with-fno-elide-constructors)
+
 ## 算法相关 <a id="32"/>
 
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
