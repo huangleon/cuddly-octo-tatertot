@@ -810,6 +810,8 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [Memory ordering model with atomic operation](https://gcc.gnu.org/wiki/Atomic/GCCMM/AtomicSync)
 
+[pure virtual method called in multi-threading environment](https://tombarta.wordpress.com/2008/07/10/gcc-pure-virtual-method-called/)
+
 ## vim/ctags/cscope <a id="47" />
 
 build ctags index:
