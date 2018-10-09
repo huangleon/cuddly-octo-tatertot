@@ -943,4 +943,6 @@ make VERBOSE=1
 make V=1
 ```
 
+[g++ -m32](https://stackoverflow.com/questions/4643197/missing-include-bits-cconfig-h-when-cross-compiling-64-bit-program-on-32-bit)
+
 [\[Table of Contents\]](#toc)
