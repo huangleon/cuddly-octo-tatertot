@@ -730,6 +730,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [gcc static link dependency](http://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking)
 
+[How to avoid `unused variable` warnings](https://stackoverflow.com/questions/4647665/why-cast-an-unused-function-parameter-value-to-void)
+
 ## VMWare相关 <a id="42"/>
 
 [Issue about vsphere client open console resolution](http://serverfault.com/questions/806914/vsphere-client-console-missing-bottom-and-right-of-screen#818466)
