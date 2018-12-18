@@ -690,6 +690,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Teach Yourself Programming in Ten Years by Norvig](http://norvig.com/21-days.html)
 
+[Quantitative System Performance by Lazowska](https://homes.cs.washington.edu/~lazowska/qsp/)
+
 ## File system <a id="38" />
 
 ### Windows <a id="48"/>
