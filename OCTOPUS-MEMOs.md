@@ -953,4 +953,6 @@ make V=1
 
 [g++ -m32](https://stackoverflow.com/questions/4643197/missing-include-bits-cconfig-h-when-cross-compiling-64-bit-program-on-32-bit)
 
+[Why is it faster to process a sorted array than an unsorted array?](https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array)
+
 [\[Table of Contents\]](#toc)
