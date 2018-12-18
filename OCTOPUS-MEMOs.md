@@ -684,6 +684,12 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [How to install lighttpd on suse](https://www.linuxhelp.com/how-to-install-lighttpd-web-server-in-opensuse/)
 
+[Latency numbers every programmer should know](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html)
+
+[Jeffrey Dean's blog](https://ai.google/research/people/jeff)
+
+[Teach Yourself Programming in Ten Years by Norvig](http://norvig.com/21-days.html)
+
 ## File system <a id="38" />
 
 ### Windows <a id="48"/>
