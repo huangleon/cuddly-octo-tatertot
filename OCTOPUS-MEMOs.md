@@ -127,6 +127,10 @@ set cindent shiftwidth=4
 set ts=4
 set listchars=tab:>-,trail:-
 set list
+" statements below set indention to 2
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
 set expandtab
 set number
 " show cusor position
