@@ -961,4 +961,6 @@ make V=1
 
 [Why is it faster to process a sorted array than an unsorted array?](https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array)
 
+[turn off buffering in bash pipe](https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe)
+
 [\[Table of Contents\]](#toc)
