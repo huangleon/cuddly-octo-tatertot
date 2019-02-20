@@ -696,6 +696,8 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 
 [Quantitative System Performance by Lazowska](https://homes.cs.washington.edu/~lazowska/qsp/)
 
+[Operating System: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/)
+
 ## File system <a id="38" />
 
 ### Windows <a id="48"/>
