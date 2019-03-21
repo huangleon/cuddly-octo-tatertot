@@ -828,6 +828,12 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [pure virtual method called in multi-threading environment](https://tombarta.wordpress.com/2008/07/10/gcc-pure-virtual-method-called/)
 
+[atomic_shared_ptr](https://www.justsoftwaresolutions.co.uk/threading/why-do-we-need-atomic_shared_ptr.html)
+
+[Multi-threading materials](https://www.justsoftwaresolutions.co.uk/threading/)
+
+[Atomic Smart pointers](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4162.pdf)
+
 ## vim/ctags/cscope <a id="47" />
 
 build ctags index:
