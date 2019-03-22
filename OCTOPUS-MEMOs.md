@@ -834,6 +834,8 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [Atomic Smart pointers](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4162.pdf)
 
+[shared_ptr thread safety](https://stackoverflow.com/questions/14482830/stdshared-ptr-thread-safety)
+
 ## vim/ctags/cscope <a id="47" />
 
 build ctags index:
