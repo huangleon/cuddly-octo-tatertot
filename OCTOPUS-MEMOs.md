@@ -51,6 +51,7 @@
 * [gdb相关](#50)
 * [软件工程](#51)
 * [Misc](#52)
+* [Security](#53)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -972,5 +973,9 @@ make V=1
 [Why is it faster to process a sorted array than an unsorted array?](https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array)
 
 [turn off buffering in bash pipe](https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe)
+
+## Security <a id="53" />
+
+[Differences between krb and NTLM](https://www.itprotoday.com/security/comparing-windows-kerberos-and-ntlm-authentication-protocols)
 
 [\[Table of Contents\]](#toc)
