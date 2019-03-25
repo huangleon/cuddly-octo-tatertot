@@ -592,6 +592,8 @@ This is overflow access of memory, the legal address range is [0x613c20, 0x613c2
 
 [elide-constructors](https://stackoverflow.com/questions/23854249/temporary-objects-with-fno-elide-constructors)
 
+[undefined reference in boost linkage](https://stackoverflow.com/questions/15280882/why-undefined-reference-to-boostsystemgeneric-category-even-if-i-do-link#15318710)
+
 ## 算法相关 <a id="32"/>
 
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
