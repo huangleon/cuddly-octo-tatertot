@@ -598,6 +598,8 @@ This is overflow access of memory, the legal address range is [0x613c20, 0x613c2
 
 [C++ delete operator not always used](https://stackoverflow.com/questions/49713773/c-operator-delete-override-not-always-used)
 
+[destructor not called with `exit(0)`](https://stackoverflow.com/questions/7054685/are-destructors-run-when-calling-exit)
+
 ## 算法相关 <a id="32"/>
 
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
