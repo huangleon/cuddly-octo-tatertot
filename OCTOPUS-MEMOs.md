@@ -52,6 +52,7 @@
 * [软件工程](#51)
 * [Misc](#52)
 * [Security](#53)
+* [gdb/valgrind](#54)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -985,5 +986,9 @@ make V=1
 ## Security <a id="53" />
 
 [Differences between krb and NTLM](https://www.itprotoday.com/security/comparing-windows-kerberos-and-ntlm-authentication-protocols)
+
+## gdb/valgrind <a id="54" />
+
+[valgrind bug](https://stackoverflow.com/questions/1542457/memory-leak-reported-by-valgrind-in-dlopen)
 
 [\[Table of Contents\]](#toc)
