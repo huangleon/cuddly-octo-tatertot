@@ -897,7 +897,7 @@ export CSCOPE_DB="$PWD/cscope.out"
 echo "Exported CSCOPE_DB to: '$CSCOPE_DB'"
 ```
 
-## gdb相关 <a id="50" />
+## gdb/valgrind 相关 <a id="50" />
 
 [gdb pretty print](https://stackoverflow.com/questions/12618331/displaying-struct-values-in-gdb#12618396)
 
@@ -951,6 +951,7 @@ gdb executable-file core-dump-file |& tee backtrace.log
 ```
 p *array@len
 ```
+[valgrind bug](https://stackoverflow.com/questions/1542457/memory-leak-reported-by-valgrind-in-dlopen)
 
 ## 软件工程 <a id="51" />
 
@@ -986,9 +987,5 @@ make V=1
 ## Security <a id="53" />
 
 [Differences between krb and NTLM](https://www.itprotoday.com/security/comparing-windows-kerberos-and-ntlm-authentication-protocols)
-
-## gdb/valgrind <a id="54" />
-
-[valgrind bug](https://stackoverflow.com/questions/1542457/memory-leak-reported-by-valgrind-in-dlopen)
 
 [\[Table of Contents\]](#toc)
