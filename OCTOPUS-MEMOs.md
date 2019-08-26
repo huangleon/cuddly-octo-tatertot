@@ -993,4 +993,7 @@ make V=1
 
 [Differences between krb and NTLM](https://www.itprotoday.com/security/comparing-windows-kerberos-and-ntlm-authentication-protocols)
 
+## gdb/valgrind <a id="54" />
+[uninitialized value in valgrind and gtest](https://www.kullo.net/blog/why-valgrind-reports-uninitialised-value-errors-when-running-google-testmock/)
+
 [\[Table of Contents\]](#toc)
