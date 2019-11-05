@@ -989,6 +989,13 @@ make V=1
 
 [turn off buffering in bash pipe](https://unix.stackexchange.com/questions/25372/turn-off-buffering-in-pipe)
 
+```
+convert \r to \n
+#!/bin/bash
+cat file.txt | tr '\r' '\n' | tr -s '\n' > file.translated.txt
+```
+[convert MAC EOL to Unix](https://marcelog.github.io/articles/mac_newline_to_unix_eol.html)
+
 ## Security <a id="53" />
 
 [Differences between krb and NTLM](https://www.itprotoday.com/security/comparing-windows-kerberos-and-ntlm-authentication-protocols)
