@@ -729,6 +729,8 @@ git -c http.sslVerify=false clone ...
 
 [CFM](https://www.flashmemorysummit.com/English/Collaterals/Proceedings/2015/20150811_FB11_Jadon.pdf)
 
+[USENIX conference on file and storage](https://www.usenix.org/legacy/events/bytopic/fast.html)
+
 ### Windows <a id="48"/>
 
 [How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
