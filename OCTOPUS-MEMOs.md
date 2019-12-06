@@ -715,6 +715,18 @@ git -c http.sslVerify=false clone ...
 
 ## File system <a id="38" />
 
+[ext4 filesystem](https://swbae98.wordpress.com/tag/ext4/)
+
+[ext4 disk layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout)
+
+[learn more about ext4](https://www.datarecoverytools.co.uk/2009/11/16/learn-more-about-ext4/)
+
+[ext3 journaling file system](http://www.cs.umd.edu/projects/shrug/ppt/5-Oct-2001.ppt)
+
+[SHRUG](http://www.cs.umd.edu/projects/shrug/)
+
+[SSDFANS](http://www.ssdfans.com/?p=832)
+
 ### Windows <a id="48"/>
 
 [How to get file ACLs on windows through command line](https://superuser.com/questions/364083/windows-list-files-and-their-permissions-access-in-command-line#364088)
