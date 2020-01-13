@@ -647,6 +647,12 @@ PATH: .\source\libcurl-7.50.3\jenkins\
 git -c http.sslVerify=false clone ...
 ```
 
+[shell command to sum integers](https://stackoverflow.com/questions/450799/shell-command-to-sum-integers-one-per-line)
+```
+git log --shortstat 1115b31ce78b5cf691c60c64deef21e6658cbcbb..32b04223a148451e0db8b62873c4ae96118f69a6 | grep 'files changed' | awk '{s+=$4} END {print s}'
+git log --shortstat 1115b31ce78b5cf691c60c64deef21e6658cbcbb..32b04223a148451e0db8b62873c4ae96118f69a6 | grep 'files changed' | awk '{s+=$6} END {print s}'
+```
+
 ## 工具相关 <a id="34"/>
 
 [绘制sequence diagram](https://www.websequencediagrams.com)
