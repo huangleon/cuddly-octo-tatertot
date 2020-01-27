@@ -174,6 +174,7 @@ nmap n nzz
 
 [How to search multiple words...](https://stackoverflow.com/questions/19970974/how-to-highlight-multiple-words-in-vim)
 
+[vim search patterns](https://vim.fandom.com/wiki/Search_patterns)
 
 ## Exact String Matching Algorithms <a id="8" />
 
