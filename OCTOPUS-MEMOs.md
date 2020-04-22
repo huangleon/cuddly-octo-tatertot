@@ -876,6 +876,10 @@ After sync iOS device with iTunes, on Windows, the sync files are located at
 
 [shared_ptr thread safety](https://stackoverflow.com/questions/14482830/stdshared-ptr-thread-safety)
 
+[lock-free programming](http://www.rossbencina.com/code/lockfree)
+
+[lock-free lecture](https://www.cs.cmu.edu/~410-s05/lectures/L31_LockFree.pdf)
+
 ## vim/ctags/cscope <a id="47" />
 
 build ctags index:
