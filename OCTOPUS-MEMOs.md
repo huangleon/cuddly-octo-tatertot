@@ -190,6 +190,12 @@ nmap n nzz
 
 [gmarik](http://www.gmarik.info/)
 
+[Alex Petrov](https://medium.com/@ifesdjeen)
+
+[Database Internals](https://www.databass.dev)
+
+[Linux Performance](http://www.brendangregg.com/linuxperf.html)
+
 ## ssh配置 <a id="12"/>
 
 [ssh配置](http://blog.chinaunix.net/uid-20710081-id-3266103.html)
