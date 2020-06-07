@@ -616,6 +616,8 @@ This is overflow access of memory, the legal address range is [0x613c20, 0x613c2
 
 [File Data Structures](http://dcs.gla.ac.uk/Keith/Chapter.4/Ch.4.html)
 
+[Oracle B-Tree Index: From the concept to Internals](http://web.archive.org/web/20161221112438/http://www.toadworld.com/platforms/oracle/w/wiki/11001.oracle-b-tree-index-from-the-concept-to-internals)
+
 ## git/svn 相关 <a id="33"/>
 
 [gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
