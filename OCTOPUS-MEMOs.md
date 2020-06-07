@@ -614,6 +614,8 @@ This is overflow access of memory, the legal address range is [0x613c20, 0x613c2
 
 [Concurrency VS Parallelism](https://www.quora.com/What-is-the-difference-between-concurrency-and-parallelism)
 
+[File Data Structures](http://dcs.gla.ac.uk/Keith/Chapter.4/Ch.4.html)
+
 ## git/svn 相关 <a id="33"/>
 
 [gerrit deny force-push](https://groups.google.com/forum/#!topic/repo-discuss/kPglQJIDQh0)
