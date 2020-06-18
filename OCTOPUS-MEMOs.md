@@ -176,6 +176,8 @@ nmap n nzz
 
 [vim search patterns](https://vim.fandom.com/wiki/Search_patterns)
 
+[vim open gz file](https://stackoverflow.com/questions/5396363/how-to-open-gzip-text-files-in-gvim-without-unzipping)
+
 ## Exact String Matching Algorithms <a id="8" />
 
 [Exact String Matching Algorithms](http://www-igm.univ-mlv.fr/~lecroq/string/)
