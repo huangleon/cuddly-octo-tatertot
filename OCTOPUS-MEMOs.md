@@ -732,6 +732,8 @@ git log --shortstat 1115b31ce78b5cf691c60c64deef21e6658cbcbb..32b04223a148451e0d
 
 [Operating System: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/)
 
+[Linux Kernel Resources/map](https://makelinux.github.io/kernel/)
+
 ## File system <a id="38" />
 
 [ext4 filesystem](https://swbae98.wordpress.com/tag/ext4/)
