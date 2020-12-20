@@ -92,11 +92,19 @@ See [\[SOLVED\] cannot connect to samba server after upgrade](https://bbs.archli
 ### Disk scanning for badblocks
 
 badblocks
+
 mhdd
+
+Run FSCK on ext4 disks:
+```
+sudo e2fsck -cfpv /dev/sdb1
+```
 
 ### Data recovery
 safecopy
+
 testdisk
+
 photorec
 
 ## Linux运维 <a id="4" />
