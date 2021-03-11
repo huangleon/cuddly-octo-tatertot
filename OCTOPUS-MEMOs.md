@@ -620,6 +620,8 @@ This is overflow access of memory, the legal address range is [0x613c20, 0x613c2
 
 [destructor not called with `exit(0)`](https://stackoverflow.com/questions/7054685/are-destructors-run-when-calling-exit)
 
+[GotW](http://www.gotw.ca)
+
 ## 算法相关 <a id="32"/>
 
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
