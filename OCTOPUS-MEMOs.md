@@ -97,7 +97,16 @@ mhdd
 
 Run FSCK on ext4 disks:
 ```
-sudo e2fsck -cfpv /dev/sdb1
+sudo e2fsck -ckfpv /dev/sdb1
+
+       -c     This  option  causes e2fsck to use badblocks(8) program to do a read-only scan of the device in order to find any bad blocks.  If any bad blocks are found, they are added to the bad block inode to prevent them from being allocated to a file or direc‐
+              tory.  If this option is specified twice, then the bad block scan will be done using a non-destructive read-write test.
+       -f     Force checking even if the file system seems clean.
+       -k     When combined with the -c option, any existing bad blocks in the bad blocks list are preserved, and any new bad blocks found by running badblocks(8) will be added to the existing bad blocks list.
+       -p     Automatically repair ("preen") the file system.  This option will cause e2fsck to automatically fix any filesystem problems that can be safely fixed without human intervention.  If e2fsck discovers a problem which may require the system administrator
+              to take additional corrective action, e2fsck will print a description of the problem and then exit with the value 4 logically or'ed into the exit code.  (See the EXIT CODE section.)  This option is normally used by the system's boot scripts.  It  may
+              not be specified at the same time as the -n or -y options.
+       -v     Verbose mode.
 ```
 
 ### Data recovery
