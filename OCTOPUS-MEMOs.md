@@ -310,6 +310,8 @@ docker run -it --net=host
 ```
 来设置
 
+[HOWTO check container's ports in used](https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/)
+
 ## Using HTTP_PROXY <a id="17"/>
 
 [using http_proxy in pip](http://stackoverflow.com/questions/14149422/using-pip-behind-a-proxy)
