@@ -1085,8 +1085,11 @@ cat file.txt | tr '\r' '\n' | tr -s '\n' > file.translated.txt
 
 ## Linux Networking <a id="55" />
 [iproute2](https://wiki.linuxfoundation.org/networking/iproute2)
+
 [veth](https://man7.org/linux/man-pages/man4/veth.4.html)
+
 [Network Namespace](https://lwn.net/Articles/580893/)
+
 [iproute2 task-centered user guide](https://baturin.org/docs/iproute2/#overview-of-iproute2)
 
 [\[Table of Contents\]](#toc)
