@@ -53,6 +53,7 @@
 * [Misc](#52)
 * [Security](#53)
 * [gdb/valgrind](#54)
+* [Linux Networking](#55)
 
 ## What is the best way to merge mp3 files ? <a id="1" />
 
@@ -1082,4 +1083,11 @@ cat file.txt | tr '\r' '\n' | tr -s '\n' > file.translated.txt
 ## gdb/valgrind <a id="54" />
 [uninitialized value in valgrind and gtest](https://www.kullo.net/blog/why-valgrind-reports-uninitialised-value-errors-when-running-google-testmock/)
 
+## Linux Networking <a id="55" />
+[iproute2](https://wiki.linuxfoundation.org/networking/iproute2)
+[veth](https://man7.org/linux/man-pages/man4/veth.4.html)
+[Network Namespace](https://lwn.net/Articles/580893/)
+[iproute2 task-centered user guide](https://baturin.org/docs/iproute2/#overview-of-iproute2)
+
 [\[Table of Contents\]](#toc)
+
