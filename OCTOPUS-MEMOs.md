@@ -649,6 +649,8 @@ This is overflow access of memory, the legal address range is [0x613c20, 0x613c2
 
 [GotW](http://www.gotw.ca)
 
+[64-bit computing](https://en.wikipedia.org/wiki/64-bit_computing#64-bit_data_models)
+
 ## 算法相关 <a id="32"/>
 
 [多路归并外排](http://sandbox.mc.edu/~bennet/cs402/lec/index.html)
