@@ -775,6 +775,8 @@ git log --shortstat 1115b31ce78b5cf691c60c64deef21e6658cbcbb..32b04223a148451e0d
 
 [Linux Kernel Resources/map](https://makelinux.github.io/kernel/)
 
+[Linux from scratch](https://www.linuxfromscratch.org/blfs/view/stable/general/gdb.html)
+
 ## File system <a id="38" />
 
 [ext4 filesystem](https://swbae98.wordpress.com/tag/ext4/)
