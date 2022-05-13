@@ -2,7 +2,7 @@
 
 ## Misc <a id="toc"></a>
 
-* [What is the best way to merge mp3 files](#1)
+* [What is the best way to merge mp3 files or video files](#1)
 * [Cannot connect to samba shared files after 4.1.14-1 upgrade.](#2)
 * [Disk Utility in Linux](#3)
 * [Linux运维](#4)
@@ -55,7 +55,7 @@
 * [gdb/valgrind](#54)
 * [Linux Networking](#55)
 
-## What is the best way to merge mp3 files ? <a id="1" />
+## What is the best way to merge mp3 files or video files ? <a id="1" />
 
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
 
@@ -72,6 +72,10 @@ Then, at runtime, concat your files together:
 Finally, run them through the tool MP3Val to fix any stream errors without forcing a full re-encode:
 
 >mp3val output.mp3 -f -nb
+
+**Use ffmpeg to merge different video and audio track in webm file**
+>ffmpeg -i 1.webm -i 2.webm -codec copy -map 0 -map 1 ./3.webm
+input 1.webm and 2.webm file and using copy without decoding the stream and merging to track 0 and track 1 to 3.webm file.
 
 ## Cannot connect to samba shared files after 4.1.14-1 upgrade. <a id="2" />
 
