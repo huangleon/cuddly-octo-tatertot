@@ -5,9 +5,9 @@ function conv_wav2mp3 () {
     SRCFILE=$1
     DSTFILE="$(basename $SRCFILE .wav).mp3"
     # https://trac.ffmpeg.org/wiki/Encode/MP3
-    echo "ffmpeg -y -i '$SRCFILE' -q:a 0 '$DSTFILE'"
+    echo "ffmpeg -y -i '$SRCFILE' -codec:a libmp3lame -b:a 320k '$DSTFILE'"
     if [[ $DRYRUN == "0" ]]; then
-        ffmpeg -y -i "$SRCFILE" -q:a 0 "$DSTFILE"
+        ffmpeg -y -i "$SRCFILE" -codec:a libmp3lame -b:a 320k "$DSTFILE"
     fi
 }
 
