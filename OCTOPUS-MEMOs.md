@@ -59,6 +59,9 @@
 
 [stackoverflow上的回答](http://stackoverflow.com/questions/62618/what-is-the-best-way-to-merge-mp3-files)
 
+**ffmpeg documentation**
+https://ffmpeg.org/ffmpeg-all.html
+
 **Use ffmpeg or a similar tool to convert all of your MP3s into a consistent format, e.g.**
 
 >ffmpeg -i originalA.mp3 -f mp3 -ab 128kb -ar 44100 -ac 2 intermediateA.mp3
@@ -77,6 +80,13 @@ Finally, run them through the tool MP3Val to fix any stream errors without forci
 >ffmpeg -i 1.webm -i 2.webm -codec copy -map 0 -map 1 ./3.webm
 
 input 1.webm and 2.webm file and using copy without decoding the stream and merging to track 0 and track 1 to 3.webm file.
+
+**Use ffmpeg to convert ts file to mp4**
+```
+[mp4 @ 0x265e6a0] Malformed AAC bitstream detected: use the audio bitstream filter 'aac_adtstoasc' to fix it ('-bsf:a aac_adtstoasc' option with ffmpeg)
+av_interleaved_write_frame(): Operation not permitted
+```
+>ffmpeg -i 1.ts -bsf:a aac_adtstoasc -codec copy 1.mp4
 
 ## Cannot connect to samba shared files after 4.1.14-1 upgrade. <a id="2" />
 
