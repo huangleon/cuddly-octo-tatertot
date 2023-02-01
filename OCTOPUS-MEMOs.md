@@ -722,6 +722,11 @@ git log --shortstat 1115b31ce78b5cf691c60c64deef21e6658cbcbb..32b04223a148451e0d
 git log --shortstat 1115b31ce78b5cf691c60c64deef21e6658cbcbb..32b04223a148451e0db8b62873c4ae96118f69a6 | grep 'files changed' | awk '{s+=$6} END {print s}'
 ```
 
+[Use git with socks5 proxy](https://stackoverflow.com/questions/15227130/using-a-socks-proxy-with-git-for-the-http-transport)
+```
+git config --global http.proxy 'socks5://127.0.0.1:7070'
+```
+
 ## 工具相关 <a id="34"/>
 
 [绘制sequence diagram](https://www.websequencediagrams.com)
